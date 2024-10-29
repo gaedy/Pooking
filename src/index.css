@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  @layer base {
+    :root {
+      --background: hsl(210, 17%, 98%);
+
+      --hover: hsl(210, 16%, 93%);
+      --hover2: hsl(210, 14%, 89%);
+
+      --input: hsl(210, 14%, 83%);
+
+      --border: hsl(208, 7%, 46%);
+
+      --button: hsl(202, 56%, 38%);
+      --buttonHover: hsl(202, 56%, 35%);
+
+      --goldColor: hsl(24, 100%, 50%);
+      --goldColorHover: hsl(24, 100%, 45%);
+
+      --greenColor: hsl(141, 44%, 48%);
+      --greenColorHover: hsl(141, 44%, 42%);
+
+      --redColor: hsl(357, 93%, 59%);
+      --redColorHover: hsl(357, 93%, 57%);
+
+      --baseText: hsl(330, 10%, 4%);
+    }
+    .dark {
+      --background: hsl(210, 11%, 15%);
+      --hover: hsl(210, 10%, 23%);
+      --hover2: hsl(210, 9%, 31%);
+
+      --input: hsl(210, 14%, 83%);
+
+      --border: hsl(208, 7%, 46%);
+
+      --button: hsl(202, 56%, 38%);
+      --buttonHover: hsl(202, 56%, 35%);
+
+      --goldColor: hsl(24, 100%, 50%);
+      --goldColorHover: hsl(24, 100%, 45%);
+
+      --greenColor: hsl(141, 44%, 48%);
+      --greenColorHover: hsl(141, 44%, 42%);
+
+      --redColor: hsl(357, 93%, 59%);
+      --redColorHover: hsl(357, 93%, 57%);
+
+      --baseText: hsl(0, 0%, 100%);
+    }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-baseText;
+  }
+}
