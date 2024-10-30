@@ -22,7 +22,8 @@ export default {
         redColor: 'var(--redColor)',
         redColorHover: 'var(--redColorHover)',
         baseText: 'var(--baseText)',
-
+        alternateText: 'var(--alternateText)',
+        baseHoverText: 'var(--baseHoverText)',
       }
     },
   },

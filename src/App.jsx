@@ -1,17 +1,24 @@
-import Button from "./assets/components/Button/Button";
-import Card from "./assets/components/Card/Card";
-import HomePage from "./assets/components/HomePage/HomePage";
-import ListCards from "./assets/components/ListCards/ListCards";
-import Rating from "./assets/components/Rating/Rating";
+import Button from "./components/Button/Button";
+import Card from "./components/Card/Card";
+import HomePage from "./pages/HomePage/HomePage";
+import ListCards from "./components/ListCards/ListCards";
+import Rating from "./components/Rating/Rating";
+import Navbar from "./components/Navbar/Navbar";
+import Searchbar from "./components/Searchbar/Searchbar";
+import Dialog from "./components/Dialog/Dialog";
 
 function App() {
   return (
     <>
+      <Navbar />
+      <Searchbar/>
       {/* <Card /> */}
       {/* <Button /> */}
       {/* <Rating /> */}
-      {/* <ListCards /> */}
-      <HomePage/>
+      <ListCards />
+      {/* <HomePage/> */}
+      {/* <Dialog></Dialog> */}
+      
     </>
   );
 }

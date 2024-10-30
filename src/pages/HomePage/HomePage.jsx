@@ -2,7 +2,8 @@
 function HomePage() {
   return (
     <>
-        <div className="w-full h-full bg-green-700 ">bnm
+        <div className="w-full h-full bg-green-700 grid-cols-1 grid-rows-5 gap-4 ">
+
 
         </div>
     </>
@@ -19,4 +20,4 @@ export default HomePage
     <div >3</div>
     <div >4</div>
 </div>
-     */}
+*/}

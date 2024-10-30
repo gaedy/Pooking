@@ -37,6 +37,8 @@
       --redColorHover: hsl(357, 93%, 57%);
 
       --baseText: hsl(330, 10%, 4%);
+      --alternateText: hsl(300, 0%, 55%);
+      --baseHoverText: hsl(0, 1%, 20%);
     }
     .dark {
       --background: hsl(210, 11%, 15%);
@@ -60,6 +62,8 @@
       --redColorHover: hsl(357, 93%, 57%);
 
       --baseText: hsl(0, 0%, 100%);
+      --alternateText: hsl(300, 0%, 55%);
+      --baseHoverText: hsl(0, 2%, 11%);
     }
   }
 }

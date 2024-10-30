@@ -7,7 +7,7 @@ function Button({ type = "default", children, text = "test" }) {
   return (
     <>
       <button
-        className={`select-none transition-all duration-200 text-sm w-28 h-8 rounded-md m-28 ${types[type]}`}
+        className={`select-none transition-all duration-200 text-sm w-28 h-8 hover:shadow-md rounded-md ${types[type]}`}
       >
         <p>{text}</p>
         {children}
