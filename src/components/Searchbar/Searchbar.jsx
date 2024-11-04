@@ -1,83 +1,97 @@
 import Button from "../Button/Button";
-import search from "/src/assets/icons/search.svg";
+import searchIcon from "/src/assets/icons/searchIcon.svg";
 import date from "/src/assets/icons/date.svg";
 import location from "/src/assets/icons/location.svg";
 import guest from "/src/assets/icons/guest.svg";
+import { cards } from "../../api/Cards/cards";
+import { useState } from "react";
 
 function Searchbar() {
+  const [dates, setDates] = useState();
+  const [guests, setGuests] = useState(0);
+  const [search, setSearch] = useState("");
+
+
   return (
     <>
-      <div className="flex  flex-col justify-center items-center  gap-8 h-fit ">
+      <div className="flex  flex-col justify-center items-center  gap-12 h-fit ">
         <div className="font-bold text-3xl flex justify-center items-center">
           Find your next stay ...
         </div>
 
-        <div className="rounded-xl gap-2 p-2 h-fit w-fit flex justify-center  flex-wrap items-center text-xs font-semibold">
-          <div className="flex flex-row gap-2 bg-hover hover:bg-hover2 focus-within:bg-hover2 p-2 rounded-lg transition-all duration-200">
-            <div className="flex flex-row justify-start items-center gap-1">
+        <div className=" rounded-full gap-2 h-fit w-fit flex justify-center  flex-wrap items-center text-xs font-semibold">
+          <div className="flex flex-row group  gap-2 hover:shadow-md focus-within:shadow-md bg-background p-2 rounded-full transition-all duration-300">
+            <div className="flex flex-row justify-start items-center gap-1 ">
               <img
                 className="w-5 scale-75 pointer-events-none select-none"
-                src={search}
+                src={searchIcon}
               ></img>
               {/* <p>Search</p> */}
             </div>
             <input
-              className=" p-2 rounded-md outline-none"
+              className=" p-2 pl-4 group-hover:bg-hover placeholder-alternateText transition-all duration-200 focus-within:bg-hover bg-background rounded-full outline-none"
               placeholder="Search here"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
             ></input>
           </div>
 
-          <div className="flex flex-row gap-2 bg-hover hover:bg-hover2 focus-within:bg-hover2 p-2 rounded-lg transition-all duration-200">
+          <div className="flex flex-row group  gap-2 hover:shadow-md focus-within:shadow-md bg-background p-2 rounded-full transition-all duration-300">
             <div className="flex flex-row justify-start items-center gap-1">
               <img
                 className="w-5 scale-75 pointer-events-none select-none"
                 src={location}
               ></img>
-              <p>Location</p>
+              {/* <p>Location</p> */}
             </div>
-            <select className=" p-2 rounded-md w-32 outline-none" name="cars" id="cars">
-              <option value="volvo">Volvo</option>
-              <option value="saab">Saab</option>
+            <select className=" p-2 pl-4 group-hover:bg-hover transition-all duration-200 focus-within:bg-hover bg-background rounded-full outline-none">
+              {cards.map((card) => (
+                <option key={card.id} value={card.location}>
+                  {card.location}
+                </option>
+              ))}
             </select>
           </div>
 
-          <div className="flex flex-row gap-2 bg-hover hover:bg-hover2 focus-within:bg-hover2 p-2 rounded-lg transition-all duration-200">
+          <div className="flex flex-row group  gap-2 hover:shadow-md focus-within:shadow-md bg-background p-2 rounded-full transition-all duration-300">
             <div className="flex flex-row justify-start items-center gap-1">
               <img
                 className="w-5 scale-75 pointer-events-none select-none"
                 src={date}
               ></img>
-              <p>Date</p>
+              {/* <p>Date</p> */}
             </div>
             <input
-              className=" p-2 rounded-md w-32 outline-none"
+              className=" p-2 pl-4 group-hover:bg-hover transition-all duration-200 focus-within:bg-hover bg-background rounded-full outline-none"
               type="date"
               id="datemax"
               name="datemax"
               min="2000-01-02"
+              value={dates}
+              onChange={setDates}
+              placeholder="Add dates"
             />
           </div>
 
-          
-
-          <div className="flex flex-row gap-2 bg-hover hover:bg-hover2 focus-within:bg-hover2 p-2 rounded-lg transition-all duration-200">
+          <div className="flex flex-row group  gap-2 hover:shadow-md focus-within:shadow-md bg-background p-2 rounded-full transition-all duration-300">
             <div className="flex flex-row justify-start items-center gap-1">
               <img
                 className="w-5 scale-75 pointer-events-none select-none"
                 src={guest}
               ></img>
-              <p>Guests</p>
+              {/* <p>Guests</p> */}
             </div>
             <input
-              className="p-2 rounded-md w-16 outline-none"
+              className="p-2 w-16 group-hover:bg-hover focus-within:bg-hover bg-background rounded-full outline-none"
               placeholder="Search here"
               type="number"
-              value="0"
+              value={guests}
+              onChange={setGuests}
               min="0"
             ></input>
           </div>
 
-          <Button text="Search"></Button>
+          <Button text="Search" className=""></Button>
         </div>
       </div>
     </>

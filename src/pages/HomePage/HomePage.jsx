@@ -1,23 +1,17 @@
+import Card from "../../components/Card/Card";
+import ListCards from "../../components/ListCards/ListCards";
+import Searchbar from "../../components/Searchbar/Searchbar";
 
 function HomePage() {
   return (
     <>
-        <div className="w-full h-full bg-green-700 grid-cols-1 grid-rows-5 gap-4 ">
-
-
-        </div>
+      <div className="w-full h-full mt-24 flex flex-col gap-8 ">
+        <Searchbar />
+        
+        <ListCards />
+      </div>
     </>
-  )
+  );
 }
 
-export default HomePage
-
-
-
-{/* <div className="grid grid-cols-1 grid-rows-5 gap-4">
-    <div >1</div>
-    <div >2</div>
-    <div >3</div>
-    <div >4</div>
-</div>
-*/}
+export default HomePage;

@@ -15,6 +15,7 @@ export default {
         border: "var(--border)",
         button: 'var(--button)',
         buttonHover: 'var(--buttonHover)',
+        buttonHover2: 'var(--buttonHover2)',
         goldColor: 'var(--goldColor)',
         goldColorHover: 'var(--goldColorHover)',
         greenColor: 'var(--greenColor)',

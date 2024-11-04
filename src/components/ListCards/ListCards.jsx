@@ -1,15 +1,12 @@
+import { cards } from "../../api/Cards/cards";
 import Card from "../Card/Card";
-
 function ListCards() {
   return (
     <>
-      <div className=" h-full w-full grid lg:grid-cols-4 md:grid-cols-3 2xl:grid-cols-6 grid-cols-1 gap-4 flex-wrap">
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
+      <div className=" h-full flex justify-center items-center px-4 gap-4 flex-auto flex-wrap">
+        {cards.map((card) => (
+          <Card key={card.id} {...card} />
+        ))}
       </div>
     </>
   );

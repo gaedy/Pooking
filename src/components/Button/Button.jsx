@@ -1,13 +1,23 @@
 // eslint-disable-next-line react/prop-types
-function Button({ type = "default", children, text = "test" }) {
+function Button({
+  type = "default",
+  children,
+  text = "test",
+  className,
+  onClick,
+  onSubmit,
+}) {
   const types = {
-    default: "bg-button hover:bg-buttonHover text-slate-50",
-    outline: "border text-blue-700 hover:bg-hover active:bg-hover2",
+    default:
+      "bg-button hover:bg-buttonHover active:bg-buttonHover2 text-slate-50",
+    outline: "border text-blue-700 hover:bg-hover2 active:bg-hover",
   };
   return (
     <>
       <button
-        className={`select-none transition-all duration-200 text-sm w-28 h-8 hover:shadow-md rounded-md ${types[type]}`}
+        onClick={onClick}
+        onSubmit={onSubmit}
+        className={`${className} select-none transition-all duration-200 text-sm w-28 h-8  rounded-full ${types[type]}`}
       >
         <p>{text}</p>
         {children}
