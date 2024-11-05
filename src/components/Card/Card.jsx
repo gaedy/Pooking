@@ -54,11 +54,14 @@ function Card({
 
             {/* <div className=" text-sm flex items-center">tags</div> */}
 
-            <div className="text-base flex px-1 justify-start items-center font-bold">
+            <div className="text-base flex px-1 gap-1 justify-start items-center font-bold">
               <p className="text-buttonHover2">
                 {currency} {price}
               </p>
-              {/* <p className="text-buttonHover2 text-xs font-medium">/per night</p> */}
+              <p className="text-alternateText text-xs font-medium">
+                {" "}
+                / Per night
+              </p>
             </div>
 
             {/* <div className="flex items-center justify-between gap-4 text-sm font-semibold ">

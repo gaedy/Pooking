@@ -1,6 +1,6 @@
 import { cards } from "../../api/Cards/cards";
 import Card from "../Card/Card";
-function ListCards() {
+function RentCards() {
   return (
     <>
       <div className=" h-full flex justify-center items-center px-4 gap-4 flex-auto flex-wrap">
@@ -12,4 +12,4 @@ function ListCards() {
   );
 }
 
-export default ListCards;
+export default RentCards;
