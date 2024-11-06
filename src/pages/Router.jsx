@@ -6,7 +6,8 @@ import BuyPage from "./BuyPage/BuyPage";
 import SellPage from "./SellPage/SellPage";
 import BuyCards from "../components/BuyCards/BuyCards";
 import SellCards from "../components/SellCards/SellCards";
-import CardsPage from "./HomePage/CardsPage";
+import CardsPage from "./CardsPage/CardsPage";
+
 
 const router = createBrowserRouter([
   {

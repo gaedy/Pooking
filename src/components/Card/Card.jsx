@@ -10,9 +10,12 @@ function Card({
   location = "Add location here",
   currency = "EGP",
   price = "200",
-  rate = 10.0,
+  rate,
   reviews = 100,
   thumbnail = img00,
+  propertyType,
+  per,
+  status,
 }) {
   return (
     <>
@@ -27,9 +30,18 @@ function Card({
             {/* <div className="bg-white p-1 px-2 rounded-full backdrop-filter backdrop-blur-md bg-opacity-60">
               <Verified></Verified>
             </div> */}
-            <div className="bg-white p-1 px-2 rounded-full backdrop-filter backdrop-blur-md bg-opacity-60">
-              <Rating rate={rate.toPrecision(2)} reviews={reviews} />
-            </div>
+            {rate && (
+              <div className="bg-white p-1 px-2 rounded-full backdrop-filter backdrop-blur-md bg-opacity-60">
+                <Rating rate={rate.toPrecision(2)} reviews={reviews} />
+              </div>
+            )}
+
+            {status && (
+              <div className="bg-white p-1 px-3 rounded-full backdrop-filter backdrop-blur-md bg-opacity-70">
+                {/* <p className="text-baseText">{status === "Available" ? "text-white" : status}</p> */}
+                <p className={`${status === "Available" ? 'text-greenColor ' : 'text-redColor'}`}>{status}</p>
+              </div>
+            )}
 
             <Tooltip text="Save">
               <div className="bg-white p-2 rounded-full backdrop-filter backdrop-blur-md bg-opacity-60">
@@ -58,10 +70,14 @@ function Card({
               <p className="text-buttonHover2">
                 {currency} {price}
               </p>
-              <p className="text-alternateText text-xs font-medium">
-                {" "}
-                / Per night
-              </p>
+
+              <p className="text-alternateText text-xs font-medium"> {per}</p>
+
+              {propertyType && (
+                <p className=" ml-auto text-greenColor bg-hover p-1 px-3 rounded-full text-xs font-medium">
+                  {propertyType}
+                </p>
+              )}
             </div>
 
             {/* <div className="flex items-center justify-between gap-4 text-sm font-semibold ">
