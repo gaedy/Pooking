@@ -11,7 +11,7 @@ import img30 from "/src/assets/img/img30.jpg"
 
 export const sellCardsData = [
   {
-    id: 1,
+    id: 21,
     title: "Luxury Penthouse",
     location: "New York, USA",
     askingPrice: 750000,
@@ -30,7 +30,7 @@ export const sellCardsData = [
     }
   },
   {
-    id: 2,
+    id: 22,
     title: "Beach House",
     location: "Miami, USA",
     askingPrice: 620000,
@@ -49,7 +49,7 @@ export const sellCardsData = [
     }
   },
   {
-    id: 3,
+    id: 23,
     title: "Mountain Retreat",
     location: "Denver, USA",
     askingPrice: 480000,
@@ -68,7 +68,7 @@ export const sellCardsData = [
     }
   },
   {
-    id: 4,
+    id: 24,
     title: "Downtown Condo",
     location: "Chicago, USA",
     askingPrice: 390000,
@@ -87,7 +87,7 @@ export const sellCardsData = [
     }
   },
   {
-    id: 5,
+    id: 25,
     title: "Hollywood Hills Villa",
     location: "Los Angeles, USA",
     askingPrice: 1200000,
@@ -106,7 +106,7 @@ export const sellCardsData = [
     }
   },
   {
-    id: 6,
+    id: 26,
     title: "Bay Area Townhouse",
     location: "San Francisco, USA",
     askingPrice: 950000,
@@ -125,7 +125,7 @@ export const sellCardsData = [
     }
   },
   {
-    id: 7,
+    id: 27,
     title: "Colonial Estate",
     location: "Boston, USA",
     askingPrice: 850000,
@@ -144,7 +144,7 @@ export const sellCardsData = [
     }
   },
   {
-    id: 8,
+    id: 28,
     title: "Lake House",
     location: "Seattle, USA",
     askingPrice: 720000,
@@ -163,7 +163,7 @@ export const sellCardsData = [
     }
   },
   {
-    id: 9,
+    id: 29,
     title: "Tech District Apartment",
     location: "Austin, USA",
     askingPrice: 440000,
@@ -182,7 +182,7 @@ export const sellCardsData = [
     }
   },
   {
-    id: 10,
+    id: 30,
     title: "French Quarter Home",
     location: "New Orleans, USA",
     askingPrice: 580000,
@@ -201,7 +201,7 @@ export const sellCardsData = [
     }
   },
   {
-    id: 11,
+    id: 31,
     title: "Skyline View Apartment",
     location: "Portland, USA",
     askingPrice: 495000,
@@ -220,7 +220,7 @@ export const sellCardsData = [
     }
   },
   {
-    id: 12,
+    id: 32,
     title: "Historic District Manor",
     location: "Charleston, USA",
     askingPrice: 890000,
@@ -239,7 +239,7 @@ export const sellCardsData = [
     }
   },
   {
-    id: 13,
+    id: 33,
     title: "Desert Oasis Villa",
     location: "Phoenix, USA",
     askingPrice: 680000,
@@ -258,7 +258,7 @@ export const sellCardsData = [
     }
   },
   {
-    id: 14,
+    id: 34,
     title: "Riverside Cottage",
     location: "Nashville, USA",
     askingPrice: 420000,
@@ -277,7 +277,7 @@ export const sellCardsData = [
     }
   },
   {
-    id: 15,
+    id: 35,
     title: "Modern High-Rise",
     location: "Dallas, USA",
     askingPrice: 550000,
@@ -296,7 +296,7 @@ export const sellCardsData = [
     }
   },
   {
-    id: 16,
+    id: 36,
     title: "Lakefront Estate",
     location: "Minneapolis, USA",
     askingPrice: 920000,
@@ -315,7 +315,7 @@ export const sellCardsData = [
     }
   },
   {
-    id: 17,
+    id: 37,
     title: "Urban Loft",
     location: "Philadelphia, USA",
     askingPrice: 470000,
@@ -334,7 +334,7 @@ export const sellCardsData = [
     }
   },
   {
-    id: 18,
+    id: 38,
     title: "Mountain View Ranch",
     location: "Salt Lake City, USA",
     askingPrice: 780000,
@@ -353,7 +353,7 @@ export const sellCardsData = [
     }
   },
   {
-    id: 19,
+    id: 39,
     title: "Golf Course Villa",
     location: "Scottsdale, USA",
     askingPrice: 830000,
@@ -372,7 +372,7 @@ export const sellCardsData = [
     }
   },
   {
-    id: 20,
+    id: 40,
     title: "Harbor View Condo",
     location: "San Diego, USA",
     askingPrice: 690000,
@@ -391,7 +391,7 @@ export const sellCardsData = [
     }
   },
   {
-    id: 21,
+    id: 41,
     title: "Victorian Mansion",
     location: "Sacramento, USA",
     askingPrice: 1100000,
@@ -410,7 +410,7 @@ export const sellCardsData = [
     }
   },
   {
-    id: 22,
+    id: 42,
     title: "Coastal Retreat",
     location: "Santa Barbara, USA",
     askingPrice: 940000,
@@ -429,7 +429,7 @@ export const sellCardsData = [
     }
   },
   {
-    id: 23,
+    id: 43,
     title: "City Center Loft",
     location: "Houston, USA",
     askingPrice: 510000,
@@ -448,7 +448,7 @@ export const sellCardsData = [
     }
   },
   {
-    id: 24,
+    id: 44,
     title: "Garden District Home",
     location: "Atlanta, USA",
     askingPrice: 670000,
@@ -467,7 +467,7 @@ export const sellCardsData = [
     }
   },
   {
-    id: 25,
+    id: 45,
     title: "Ski Resort Cabin",
     location: "Park City, USA",
     askingPrice: 880000,
@@ -486,7 +486,7 @@ export const sellCardsData = [
     }
   },
   {
-    id: 26,
+    id: 46,
     title: "Waterfront Estate",
     location: "Tampa, USA",
     askingPrice: 1300000,

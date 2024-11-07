@@ -11,7 +11,6 @@ function Searchbar() {
   const [guests, setGuests] = useState(0);
   const [search, setSearch] = useState("");
 
-
   return (
     <>
       <div className="flex  flex-col justify-center items-center  gap-12 h-fit ">

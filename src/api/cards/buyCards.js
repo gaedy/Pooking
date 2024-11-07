@@ -11,7 +11,7 @@ import img20 from "/src/assets/img/img20.jpg"
 
 export const buyCards = [
     {
-      id: 1,
+      id: 11,
       title: "Modern Family House",
       location: "New York, USA",
       price: 450000,
@@ -26,7 +26,7 @@ export const buyCards = [
       features: ["Garage", "Garden", "Pool"]
     },
     {
-      id: 2,
+      id: 12,
       title: "Luxury Condominium",
       location: "Miami, USA",
       price: 380000,
@@ -41,7 +41,7 @@ export const buyCards = [
       features: ["Gym", "Pool", "Security"]
     },
     {
-      id: 3,
+      id: 13,
       title: "Mountain Estate",
       location: "Denver, USA",
       price: 750000,
@@ -56,7 +56,7 @@ export const buyCards = [
       features: ["Views", "Large Lot", "Garage"]
     },
     {
-      id: 4,
+      id: 14,
       title: "City Center Apartment",
       location: "Chicago, USA",
       price: 320000,
@@ -71,7 +71,7 @@ export const buyCards = [
       features: ["Balcony", "Parking", "Doorman"]
     },
     {
-      id: 5,
+      id: 15,
       title: "Beachfront Villa",
       location: "Los Angeles, USA",
       price: 980000,
@@ -86,7 +86,7 @@ export const buyCards = [
       features: ["Beach Access", "Pool", "Garden"]
     },
     {
-      id: 6,
+      id: 16,
       title: "Victorian Townhouse",
       location: "San Francisco, USA",
       price: 850000,
@@ -101,7 +101,7 @@ export const buyCards = [
       features: ["Historic", "Garden", "Parking"]
     },
     {
-      id: 7,
+      id: 17,
       title: "Suburban Family Home",
       location: "Boston, USA",
       price: 520000,
@@ -116,7 +116,7 @@ export const buyCards = [
       features: ["Garage", "Basement", "Yard"]
     },
     {
-      id: 8,
+      id: 18,
       title: "Waterfront Property",
       location: "Seattle, USA",
       price: 890000,
@@ -131,7 +131,7 @@ export const buyCards = [
       features: ["Dock", "Views", "Garage"]
     },
     {
-      id: 9,
+      id: 19,
       title: "Modern Loft",
       location: "Austin, USA",
       price: 420000,
@@ -146,7 +146,7 @@ export const buyCards = [
       features: ["High Ceilings", "Open Plan", "Parking"]
     },
     {
-      id: 10,
+      id: 20,
       title: "Historic Mansion",
       location: "New Orleans, USA",
       price: 1200000,

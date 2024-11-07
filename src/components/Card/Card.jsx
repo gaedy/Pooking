@@ -39,7 +39,15 @@ function Card({
             {status && (
               <div className="bg-white p-1 px-3 rounded-full backdrop-filter backdrop-blur-md bg-opacity-70">
                 {/* <p className="text-baseText">{status === "Available" ? "text-white" : status}</p> */}
-                <p className={`${status === "Available" ? 'text-greenColor ' : 'text-redColor'}`}>{status}</p>
+                <p
+                  className={`${
+                    status === "Available"
+                      ? "text-greenColor "
+                      : "text-redColor"
+                  }`}
+                >
+                  {status}
+                </p>
               </div>
             )}
 

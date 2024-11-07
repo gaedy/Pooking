@@ -2,15 +2,20 @@ import profile from "/src/assets/icons/profile.svg";
 import down from "/src/assets/icons/down.svg";
 import Tooltip from "../Tooltip/Tooltip";
 import { NavLink } from "react-router-dom";
+import Dialog from "../Dialog/Dialog";
 
 function Navbar() {
   return (
-    <div className="h-16 flex sticky top-0 z-10 items-center px-20 p-2 mt-5 bg-hover gap-2 
+    <div
+      className="h-16 flex sticky top-0 z-10 items-center px-20 p-2 mt-5 bg-hover gap-2 
     text-baseHoverText font-semibold text-sm
     
-    ">
+    "
+    >
       <NavLink to="/">
-        <div className="text-lg font-bold mr-10 ">Pooking</div>
+        <div className="text-lg font-bold mr-10 ">
+          <p>Pooking</p>
+        </div>
       </NavLink>
 
       <NavLink

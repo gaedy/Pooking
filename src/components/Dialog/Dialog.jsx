@@ -1,19 +1,24 @@
-import { useRef } from "react";
+import { current } from "@reduxjs/toolkit";
+import { useRef, useState } from "react";
 
+function Dialog({ children }) {
+  const dialogRef = useRef(null);
 
+  const [isShow, setIsShow] = useState(false);
 
-function Dialog() {
+  const openDialog = () => {};
 
-  const dialogRef = useRef();
+  const closeDialog = () => {};
 
-  const handleShow = () => {
-
-  }
   return (
     <>
-      <dialog>
-        <p>test</p>
-      </dialog>
+      <div className="relative">
+        <div>{children}</div>
+
+        <dialog ref={dialogRef} className="absolute top-0 w-36 h-28 opacity-25">
+          <p>test</p>
+        </dialog>
+      </div>
     </>
   );
 }
