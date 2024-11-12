@@ -1,11 +1,11 @@
-import { buyCards } from "../../api/cards/buyCards";
+import { buyCardsData } from "../../api/cards/buyCardsData";
 import Card from "../Card/Card";
 
 function BuyCards() {
   return (
     <>
       <div className=" h-full flex justify-center items-center px-4 gap-4 flex-auto flex-wrap">
-        {buyCards.map((buycard) => (
+        {buyCardsData.map((buycard) => (
           <Card
             key={buycard.id}
             title={buycard.title}
@@ -18,6 +18,7 @@ function BuyCards() {
             thumbnail={buycard.thumbnail}
           />
         ))}
+       
       </div>
     </>
   );

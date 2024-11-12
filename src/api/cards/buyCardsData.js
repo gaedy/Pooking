@@ -9,7 +9,7 @@ import img18 from "/src/assets/img/img18.jpg"
 import img19 from "/src/assets/img/img19.jpg"
 import img20 from "/src/assets/img/img20.jpg"
 
-export const buyCards = [
+export const buyCardsData = [
     {
       id: 11,
       title: "Modern Family House",

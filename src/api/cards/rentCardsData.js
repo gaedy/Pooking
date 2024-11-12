@@ -10,7 +10,7 @@ import img09 from "/src/assets/img/img09.jpg"
 import img10 from "/src/assets/img/img10.jpg"
 
 
-export const cards =
+export const rentCardsData =
 
  [
     {

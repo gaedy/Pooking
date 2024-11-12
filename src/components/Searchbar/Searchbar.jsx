@@ -3,7 +3,7 @@ import searchIcon from "/src/assets/icons/searchIcon.svg";
 import date from "/src/assets/icons/date.svg";
 import location from "/src/assets/icons/location.svg";
 import guest from "/src/assets/icons/guest.svg";
-import { cards } from "../../api/Cards/cards";
+import { rentCardsData } from "../../api/cards/rentCardsData";
 import { useState } from "react";
 
 function Searchbar() {
@@ -44,7 +44,7 @@ function Searchbar() {
               {/* <p>Location</p> */}
             </div>
             <select className=" p-2 pl-4 group-hover:bg-hover transition-all duration-200 focus-within:bg-hover bg-background rounded-full outline-none">
-              {cards.map((card) => (
+              {rentCardsData.map((card) => (
                 <option key={card.id} value={card.location}>
                   {card.location}
                 </option>

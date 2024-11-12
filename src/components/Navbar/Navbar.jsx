@@ -52,13 +52,14 @@ function Navbar() {
       </NavLink>
 
       <div className="ml-auto transition-all duration-300 hover:bg-background hover:shadow-md border border-input hover:text-baseText p-2 w-fit h-full flex rounded-full justify-between items-center gap-4 cursor-pointer">
-        <div className="bg-hover  rounded-full">
-          <img
-            className="w-8 p-1 pointer-events-none select-none"
-            src={profile}
-          ></img>
-        </div>
-
+        
+          <div className="bg-hover rounded-full">
+            <img
+              className="w-8 p-1 pointer-events-none select-none"
+              src={profile}
+            ></img>
+          </div>
+        
         <div className="flex flex-col justify-center items-start">
           {/* <p className="text-alternateText text-xs">Good morning</p> */}
           <p>Sign in</p>

@@ -1,22 +1,46 @@
-import { current } from "@reduxjs/toolkit";
-import { useRef, useState } from "react";
+import { CircleXIcon, SidebarClose } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 function Dialog({ children }) {
   const dialogRef = useRef(null);
 
-  const [isShow, setIsShow] = useState(false);
+  const openDialog = () => {
+    if (dialogRef.current && !dialogRef.current.hasAttribute("open")) {
+      dialogRef.current.showModal();
+    }
+  };
 
-  const openDialog = () => {};
+  const closeDialog = () => {
+    if (!dialogRef.target && dialogRef.current.hasAttribute("open")) {
+      dialogRef.current.close();
+    }
+  };
 
-  const closeDialog = () => {};
+  const closeOutside = (e) => {
+    if (e.currentTarget === e.target) {
+      closeDialog();
+    }
+  };
 
   return (
     <>
       <div className="relative">
-        <div>{children}</div>
+        <div onClick={openDialog}>{children}</div>
 
-        <dialog ref={dialogRef} className="absolute top-0 w-36 h-28 opacity-25">
-          <p>test</p>
+        <dialog
+          ref={dialogRef}
+          onClick={(e) => {
+            closeOutside(e);
+          }}
+          className="fixed w-full h-full rounded-lg bg-hover backdrop:bg-black backdrop:opacity-50 shadow-lg outline-none"
+        >
+          <div className="h-full w-full flex justify-between p-6">
+            <p>test</p>
+            <CircleXIcon
+              className="cursor-pointer hover:stroke-alternateText"
+              onClick={closeDialog}
+            />
+          </div>
         </dialog>
       </div>
     </>
