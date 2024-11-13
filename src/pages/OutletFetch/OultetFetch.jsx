@@ -9,6 +9,7 @@ function OultetFetch() {
   const [theCards, setTheCards] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+
   useEffect(() => {
     Promise.all([fetchRentCards(), fetchBuyCards(), fetchSellCards()])
       .then(([buyCardsData, sellCardsData, cardsData]) => {
@@ -20,6 +21,7 @@ function OultetFetch() {
         setIsLoading(false);
       });
   }, []);
+
 
   return (
     <>

@@ -9,16 +9,6 @@ function fetchApi(apiData, delay = 800) {
 
 }
 
-export function fetchBuyCards() {
-    return fetchApi(buyCardsData);
-}
-
-export function fetchRentCards() {
-    return fetchApi(rentCardsData);
-}
-
-
-export function fetchSellCards() {
-    return fetchApi(sellCardsData);
-}
-
+export const fetchBuyCards = () => fetchApi(buyCardsData);
+export const fetchRentCards = () => fetchApi(rentCardsData);
+export const fetchSellCards = () => fetchApi(sellCardsData);
