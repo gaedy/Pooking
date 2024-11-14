@@ -17,7 +17,7 @@ function Button({
       <button
         onClick={onClick}
         onSubmit={onSubmit}
-        className={`${className} select-none transition-all duration-200 text-sm w-28  rounded-full ${types[type]}`}
+        className={`${className} select-none transition-all duration-200 text-sm rounded-full ${types[type]}`}
       >
         <p>{text}</p>
         {children}

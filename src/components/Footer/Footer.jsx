@@ -1,10 +1,10 @@
 import { NavLink } from "react-router-dom";
+import Dialog from "../Dialog/Dialog";
 
 function Footer() {
   return (
     <>
       <div className=" bg-hover2 flex justify-around items-center p-8 border-t border-input">
-
         <div className="flex flex-col gap-2">
           <p className="font-bold">Pages</p>
           <div className="text-sm flex flex-col gap-2">
@@ -19,8 +19,6 @@ function Footer() {
             </NavLink>
           </div>
         </div>
-
-        
 
         <div className="flex flex-col gap-2">
           <p className="font-bold">Support</p>
@@ -66,14 +64,13 @@ function Footer() {
             </NavLink>
           </div>
         </div>
-
-
       </div>
-
 
       <div className="border-t border-input bg-hover2 text-sm flex justify-between items-center p-4">
         <p>2024 Pooking, Inc.</p>
-        <p>ghj</p>
+        <Dialog>
+          <p>ghj</p>
+        </Dialog>
       </div>
     </>
   );

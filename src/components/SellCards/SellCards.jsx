@@ -1,8 +1,9 @@
-import { sellCardsData } from "../../api/cards/sellCardsData";
+import { useOutletContext } from "react-router-dom";
 import Card from "../Card/Card";
 
 function SellCards() {
-  
+  const { sellCardsData } = useOutletContext();
+
   return (
     <>
       <div className=" h-full flex justify-center items-center px-4 gap-4 flex-auto flex-wrap">
