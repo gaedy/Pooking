@@ -1,33 +1,29 @@
 import Button from "../Button/Button";
-import date from "/src/assets/icons/date.svg";
 import location from "/src/assets/icons/location.svg";
 import guest from "/src/assets/icons/guest.svg";
 import { rentCardsData } from "../../api/cards/rentCardsData";
 import { useState } from "react";
-import Dialog from "../Dialog/Dialog";
-import {
-  ArrowUpDown,
-  CalendarSearch,
-  ChevronDown,
-  CircleX,
-  FolderClosed,
-} from "lucide-react";
+import { CalendarSearch, ChevronDown } from "lucide-react";
 
-function Searchbar({ setSearchTerm }) {
+function Searchbar({ setSearchTerm, setGuestNmuber }) {
   const [dates, setDates] = useState();
   const [guests, setGuests] = useState("");
   const [search, setSearch] = useState("");
 
   const handleSubmit = () => {
     setSearchTerm(search);
+    setGuestNmuber(guests);
   };
 
   const handleClear = () => {
     setSearchTerm("");
     setSearch("");
+
+    setGuestNmuber(0);
+    setGuests("");
   };
 
-  const handleInputChange = (e) => {
+  const handleSearchChange = (e) => {
     const value = e.target.value;
     setSearch(value);
     if (value === "") {
@@ -35,26 +31,34 @@ function Searchbar({ setSearchTerm }) {
     }
   };
 
+  const handleGuestChange = (e) => {
+    const value = e.target.value;
+    setGuests(value);
+    if (value === "") {
+      setGuestNmuber("");
+    }
+  };
+
   return (
     <>
       <div className="flex  flex-col justify-center items-center  gap-10 h-fit ">
-        <div className="font-bold text-3xl flex justify-center items-center">
+        <div className="font-bold md:text-3xl text-xl flex justify-center items-center">
           Find your next stay ...
         </div>
         <button onClick={handleClear}>clear</button>
 
         <div
-          className=" rounded-[1.8rem] md:rounded-full flex-shrink h-fit md:w-fit w-10/12 flex md:flex-row flex-col justify-center items-center text-xs font-semibold
+          className=" rounded-[1.8rem] md:rounded-full mx-2 flex-shrink h-fit md:w-fit w-11/12 flex md:flex-row flex-col justify-center items-center text-xs font-semibold
          p-2 gap-1 bg-background hover:shadow-lg focus-within:shadow-lg transition-shadow duration-300"
         >
           <input
-            className="md:w-fit p-4 w-full shrink border border-input hover:bg-hover placeholder-alternateText transition-all duration-200 focus-within:bg-hover bg-background rounded-full outline-none "
+            className="md:w-full p-4 w-full shrink border border-input hover:bg-hover placeholder-alternateText transition-all duration-200 focus-within:bg-hover bg-background rounded-full outline-none "
             placeholder="Search here"
             value={search}
-            onChange={handleInputChange}
+            onChange={handleSearchChange}
           ></input>
 
-          <div className="flex hover:bg-hover p-4 h-fit md:w-fit border border-input w-full focus-within:bg-hover rounded-full transition-all duration-200 group">
+          <div className="flex hover:bg-hover p-4 h-fit md:w-fit w-full border border-input  focus-within:bg-hover rounded-full transition-all duration-200 group">
             <div className="flex flex-row justify-start items-center gap-1 group">
               <img
                 className="w-4  pointer-events-none select-none"
@@ -102,10 +106,8 @@ function Searchbar({ setSearchTerm }) {
                 placeholder="Guests"
                 type="number"
                 value={guests}
-                min="1"
-                onChange={(e) => {
-                  setGuests(e.target.value);
-                }}
+                min="0"
+                onChange={handleGuestChange}
               ></input>
             </div>
           </div>

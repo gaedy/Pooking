@@ -13,5 +13,6 @@ export const searchFilterByRate = (rate, apiData = []) => {
 
 // filter guests
 export const searchFilterByGuests = (guests, apiData = []) => {
-  return apiData.filter(card => card.guests >= guests);
+  return apiData.filter(card => (card.guests || card.bedrooms) >= guests);
 };
+

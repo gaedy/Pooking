@@ -1,12 +1,13 @@
 import { useOutletContext } from "react-router-dom";
 import Card from "../Card/Card";
+import ListingCards from "../../pages/ListingCards/ListingCards";
 
 function RentCards() {
   const { rentCardsData } = useOutletContext();
 
   return (
     <>
-      <div className=" h-full flex justify-center items-center px-4 gap-4 flex-auto flex-wrap">
+      <ListingCards>
         {rentCardsData.length > 0 ? (
           rentCardsData.map((card) => (
             <Card key={card.id} {...card} per=" / Per night" />
@@ -16,7 +17,7 @@ function RentCards() {
             No results found for your search.
           </div>
         )}
-      </div>
+      </ListingCards>
     </>
   );
 }

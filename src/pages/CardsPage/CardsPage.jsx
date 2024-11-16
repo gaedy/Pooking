@@ -13,14 +13,15 @@ import { buyCardsData } from "../../api/cards/buyCardsData";
 import { sellCardsData } from "../../api/cards/sellCardsData";
 
 function CardsPage() {
-  const [theCards, setTheRentCards] = useState([]);
+  const [theRentCards, setTheRentCards] = useState([]);
   const [theBuyCards, setTheBuyCards] = useState([]);
   const [theSellCards, setTheSellCards] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   const [searchTerm, setSearchTerm] = useState("");
-  const [rateTerm, setRateTerm] = useState(0);
-  const [guestNmuber, setguestNmuber] = useState(0);
+
+  const [rateTerm, setRateTerm] = useState("");
+  const [guestNmuber, setGuestNmuber] = useState(0);
 
   useEffect(() => {
     Promise.all([fetchRentCards(), fetchBuyCards(), fetchSellCards()])
@@ -34,14 +35,31 @@ function CardsPage() {
       });
   }, []);
 
-  const filteredRentCards = searchFilterByTitle(searchTerm, rentCardsData);
-  const filteredBuyCards = searchFilterByTitle(searchTerm, buyCardsData);
-  const filteredSellCards = searchFilterByTitle(searchTerm, sellCardsData);
+  // return filtered Rent cards
+  const filteredRentCards = searchFilterByGuests(
+    guestNmuber,
+    searchFilterByRate(rateTerm, searchFilterByTitle(searchTerm, rentCardsData))
+  );
+
+  // return filtered Buy cards
+  const filteredBuyCards = searchFilterByGuests(
+    guestNmuber,
+    searchFilterByRate(rateTerm, searchFilterByTitle(searchTerm, buyCardsData))
+  );
+
+  // return filtered Sell cards
+  const filteredSellCards = searchFilterByGuests(
+    guestNmuber,
+    searchFilterByTitle(searchTerm, sellCardsData)
+  );
 
   return (
     <>
       <div className="w-full h-full py-10 flex flex-col gap-4">
-        <Searchbar setSearchTerm={setSearchTerm} />
+        <Searchbar
+          setSearchTerm={setSearchTerm}
+          setGuestNmuber={setGuestNmuber}
+        />
 
         {isLoading ? (
           <div className="flex justify-center h-screen">
@@ -49,6 +67,7 @@ function CardsPage() {
           </div>
         ) : (
           <>
+          
             <Outlet
               context={{
                 rentCardsData: filteredRentCards,
