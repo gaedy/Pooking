@@ -3,7 +3,7 @@ import location from "/src/assets/icons/location.svg";
 import guest from "/src/assets/icons/guest.svg";
 import { rentCardsData } from "../../api/cards/rentCardsData";
 import { useState } from "react";
-import { CalendarSearch, ChevronDown } from "lucide-react";
+import { CalendarSearch, ChevronDown, Search } from "lucide-react";
 
 function Searchbar({ setSearchTerm, setGuestNmuber }) {
   const [dates, setDates] = useState();
@@ -115,9 +115,11 @@ function Searchbar({ setSearchTerm, setGuestNmuber }) {
           <div className="flex hover:bg-hover focus-within:bg-hover rounded-full transition-all duration-200">
             <Button
               onClick={handleSubmit}
-              className="p-[14px] px-6"
-              text="Search"
-            />
+              className="p-4"
+              type="circle"
+            >
+              <Search size={20} color="white"/>
+            </Button>
           </div>
         </div>
       </div>

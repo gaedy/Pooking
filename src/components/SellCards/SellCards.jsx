@@ -1,4 +1,4 @@
-import { useOutletContext } from "react-router-dom";
+import { Outlet, useOutletContext } from "react-router-dom";
 import Card from "../Card/Card";
 import ListingCards from "../../pages/ListingCards/ListingCards";
 
@@ -12,14 +12,9 @@ function SellCards() {
           sellCardsData.map((sellcard) => (
             <Card
               key={sellcard.id}
-              title={sellcard.title}
               price={sellcard.askingPrice}
-              location={sellcard.location}
-              currency={sellcard.currency}
-              thumbnail={sellcard.thumbnail}
-              reviews={sellcard.reviews}
-              status={sellcard.status}
-              per="/ Asking price"
+              {...sellcard}
+              // per="/ Asking price"
             />
           ))
         ) : (
@@ -28,6 +23,7 @@ function SellCards() {
           </div>
         )}
       </ListingCards>
+      <Outlet context={{sellCardsData}}/>
     </>
   );
 }
