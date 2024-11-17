@@ -42,7 +42,7 @@ function Tooltip({ children, text = "This is Tooltip" }) {
   return (
     <>
       <div
-        className="relative flex justify-center items-center group"
+        className="relative flex justify-center items-center"
         onMouseEnter={hanldeHover}
         onMouseLeave={handleClose}
       >

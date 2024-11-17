@@ -1,13 +1,4 @@
-import img21 from "/src/assets/img/img21.jpg"
-import img22 from "/src/assets/img/img22.jpg"
-import img23 from "/src/assets/img/img23.jpg"
-import img24 from "/src/assets/img/img24.jpg"
-import img25 from "/src/assets/img/img25.jpg"
-import img26 from "/src/assets/img/img26.jpg"
-import img27 from "/src/assets/img/img27.jpg"
-import img28 from "/src/assets/img/img28.jpg"
-import img29 from "/src/assets/img/img29.jpg"
-import img30 from "/src/assets/img/img30.jpg"
+import { theImages } from "../../utils/imagesImport"
 
 export const sellCardsData = [
   {
@@ -17,7 +8,13 @@ export const sellCardsData = [
     askingPrice: 750000,
     currency: "USD",
     bedrooms: 4,
-    thumbnail: img21,
+    thumbnail: theImages['img21'],
+    thumbnails: {
+      img21_01: theImages['img15_02'],
+      img21_02: theImages['img03_04'],
+      img21_03: theImages['img08_01'],
+      img21_04: theImages['img12_03'],
+    },
     listingDate: "2024-11-06",
     squareFeet: 3000,
     status: "Available",
@@ -36,7 +33,13 @@ export const sellCardsData = [
     askingPrice: 620000,
     currency: "USD",
     bedrooms: 3,
-    thumbnail: img22,
+    thumbnail: theImages['img22'],
+    thumbnails: {
+      img22_01: theImages['img02_03'],
+      img22_02: theImages['img17_01'],
+      img22_03: theImages['img09_04'],
+      img22_04: theImages['img11_02'],
+    },
     listingDate: "2024-11-05",
     squareFeet: 2500,
     status: "Under Contract",
@@ -55,7 +58,13 @@ export const sellCardsData = [
     askingPrice: 480000,
     currency: "USD",
     bedrooms: 3,
-    thumbnail: img23,
+    thumbnail: theImages['img23'],
+    thumbnails: {
+      img23_01: theImages['img05_02'],
+      img23_02: theImages['img14_03'],
+      img23_03: theImages['img19_01'],
+      img23_04: theImages['img07_04'],
+    },
     listingDate: "2024-11-04",
     squareFeet: 2200,
     status: "Available",
@@ -74,7 +83,13 @@ export const sellCardsData = [
     askingPrice: 390000,
     currency: "USD",
     bedrooms: 2,
-    thumbnail: img24,
+    thumbnail: theImages['img24'],
+    thumbnails: {
+      img24_01: theImages['img16_03'],
+      img24_02: theImages['img04_01'],
+      img24_03: theImages['img11_04'],
+      img24_04: theImages['img08_02'],
+    },
     listingDate: "2024-11-03",
     squareFeet: 1800,
     status: "Available",
@@ -93,7 +108,13 @@ export const sellCardsData = [
     askingPrice: 1200000,
     currency: "USD",
     bedrooms: 5,
-    thumbnail: img25,
+    thumbnail: theImages['img25'],
+    thumbnails: {
+      img25_01: theImages['img01_04'],
+      img25_02: theImages['img18_02'],
+      img25_03: theImages['img13_01'],
+      img25_04: theImages['img06_03'],
+    },
     listingDate: "2024-11-02",
     squareFeet: 4500,
     status: "Available",
@@ -112,7 +133,13 @@ export const sellCardsData = [
     askingPrice: 950000,
     currency: "USD",
     bedrooms: 3,
-    thumbnail: img26,
+    thumbnail: theImages['img26'],
+    thumbnails: {
+      img26_01: theImages['img20_02'],
+      img26_02: theImages['img07_01'],
+      img26_03: theImages['img12_04'],
+      img26_04: theImages['img03_02'],
+    },
     listingDate: "2024-11-01",
     squareFeet: 2800,
     status: "Under Contract",
@@ -131,7 +158,13 @@ export const sellCardsData = [
     askingPrice: 850000,
     currency: "USD",
     bedrooms: 4,
-    thumbnail: img27,
+    thumbnail: theImages['img27'],
+    thumbnails: {
+      img27_01: theImages['img09_02'],
+      img27_02: theImages['img15_04'],
+      img27_03: theImages['img02_01'],
+      img27_04: theImages['img19_03'],
+    },
     listingDate: "2024-10-31",
     squareFeet: 3200,
     status: "Available",
@@ -150,7 +183,13 @@ export const sellCardsData = [
     askingPrice: 720000,
     currency: "USD",
     bedrooms: 3,
-    thumbnail: img28,
+    thumbnail: theImages['img28'],
+    thumbnails: {
+      img28_01: theImages['img10_03'],
+      img28_02: theImages['img16_01'],
+      img28_03: theImages['img05_04'],
+      img28_04: theImages['img14_02'],
+    },
     listingDate: "2024-10-30",
     squareFeet: 2600,
     status: "Available",
@@ -169,7 +208,13 @@ export const sellCardsData = [
     askingPrice: 440000,
     currency: "USD",
     bedrooms: 2,
-    thumbnail: img29,
+    thumbnail: theImages['img29'],
+    thumbnails: {
+      img29_01: theImages['img04_02'],
+      img29_02: theImages['img17_03'],
+      img29_03: theImages['img08_04'],
+      img29_04: theImages['img13_01'],
+    },
     listingDate: "2024-10-29",
     squareFeet: 1600,
     status: "Under Contract",
@@ -188,7 +233,13 @@ export const sellCardsData = [
     askingPrice: 580000,
     currency: "USD",
     bedrooms: 3,
-    thumbnail: img30,
+    thumbnail: theImages['img30'],
+    thumbnails: {
+      img30_01: theImages['img11_03'],
+      img30_02: theImages['img19_02'],
+      img30_03: theImages['img06_04'],
+      img30_04: theImages['img15_01'],
+    },
     listingDate: "2024-10-28",
     squareFeet: 2400,
     status: "Available",
@@ -207,7 +258,13 @@ export const sellCardsData = [
     askingPrice: 495000,
     currency: "USD",
     bedrooms: 2,
-    thumbnail: img21,
+    thumbnail: theImages['img31'],
+    thumbnails: {
+      img31_01: theImages['img03_01'],
+      img31_02: theImages['img18_04'],
+      img31_03: theImages['img07_02'],
+      img31_04: theImages['img12_03'],
+    },
     listingDate: "2024-10-27",
     squareFeet: 1900,
     status: "Available",
@@ -226,7 +283,13 @@ export const sellCardsData = [
     askingPrice: 890000,
     currency: "USD",
     bedrooms: 5,
-    thumbnail: img22,
+    thumbnail: theImages['img32'],
+    thumbnails: {
+      img32_01: theImages['img20_03'],
+      img32_02: theImages['img05_01'],
+      img32_03: theImages['img14_04'],
+      img32_04: theImages['img09_02'],
+    },
     listingDate: "2024-10-26",
     squareFeet: 3800,
     status: "Under Contract",
@@ -245,7 +308,13 @@ export const sellCardsData = [
     askingPrice: 680000,
     currency: "USD",
     bedrooms: 4,
-    thumbnail: img23,
+    thumbnail: theImages['img33'],
+    thumbnails: {
+      img33_01: theImages['img02_04'],
+      img33_02: theImages['img16_02'],
+      img33_03: theImages['img08_03'],
+      img33_04: theImages['img11_01'],
+    },
     listingDate: "2024-10-25",
     squareFeet: 2900,
     status: "Available",
@@ -264,7 +333,13 @@ export const sellCardsData = [
     askingPrice: 420000,
     currency: "USD",
     bedrooms: 2,
-    thumbnail: img24,
+    thumbnail: theImages['img34'],
+    thumbnails: {
+      img34_01: theImages['img17_04'],
+      img34_02: theImages['img01_02'],
+      img34_03: theImages['img13_03'],
+      img34_04: theImages['img06_01'],
+    },
     listingDate: "2024-10-24",
     squareFeet: 1700,
     status: "Available",
@@ -283,7 +358,13 @@ export const sellCardsData = [
     askingPrice: 550000,
     currency: "USD",
     bedrooms: 3,
-    thumbnail: img25,
+    thumbnail: theImages['img35'],
+    thumbnails: {
+      img35_01: theImages['img10_02'],
+      img35_02: theImages['img19_04'],
+      img35_03: theImages['img04_03'],
+      img35_04: theImages['img15_01'],
+    },
     listingDate: "2024-10-23",
     squareFeet: 2100,
     status: "Under Contract",
@@ -302,7 +383,13 @@ export const sellCardsData = [
     askingPrice: 920000,
     currency: "USD",
     bedrooms: 5,
-    thumbnail: img26,
+    thumbnail: theImages['img36'],
+    thumbnails: {
+      img36_01: theImages['img07_03'],
+      img36_02: theImages['img12_01'],
+      img36_03: theImages['img18_02'],
+      img36_04: theImages['img03_04'],
+    },
     listingDate: "2024-10-22",
     squareFeet: 4200,
     status: "Available",
@@ -312,196 +399,6 @@ export const sellCardsData = [
       name: "Michelle Park",
       contact: "678-234-9015",
       email: "michelle@example.com"
-    }
-  },
-  {
-    id: 37,
-    title: "Urban Loft",
-    location: "Philadelphia, USA",
-    askingPrice: 470000,
-    currency: "USD",
-    bedrooms: 2,
-    thumbnail: img27,
-    listingDate: "2024-10-21",
-    squareFeet: 1850,
-    status: "Available",
-    views: 189,
-    inquiries: 11,
-    sellerInfo: {
-      name: "Chris Taylor",
-      contact: "789-345-0126",
-      email: "chris@example.com"
-    }
-  },
-  {
-    id: 38,
-    title: "Mountain View Ranch",
-    location: "Salt Lake City, USA",
-    askingPrice: 780000,
-    currency: "USD",
-    bedrooms: 4,
-    thumbnail: img28,
-    listingDate: "2024-10-20",
-    squareFeet: 3400,
-    status: "Under Contract",
-    views: 267,
-    inquiries: 18,
-    sellerInfo: {
-      name: "Amanda Garcia",
-      contact: "890-456-1237",
-      email: "amanda@example.com"
-    }
-  },
-  {
-    id: 39,
-    title: "Golf Course Villa",
-    location: "Scottsdale, USA",
-    askingPrice: 830000,
-    currency: "USD",
-    bedrooms: 3,
-    thumbnail: img29,
-    listingDate: "2024-10-19",
-    squareFeet: 2800,
-    status: "Available",
-    views: 223,
-    inquiries: 14,
-    sellerInfo: {
-      name: "Kevin Lee",
-      contact: "901-567-2348",
-      email: "kevin@example.com"
-    }
-  },
-  {
-    id: 40,
-    title: "Harbor View Condo",
-    location: "San Diego, USA",
-    askingPrice: 690000,
-    currency: "USD",
-    bedrooms: 2,
-    thumbnail: img30,
-    listingDate: "2024-10-18",
-    squareFeet: 1950,
-    status: "Available",
-    views: 198,
-    inquiries: 12,
-    sellerInfo: {
-      name: "Jessica Wong",
-      contact: "012-678-3459",
-      email: "jessica@example.com"
-    }
-  },
-  {
-    id: 41,
-    title: "Victorian Mansion",
-    location: "Sacramento, USA",
-    askingPrice: 1100000,
-    currency: "USD",
-    bedrooms: 6,
-    thumbnail: img21,
-    listingDate: "2024-10-17",
-    squareFeet: 4800,
-    status: "Under Contract",
-    views: 345,
-    inquiries: 28,
-    sellerInfo: {
-      name: "Peter Chang",
-      contact: "123-789-4560",
-      email: "peter@example.com"
-    }
-  },
-  {
-    id: 42,
-    title: "Coastal Retreat",
-    location: "Santa Barbara, USA",
-    askingPrice: 940000,
-    currency: "USD",
-    bedrooms: 4,
-    thumbnail: img22,
-    listingDate: "2024-10-16",
-    squareFeet: 3100,
-    status: "Available",
-    views: 278,
-    inquiries: 19,
-    sellerInfo: {
-      name: "Nicole Martinez",
-      contact: "234-890-5671",
-      email: "nicole@example.com"
-    }
-  },
-  {
-    id: 43,
-    title: "City Center Loft",
-    location: "Houston, USA",
-    askingPrice: 510000,
-    currency: "USD",
-    bedrooms: 2,
-    thumbnail: img23,
-    listingDate: "2024-10-15",
-    squareFeet: 1750,
-    status: "Available",
-    views: 187,
-    inquiries: 11,
-    sellerInfo: {
-      name: "Brian Wilson",
-      contact: "345-901-6782",
-      email: "brian@example.com"
-    }
-  },
-  {
-    id: 44,
-    title: "Garden District Home",
-    location: "Atlanta, USA",
-    askingPrice: 670000,
-    currency: "USD",
-    bedrooms: 4,
-    thumbnail: img24,
-    listingDate: "2024-10-14",
-    squareFeet: 2700,
-    status: "Under Contract",
-    views: 245,
-    inquiries: 16,
-    sellerInfo: {
-      name: "Maria Rodriguez",
-      contact: "456-012-7893",
-      email: "maria@example.com"
-    }
-  },
-  {
-    id: 45,
-    title: "Ski Resort Cabin",
-    location: "Park City, USA",
-    askingPrice: 880000,
-    currency: "USD",
-    bedrooms: 3,
-    thumbnail: img25,
-    listingDate: "2024-10-13",
-    squareFeet: 2400,
-    status: "Available",
-    views: 212,
-    inquiries: 13,
-    sellerInfo: {
-      name: "Andrew Kim",
-      contact: "567-123-8904",
-      email: "andrew@example.com"
-    }
-  },
-  {
-    id: 46,
-    title: "Waterfront Estate",
-    location: "Tampa, USA",
-    askingPrice: 1300000,
-    currency: "USD",
-    bedrooms: 5,
-    thumbnail: img26,
-    listingDate: "2024-10-12",
-    squareFeet: 5000,
-    status: "Available",
-    views: 356,
-    inquiries: 29,
-    sellerInfo: {
-      name: "Sarah Chen",
-      contact: "678-234-9015",
-      email: "sarahc@example.com"
     }
   },
 ]

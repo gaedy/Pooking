@@ -12,6 +12,7 @@ function BuyCards() {
             <Card
               key={buycard.id}
               {...buycard}
+              
             />
           ))
         ) : (

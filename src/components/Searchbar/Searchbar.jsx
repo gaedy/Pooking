@@ -3,7 +3,7 @@ import location from "/src/assets/icons/location.svg";
 import guest from "/src/assets/icons/guest.svg";
 import { rentCardsData } from "../../api/cards/rentCardsData";
 import { useState } from "react";
-import { CalendarSearch, ChevronDown, Search } from "lucide-react";
+import { CalendarSearch, ChevronDown, CircleXIcon, Search } from "lucide-react";
 
 function Searchbar({ setSearchTerm, setGuestNmuber }) {
   const [dates, setDates] = useState();
@@ -42,21 +42,30 @@ function Searchbar({ setSearchTerm, setGuestNmuber }) {
   return (
     <>
       <div className="flex  flex-col justify-center items-center  gap-10 h-fit ">
-        <div className="font-bold md:text-3xl text-xl flex justify-center items-center">
+        <div className="font-bold md:text-3xl text-xl flex justify-center items-center text-pretty">
           Find your next stay ...
         </div>
-        <button onClick={handleClear}>clear</button>
 
         <div
           className=" rounded-[1.8rem] md:rounded-full mx-2 flex-shrink h-fit md:w-fit w-11/12 flex md:flex-row flex-col justify-center items-center text-xs font-semibold
          p-2 gap-1 bg-background hover:shadow-lg focus-within:shadow-lg transition-shadow duration-300"
         >
-          <input
-            className="md:w-full p-4 w-full shrink border border-input hover:bg-hover placeholder-alternateText transition-all duration-200 focus-within:bg-hover bg-background rounded-full outline-none "
-            placeholder="Search here"
-            value={search}
-            onChange={handleSearchChange}
-          ></input>
+          <div className="md:w-full w-full relative group ">
+            <input
+              className="md:w-full pr-10 p-4 w-full shrink border border-input hover:bg-hover placeholder-alternateText transition-all duration-200 focus-within:bg-hover bg-background rounded-full outline-none "
+              placeholder="Search here"
+              value={search}
+              onChange={handleSearchChange}
+            ></input>
+            {search !== "" && (
+              <div
+                className="absolute right-3 top-1/4 scale-75 cursor-pointer opacity-75 hover:opacity-100"
+                onClick={handleClear}
+              >
+                <CircleXIcon />
+              </div>
+            )}
+          </div>
 
           <div className="flex hover:bg-hover p-4 h-fit md:w-fit w-full border border-input  focus-within:bg-hover rounded-full transition-all duration-200 group">
             <div className="flex flex-row justify-start items-center gap-1 group">
@@ -65,7 +74,10 @@ function Searchbar({ setSearchTerm, setGuestNmuber }) {
                 src={location}
               ></img>
 
-              <select className="group-hover:bg-hover bg-background transition-all duration-200 focus-within:bg-hover rounded-full outline-none">
+              <select className="group-hover:bg-hover bg-background mr-3 transition-all duration-200 focus-within:bg-hover rounded-full outline-none">
+                {/* <option value="" disabled selected>
+                  Select Location
+                </option> */}
                 {rentCardsData.map((card) => (
                   <option key={card.id} value={card.location}>
                     {card.location}
@@ -102,23 +114,20 @@ function Searchbar({ setSearchTerm, setGuestNmuber }) {
               ></img>
 
               <input
-                className="group-hover:bg-hover w-20 px-1 transition-all duration-200 focus-within:bg-hover bg-background rounded-full outline-none"
+                className="group-hover:bg-hover px-2 mr-2 w-20 transition-all duration-200 focus-within:bg-hover bg-background rounded-full outline-none"
                 placeholder="Guests"
                 type="number"
                 value={guests}
                 min="0"
                 onChange={handleGuestChange}
+                max="20"
               ></input>
             </div>
           </div>
 
           <div className="flex hover:bg-hover focus-within:bg-hover rounded-full transition-all duration-200">
-            <Button
-              onClick={handleSubmit}
-              className="p-4"
-              type="circle"
-            >
-              <Search size={20} color="white"/>
+            <Button onClick={handleSubmit} className="p-4" type="circle">
+              <Search size={20} color="white" />
             </Button>
           </div>
         </div>

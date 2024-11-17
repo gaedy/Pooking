@@ -5,7 +5,8 @@ import Tooltip from "../Tooltip/Tooltip";
 Button;
 import img00 from "/src/assets/img/img00.jpg";
 import Button from "../Button/Button";
-import { ArrowUpRight, MoveUpRight } from "lucide-react";
+import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState } from "react";
 
 function Card({
   title = "Add Title Here",
@@ -15,6 +16,7 @@ function Card({
   rate,
   reviews = 100,
   thumbnail = img00,
+  thumbnails,
   propertyType,
   per,
   id,
@@ -23,20 +25,37 @@ function Card({
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`detailed-card/${id}#${title}`);
+    navigate(`detailed-card/${id}=${title}`);
   };
+
+  const [currentThumbnail, setCurrentThumbnail] = useState(0);
+  const thumbnailKey = Object.keys(thumbnails);
+
+  const handleNextThumbnail = () => {
+    setCurrentThumbnail((prevIndex) =>
+      prevIndex < thumbnailKey.length - 1 ? prevIndex + 1 : 0
+    );
+  };
+
+  const handlePrevThumbnail = () => {
+    setCurrentThumbnail((prevIndex) =>
+      prevIndex > 0 ? prevIndex - 1 : thumbnailKey.length - 1
+    );
+  };
+
   return (
     <>
-      <div
-        
-        className="group w-72 bg-background hover:shadow-lg transition-all cursor-pointer duration-300 h-80 rounded-3xl flex flex-col items-center gap-2 p-2"
-      >
+      <div className="group w-72 bg-background hover:shadow-lg transition-all cursor-pointer duration-300 h-80 rounded-3xl flex flex-col items-center gap-2 p-2">
         <div className=" h-56 w-full relative">
           <img
-            className="object-cover transition-all duration-200 group-hover:brightness-[80%] rounded-2xl w-full h-full absolute pointer-events-none"
-            src={thumbnail}
+            className="object-cover transition-all select-none duration-200 group-hover:brightness-[80%] rounded-2xl w-full h-full absolute pointer-events-none"
+            src={
+              currentThumbnail === 0
+                ? thumbnail
+                : thumbnails[thumbnailKey[currentThumbnail]]
+            }
           ></img>
-          
+
           <div className="  flex-col flex justify-between h-full text-sm  text-baseText font-semibold p-2 gap-2 group">
             <div className="flex items-center justify-between">
               {rate && (
@@ -66,15 +85,33 @@ function Card({
               </Tooltip>
             </div>
 
-            <div onClick={handleClick} className="bg-white  p-2 gap-1 hover:underline px-2 w-full hidden group-hover:flex items-center justify-center rounded-full backdrop-filter backdrop-blur-md bg-opacity-60">
+            <div className="group-hover:flex hidden justify-between items-center z-10">
+              <div
+                className="bg-white p-2 rounded-full backdrop-filter backdrop-blur-md bg-opacity-60 active:scale-95 transition-transform"
+                onClick={handlePrevThumbnail}
+              >
+                <ChevronLeft size={16} />
+              </div>
+
+              <div
+                className="bg-white p-2 rounded-full backdrop-filter backdrop-blur-md bg-opacity-60 active:scale-95 transition-transform"
+                onClick={handleNextThumbnail}
+              >
+                <ChevronRight size={16} />
+              </div>
+            </div>
+
+            <div
+              onClick={handleClick}
+              className="bg-white select-none p-2 gap-1 hover:underline px-2 w-full hidden group-hover:flex items-center justify-center rounded-full backdrop-filter backdrop-blur-md bg-opacity-60"
+            >
               <p>Click For Details</p>
-              <ArrowUpRight className="" size={18}/>
-              
+              <ArrowUpRight className="" size={18} />
             </div>
           </div>
         </div>
 
-        <div className="w-full h-1/2 rounded-md">
+        <div className="w-full h-1/2 rounded-md select-none">
           <div className="h-full  flex flex-col justify-between gap-0 py-2">
             <div className="flex justify-between">
               <div className="flex flex-col justify-center items-start ">
