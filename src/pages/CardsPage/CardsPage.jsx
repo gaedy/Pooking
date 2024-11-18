@@ -8,9 +8,8 @@ import {
   searchFilterByRate,
   searchFilterByTitle,
 } from "../../utils/filter";
-import { rentCardsData } from "../../api/cards/rentCardsData";
-import { buyCardsData } from "../../api/cards/buyCardsData";
-import { sellCardsData } from "../../api/cards/sellCardsData";
+import LoadingSpin from "../../components/LoadingSpin/LoadingSpin";
+
 
 function CardsPage() {
   const [theRentCards, setTheRentCards] = useState([]);
@@ -38,19 +37,19 @@ function CardsPage() {
   // return filtered Rent cards
   const filteredRentCards = searchFilterByGuests(
     guestNmuber,
-    searchFilterByRate(rateTerm, searchFilterByTitle(searchTerm, rentCardsData))
+    searchFilterByRate(rateTerm, searchFilterByTitle(searchTerm, theRentCards))
   );
 
   // return filtered Buy cards
   const filteredBuyCards = searchFilterByGuests(
     guestNmuber,
-    searchFilterByRate(rateTerm, searchFilterByTitle(searchTerm, buyCardsData))
+    searchFilterByRate(rateTerm, searchFilterByTitle(searchTerm, theBuyCards))
   );
 
   // return filtered Sell cards
   const filteredSellCards = searchFilterByGuests(
     guestNmuber,
-    searchFilterByTitle(searchTerm, sellCardsData)
+    searchFilterByTitle(searchTerm, theSellCards)
   );
 
   return (
@@ -62,9 +61,7 @@ function CardsPage() {
         />
 
         {isLoading ? (
-          <div className="flex justify-center h-screen">
-            <LoaderIcon className="animate-spin" />
-          </div>
+          <LoadingSpin className="h-screen"/>
         ) : (
           <>
           

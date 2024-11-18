@@ -211,7 +211,8 @@ export const buyCardsData = [
     reviews: 20,
     propertyType: "Mansion",
     features: ["Pool", "Garden", "Carriage House"]
-  }
+  },
+  
 ];
   
   

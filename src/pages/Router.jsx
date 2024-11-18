@@ -5,13 +5,13 @@ import BuyCards from "../components/BuyCards/BuyCards";
 import SellCards from "../components/SellCards/SellCards";
 import CardsPage from "./CardsPage/CardsPage";
 import DetailedCard from "./DetailedCard/DetailedCard";
-import Dashboard from "./Dashboard/Dashboard";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
+      
       {
         path: "/",
         element: <CardsPage />,

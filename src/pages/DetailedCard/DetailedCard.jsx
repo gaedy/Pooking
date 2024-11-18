@@ -1,13 +1,19 @@
 import { useNavigate, useOutletContext, useParams } from "react-router-dom";
 import Button from "../../components/Button/Button";
-import { BedDoubleIcon, HouseIcon, MapPin, X } from "lucide-react";
+import { BedDoubleIcon, CircleUser, HouseIcon, MapPin, X } from "lucide-react";
 import Rating from "../../components/Rating/Rating";
 import Tooltip from "../../components/Tooltip/Tooltip";
 import GridImages from "./GridImages";
+import { useEffect, useState } from "react";
+import { fetchRentReviews } from "../../api/api";
+import LoadingSpin from "../../components/LoadingSpin/LoadingSpin";
 
 function DetailedCard() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const [theReviews, setTheReviews] = useState([]);
+
+  const [isLoading, setIsLoading] = useState(true);
 
   const {
     rentCardsData = [],
@@ -18,6 +24,19 @@ function DetailedCard() {
   const card = [...rentCardsData, ...buyCardsData, ...sellCardsData].find(
     (item) => item.id === parseInt(id)
   );
+
+  useEffect(() => {
+    setIsLoading(true);
+    fetchRentReviews().then((RentReviewsData) => {
+      const reviewsByCardID = RentReviewsData.filter(
+        (review) => review.cardId === card.id
+      );
+
+      setTheReviews(reviewsByCardID);
+
+      setIsLoading(false);
+    });
+  }, [card.id]);
 
   const handleClose = () => {
     navigate(-1);
@@ -34,43 +53,6 @@ function DetailedCard() {
             </Button>
           </Tooltip>
         </div>
-
-        {/* 
-        <div className=" w-full  h-4/6 rounded-2xl">
-          <div className="grid grid-cols-3 h-full w-full grid-rows-2 rounded-3xl gap-3">
-            <div className="row-span-2 rounded-lg">
-              <img
-                className="object-cover w-full h-full rounded-lg"
-                src={card.thumbnail}
-              ></img>
-            </div>
-
-            <div className=" rounded-lg">
-              <img
-                className="object-cover w-full h-full rounded-lg"
-                src={card.thumbnail}
-              ></img>
-            </div>
-            <div className=" rounded-lg">
-              <img
-                className="object-cover w-full h-full rounded-lg"
-                src={card.thumbnail}
-              ></img>
-            </div>
-            <div className="col-start-2 rounded-lg">
-              <img
-                className="object-cover w-full h-full rounded-lg"
-                src={card.thumbnail}
-              ></img>
-            </div>
-            <div className="col-start-3  rounded-lg">
-              <img
-                className="object-cover w-full h-full rounded-lg"
-                src={card.thumbnail}
-              ></img>
-            </div>
-          </div>
-        </div> */}
 
         {card.thumbnails ? (
           <GridImages card={card} />
@@ -190,6 +172,36 @@ function DetailedCard() {
             )}
           </div>
         </div>
+
+        {card.reviews && (
+          <div className="flex flex-col gap-3 md:w-1/2 w-full h-fit">
+            <p className="text-lg font-bold">Top 3 Reviews</p>
+
+            {isLoading ? (
+              <LoadingSpin />
+            ) : theReviews.length > 0 ? (
+              theReviews.map((review) => (
+                <div
+                  key={review.id}
+                  className="bg-hover2 rounded-lg p-3 gap-2  justify-center flex flex-col"
+                >
+                  <div className="flex justify-start gap-3 items-center text-sm font-bold flex-wrap">
+                    <div className="rounded-full bg-hover p-1">
+                      <CircleUser />
+                    </div>
+                    <div>{review.userName}</div>
+                    <div className="text-alternateText text-xs">
+                      {review.date}
+                    </div>
+                  </div>
+                  <div className="text-sm ">{review.comment}</div>
+                </div>
+              ))
+            ) : (
+              <p>No Reviews Found.</p>
+            )}
+          </div>
+        )}
       </div>
     </>
   );
