@@ -1,10 +1,8 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Like from "../Like/Like";
 import Rating from "../Rating/Rating";
 import Tooltip from "../Tooltip/Tooltip";
-Button;
 import img00 from "/src/assets/img/img00.jpg";
-import Button from "../Button/Button";
 import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 
@@ -85,7 +83,7 @@ function Card({
               </Tooltip>
             </div>
 
-            <div className="group-hover:flex hidden justify-between items-center z-10">
+            <div className="group-hover:flex md:hidden flex justify-between items-center z-10">
               <div
                 className="bg-white p-2 rounded-full backdrop-filter backdrop-blur-md bg-opacity-60 active:scale-95 transition-transform"
                 onClick={handlePrevThumbnail}
@@ -103,7 +101,7 @@ function Card({
 
             <div
               onClick={handleClick}
-              className="bg-white select-none p-2 gap-1 hover:underline px-2 w-full hidden group-hover:flex items-center justify-center rounded-full backdrop-filter backdrop-blur-md bg-opacity-60"
+              className="bg-white select-none p-2 gap-1 hover:underline px-2 w-full  md:hidden flex group-hover:flex items-center justify-center rounded-full backdrop-filter backdrop-blur-md bg-opacity-60"
             >
               <p>Click For Details</p>
               <ArrowUpRight className="" size={18} />

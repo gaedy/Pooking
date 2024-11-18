@@ -5,6 +5,7 @@ import BuyCards from "../components/BuyCards/BuyCards";
 import SellCards from "../components/SellCards/SellCards";
 import CardsPage from "./CardsPage/CardsPage";
 import DetailedCard from "./DetailedCard/DetailedCard";
+import Dashboard from "./Dashboard/Dashboard";
 
 const router = createBrowserRouter([
   {
@@ -20,30 +21,30 @@ const router = createBrowserRouter([
             element: <RentCards />,
             children: [
               {
-                path:"detailed-card/:id",
-                element: <DetailedCard/>
-              }
-            ]
+                path: "detailed-card/:id",
+                element: <DetailedCard />,
+              },
+            ],
           },
           {
             path: "buy",
             element: <BuyCards />,
             children: [
               {
-                path:"detailed-card/:id",
-                element: <DetailedCard/>
-              }
-            ]
+                path: "detailed-card/:id",
+                element: <DetailedCard />,
+              },
+            ],
           },
           {
             path: "sell",
             element: <SellCards />,
             children: [
               {
-                path:"detailed-card/:id",
-                element: <DetailedCard/>
-              }
-            ]
+                path: "detailed-card/:id",
+                element: <DetailedCard />,
+              },
+            ],
           },
         ],
       },

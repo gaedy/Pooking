@@ -20,7 +20,7 @@ function CardsPage() {
 
   const [searchTerm, setSearchTerm] = useState("");
 
-  const [rateTerm, setRateTerm] = useState("");
+  const [rateTerm, setRateTerm] = useState(0);
   const [guestNmuber, setGuestNmuber] = useState(0);
 
   useEffect(() => {

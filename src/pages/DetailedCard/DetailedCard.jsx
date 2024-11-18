@@ -1,11 +1,6 @@
 import { useNavigate, useOutletContext, useParams } from "react-router-dom";
 import Button from "../../components/Button/Button";
-import {
-  BedDoubleIcon,
-  HouseIcon,
-  MapPin,
-  X,
-} from "lucide-react";
+import { BedDoubleIcon, HouseIcon, MapPin, X } from "lucide-react";
 import Rating from "../../components/Rating/Rating";
 import Tooltip from "../../components/Tooltip/Tooltip";
 import GridImages from "./GridImages";
@@ -40,9 +35,7 @@ function DetailedCard() {
           </Tooltip>
         </div>
 
-
-
-{/* 
+        {/* 
         <div className=" w-full  h-4/6 rounded-2xl">
           <div className="grid grid-cols-3 h-full w-full grid-rows-2 rounded-3xl gap-3">
             <div className="row-span-2 rounded-lg">
@@ -80,12 +73,10 @@ function DetailedCard() {
         </div> */}
 
         {card.thumbnails ? (
-          <GridImages card={card}/>
-        ): (<p>no thumbnails prop in api</p>)}
-
-
-        
-
+          <GridImages card={card} />
+        ) : (
+          <p>no thumbnails prop in api</p>
+        )}
 
         <div className="flex-col md:flex-row flex gap-6 w-full md:w-full justify-between">
           <div className="flex flex-col justify-start w-full gap-2">
@@ -185,20 +176,18 @@ function DetailedCard() {
 
             {card.checkIn && (
               <div className="bg-hover2 w-fit p-4 gap-4 flex flex-col items-start rounded-2xl">
-              {/* <Calendar /> */}
-              <div className="flex flex-row gap-2 text-sm font-bold items-center w-full justify-between flex-wrap ">
-                <p className="bg-green-300 p-1 px-3 rounded-full">Check In</p>
-                <p className="font-semibold">{card.checkIn}</p>
-              </div>
+                {/* <Calendar /> */}
+                <div className="flex flex-row gap-2 text-sm font-bold items-center w-full justify-between flex-wrap ">
+                  <p className="bg-green-300 p-1 px-3 rounded-full">Check In</p>
+                  <p className="font-semibold">{card.checkIn}</p>
+                </div>
 
-              <div className="flex flex-row gap-2 items-center text-sm font-bold w-full justify-between flex-wrap ">
-                <p className="bg-red-300 p-1 px-3 rounded-full">Check Out</p>
-                <p className="font-semibold">{card.checkOut}</p>
+                <div className="flex flex-row gap-2 items-center text-sm font-bold w-full justify-between flex-wrap ">
+                  <p className="bg-red-300 p-1 px-3 rounded-full">Check Out</p>
+                  <p className="font-semibold">{card.checkOut}</p>
+                </div>
               </div>
-            </div>
             )}
-
-            
           </div>
         </div>
       </div>

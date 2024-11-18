@@ -2,13 +2,15 @@ import profile from "/src/assets/icons/profile.svg";
 import down from "/src/assets/icons/down.svg";
 import Tooltip from "../Tooltip/Tooltip";
 import { NavLink } from "react-router-dom";
-import { Menu } from "lucide-react";
+import { Bookmark, Heart, LayoutDashboard, Menu, Settings } from "lucide-react";
+import DropSelect from "../DropSelect/DropSelect";
+import Select from "../DropSelect/Select";
 
 function Navbar() {
   return (
     <>
       <div
-        className="h-16 flex sticky top-0 z-10 items-center justify-between  px-10 p-2 mt-5 bg-hover gap-2 
+        className="h-16 flex sticky top-0 z-20 items-center justify-between  px-10 p-2 mt-5 bg-hover gap-2 
     text-baseHoverText font-semibold text-sm
     
     "
@@ -85,14 +87,27 @@ function Navbar() {
             <p>Sign in</p>
           </div>
 
-          <Tooltip text="Open Menu">
-            <div className="bg-hover hover:bg-hover2 rounded-full">
-              <img
-                className="w-8 p-[6px] pointer-events-none select-none "
-                src={down}
-              ></img>
-            </div>
-          </Tooltip>
+          <DropSelect
+            label="Menu"
+            size="lg"
+            position="right"
+            content={
+              <>
+                <Select text="Dashboard" icon={<LayoutDashboard size={22} />} />
+                <Select text="Saved Cards" icon={<Heart size={22} />} />
+                <Select text="Settings" icon={<Settings size={22} />} />
+              </>
+            }
+          >
+            <Tooltip text="Open Menu">
+              <div className="bg-hover hover:bg-hover2 rounded-full">
+                <img
+                  className="w-8 p-[6px] pointer-events-none select-none "
+                  src={down}
+                ></img>
+              </div>
+            </Tooltip>
+          </DropSelect>
         </div>
       </div>
     </>

@@ -3,12 +3,26 @@ import location from "/src/assets/icons/location.svg";
 import guest from "/src/assets/icons/guest.svg";
 import { rentCardsData } from "../../api/cards/rentCardsData";
 import { useState } from "react";
-import { CalendarSearch, ChevronDown, CircleXIcon, Search } from "lucide-react";
+import {
+  ArrowUpWideNarrow,
+  CalendarSearch,
+  ChevronDown,
+  CircleXIcon,
+  Search,
+} from "lucide-react";
+import DropSelect from "../DropSelect/DropSelect";
+import Select from "../DropSelect/Select";
 
 function Searchbar({ setSearchTerm, setGuestNmuber }) {
   const [dates, setDates] = useState();
   const [guests, setGuests] = useState("");
   const [search, setSearch] = useState("");
+
+  const [isRotate, setIsRotate] = useState(false);
+
+  const handleRotating = () => {
+    setIsRotate((prev) => !prev);
+  };
 
   const handleSubmit = () => {
     setSearchTerm(search);
@@ -67,17 +81,34 @@ function Searchbar({ setSearchTerm, setGuestNmuber }) {
             )}
           </div>
 
-          <div className="flex hover:bg-hover p-4 h-fit md:w-fit w-full border border-input  focus-within:bg-hover rounded-full transition-all duration-200 group">
-            <div className="flex flex-row justify-start items-center gap-1 group">
+          <div className="flex hover:bg-hover p-4 h-fit md:w-fit w-full border border-input focus-within:bg-hover rounded-full transition-all duration-200 group">
+            <div className="flex flex-row  text-nowrap justify-between items-center ">
               <img
-                className="w-4  pointer-events-none select-none"
+                className="w-4 pointer-events-none select-none"
                 src={location}
               ></img>
 
+              {/* <DropSelect
+                label="Select location"
+                content={
+                  <>
+                    {rentCardsData.map((card) => (
+                      <Select key={card.id} text={card.location}></Select>
+                    ))}
+                  </>
+                }
+              >
+                <div className="flex items-center justify-between gap-2 px-2 pr-4">
+                  <div>
+                    <p>Select location</p>
+                  </div>
+
+                  <ChevronDown size={14} className="scale-110" />
+                </div>
+
+                
+              </DropSelect> */}
               <select className="group-hover:bg-hover bg-background mr-3 transition-all duration-200 focus-within:bg-hover rounded-full outline-none">
-                {/* <option value="" disabled selected>
-                  Select Location
-                </option> */}
                 {rentCardsData.map((card) => (
                   <option key={card.id} value={card.location}>
                     {card.location}
@@ -138,11 +169,31 @@ function Searchbar({ setSearchTerm, setGuestNmuber }) {
           className="transition-all mx-20 duration-300 hover:bg-background hover:shadow-md border border-input
          hover:text-baseText p-2 px-3 w-fit rounded-full cursor-pointer text-sm font-bold"
         >
-          <div className="flex items-center justify-between gap-2">
-            {/* <ArrowUpDown size={18}/> */}
-            <p>Sort by</p>
-            <ChevronDown size={18} />
-          </div>
+          <DropSelect size="med"
+            label="Choose one"
+            content={
+              <>
+                <Select
+                  text="Top Rated"
+                  icon={<ArrowUpWideNarrow size={22} />}
+                />
+              </>
+            }
+          >
+            <div
+              onClick={handleRotating}
+              className="flex items-center justify-between gap-2"
+            >
+              {/* <ArrowUpDown size={18}/> */}
+              <p>Sort by</p>
+              <ChevronDown
+                size={18}
+                className={` transition-transform duration-200 ${
+                  isRotate ? "rotate-180" : "rotate-0"
+                }`}
+              />
+            </div>
+          </DropSelect>
         </div>
       </div>
     </>
