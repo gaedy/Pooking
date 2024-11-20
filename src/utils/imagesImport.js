@@ -1,5 +1,4 @@
 
-
 const createImagesMap = () => {
     const imagesMap = {};
     const images = import.meta.glob('/src/assets/img/**/*.jpg', { eager: true });

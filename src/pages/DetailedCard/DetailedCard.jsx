@@ -5,7 +5,7 @@ import Rating from "../../components/Rating/Rating";
 import Tooltip from "../../components/Tooltip/Tooltip";
 import GridImages from "./GridImages";
 import { useEffect, useState } from "react";
-import { fetchRentReviews } from "../../api/api";
+import { fetchReviews } from "../../api/api";
 import LoadingSpin from "../../components/LoadingSpin/LoadingSpin";
 
 function DetailedCard() {
@@ -27,7 +27,7 @@ function DetailedCard() {
 
   useEffect(() => {
     setIsLoading(true);
-    fetchRentReviews().then((RentReviewsData) => {
+    fetchReviews().then((RentReviewsData) => {
       const reviewsByCardID = RentReviewsData.filter(
         (review) => review.cardId === card.id
       );
@@ -41,6 +41,7 @@ function DetailedCard() {
   const handleClose = () => {
     navigate(-1);
   };
+
   return (
     <>
       <div className="fixed w-full h-full overflow-auto bg-hover z-20 gap-4 inset-0 flex flex-col items-start p-5">
@@ -186,23 +187,17 @@ function DetailedCard() {
                   className="bg-hover2 rounded-lg p-3 gap-2  justify-center flex flex-col"
                 >
                   <div className="flex justify-start gap-2 items-center text-sm font-bold flex-wrap">
-
-
                     <div className="rounded-full bg-hover p-1">
                       <CircleUser />
                     </div>
 
+                    <div>{review.userName}</div>
 
-                    <div >{review.userName}</div>
-                    
                     <p className="text-alternateText">&bull;</p>
-                    
+
                     <div className="text-alternateText text-xs">
                       {review.date}
                     </div>
-
-                    
-
                   </div>
                   <div className="text-sm ">{review.comment}</div>
                 </div>

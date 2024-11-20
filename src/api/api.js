@@ -15,4 +15,4 @@ export const fetchRentCards = () => fetchApi(rentCardsData);
 export const fetchSellCards = () => fetchApi(sellCardsData);
 
 
-export const fetchRentReviews = () => fetchApi(reviewsData);
+export const fetchReviews = () => fetchApi(reviewsData);
