@@ -1,13 +1,23 @@
-function Select({ text = "trest", icon, onClick }) {
+import { useState } from "react";
+
+function Select({ text = "test", icon, onClick }) {
+
+
   return (
     <>
     
       <button
-        className="flex flex-row w-full justify-start gap-2 items-center rounded-md hover:bg-background p-2"
+        className="flex flex-row w-full justify-start gap-2 transition-all items-center rounded-md hover:bg-input active:bg-border p-2"
         onClick={onClick}
       >
-        <div>{icon}</div>
-        <div>{text}</div>
+        {!icon ? (
+          <p>{text}</p>
+        ) : (
+          <>
+            <div>{icon}</div>
+            <p>{text}</p>
+          </>
+        )}
       </button>
     </>
   );

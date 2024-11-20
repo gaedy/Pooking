@@ -541,7 +541,8 @@ export const reviewsData = [
         "userName": "Isaac J.",
         "comment": "Good stay, but the lighting in the bedroom was too dim.",
         "stayLength": "5 nights"
-      }
+      },
+     
 
 ]
   

@@ -181,7 +181,7 @@ function Searchbar({ setSearchTerm, setGuestNmuber }) {
             }
           >
             <div
-              onClick={handleRotating}
+              
               className="flex items-center justify-between gap-2"
             >
               {/* <ArrowUpDown size={18}/> */}

@@ -22,7 +22,7 @@ function DetailedCard() {
   } = useOutletContext();
 
   const card = [...rentCardsData, ...buyCardsData, ...sellCardsData].find(
-    (item) => item.id === parseInt(id)
+    (item) => item.id.toString() === id.toString()
   );
 
   useEffect(() => {
@@ -175,7 +175,7 @@ function DetailedCard() {
 
         {card.reviews && (
           <div className="flex flex-col gap-3 md:w-1/2 w-full h-fit">
-            <p className="text-lg font-bold">Top 3 Reviews</p>
+            <p className="text-lg font-bold">Top Reviews</p>
 
             {isLoading ? (
               <LoadingSpin />
@@ -185,14 +185,24 @@ function DetailedCard() {
                   key={review.id}
                   className="bg-hover2 rounded-lg p-3 gap-2  justify-center flex flex-col"
                 >
-                  <div className="flex justify-start gap-3 items-center text-sm font-bold flex-wrap">
+                  <div className="flex justify-start gap-2 items-center text-sm font-bold flex-wrap">
+
+
                     <div className="rounded-full bg-hover p-1">
                       <CircleUser />
                     </div>
-                    <div>{review.userName}</div>
+
+
+                    <div >{review.userName}</div>
+                    
+                    <p className="text-alternateText">&bull;</p>
+                    
                     <div className="text-alternateText text-xs">
                       {review.date}
                     </div>
+
+                    
+
                   </div>
                   <div className="text-sm ">{review.comment}</div>
                 </div>

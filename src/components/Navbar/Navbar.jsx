@@ -2,7 +2,7 @@ import profile from "/src/assets/icons/profile.svg";
 import down from "/src/assets/icons/down.svg";
 import Tooltip from "../Tooltip/Tooltip";
 import { NavLink } from "react-router-dom";
-import { Bookmark, Heart, LayoutDashboard, Menu, Settings } from "lucide-react";
+import { Heart, LayoutDashboard, Menu, Settings } from "lucide-react";
 import DropSelect from "../DropSelect/DropSelect";
 import Select from "../DropSelect/Select";
 
@@ -21,7 +21,7 @@ function Navbar() {
           </div>
         </NavLink>
 
-        <button className="md:hidden flex">
+        <button className="md:hidden z-50 flex">
           <Menu />
         </button>
 
@@ -93,9 +93,21 @@ function Navbar() {
             position="right"
             content={
               <>
-                <Select text="Dashboard" icon={<LayoutDashboard size={22} />} />
-                <Select text="Saved Cards" icon={<Heart size={22} />} />
-                <Select text="Settings" icon={<Settings size={22} />} />
+                <NavLink to="dashboard" className="w-full">
+                  <Select
+                    text="Dashboard"
+                    icon={<LayoutDashboard size={22} />}
+                  />
+                </NavLink>
+
+                <NavLink to="saved" className="w-full">
+                  <Select text="Saved Cards" icon={<Heart size={22} />} />
+                </NavLink>
+
+                <NavLink to="settings" className="w-full">
+                  <Select text="Settings" icon={<Settings size={22} />} />
+                </NavLink>
+
               </>
             }
           >

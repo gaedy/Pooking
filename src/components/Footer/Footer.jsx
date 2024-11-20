@@ -54,18 +54,20 @@ function Footer() {
       <div className="border-t border-black border-opacity-10 bg-hover2 text-sm font-bold flex justify-between items-center p-4 px-10">
         <p>Build by aGae</p>
 
-        <div className="flex flex-row items-center justify-center gap-2">
-          <div className="cursor-pointer">
+        <div className="flex flex-row items-center justify-center  gap-2">
+
+          <div className="cursor-pointer transition-opacity opacity-75 hover:opacity-100">
             <Facebook />
           </div>
 
-          <div className="cursor-pointer">
+          <div className="cursor-pointer transition-opacity opacity-75 hover:opacity-100">
             <X />
           </div>
 
-          <div className="cursor-pointer">
+          <div className="cursor-pointer transition-opacity opacity-75 hover:opacity-100">
             <Github />
           </div>
+
         </div>
       </div>
     </>

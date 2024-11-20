@@ -193,7 +193,7 @@ export const rentCardsData = [
     rate: 9.2,
     reviews: 27,
   },
- 
+  
 ];
 
   

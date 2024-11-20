@@ -23,7 +23,7 @@ function Card({
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`detailed-card/${id}=${title}`);
+    navigate(`detailed-card/${id}/${title}`);
   };
 
   const [currentThumbnail, setCurrentThumbnail] = useState(0);
