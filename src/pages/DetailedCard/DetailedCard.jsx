@@ -27,8 +27,8 @@ function DetailedCard() {
 
   useEffect(() => {
     setIsLoading(true);
-    fetchReviews().then((RentReviewsData) => {
-      const reviewsByCardID = RentReviewsData.filter(
+    fetchReviews().then((reviewsData) => {
+      const reviewsByCardID = reviewsData.filter(
         (review) => review.cardId === card.id
       );
 
@@ -58,7 +58,7 @@ function DetailedCard() {
         {card.thumbnails ? (
           <GridImages card={card} />
         ) : (
-          <p>no thumbnails prop in api</p>
+          <p>no thumbnails</p>
         )}
 
         <div className="flex-col md:flex-row flex gap-6 w-full md:w-full justify-between">

@@ -19,15 +19,18 @@ function Card({
   per,
   id,
   status,
+  
 }) {
   const navigate = useNavigate();
 
-  const handleClick = () => {
+  const handleDetailsClick = () => {
     const betterURLTitle = title.replace(/\s+/g, "_").toLowerCase();
     navigate(`detailed-card/${id}/${betterURLTitle}`);
   };
 
+
   const [currentThumbnail, setCurrentThumbnail] = useState(0);
+
   const thumbnailKey = Object.keys(thumbnails);
 
   const handleNextThumbnail = () => {
@@ -101,7 +104,7 @@ function Card({
             </div>
 
             <div
-              onClick={handleClick}
+              onClick={handleDetailsClick}
               className="bg-white select-none p-2 gap-1 hover:underline px-2 w-full  md:hidden flex group-hover:flex items-center justify-center rounded-full backdrop-filter backdrop-blur-md bg-opacity-60"
             >
               <p>Click For Details</p>

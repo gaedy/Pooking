@@ -5,12 +5,13 @@ import ListingCards from "../../pages/ListingCards/ListingCards";
 function RentCards() {
   const { rentCardsData } = useOutletContext();
 
+
   return (
     <>
       <ListingCards>
         {rentCardsData.length > 0 ? (
           rentCardsData.map((card) => (
-            <Card key={card.id} {...card} per=" / Per night" />
+            <Card key={card.id} {...card} per=" / Per night"/>
           ))
         ) : (
           <div className="font-medium h-screen">
@@ -18,7 +19,7 @@ function RentCards() {
           </div>
         )}
       </ListingCards>
-      <Outlet context={{ rentCardsData }} />
+      <Outlet context={{ rentCardsData}} />
     </>
   );
 }

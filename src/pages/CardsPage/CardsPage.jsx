@@ -9,6 +9,7 @@ import {
 } from "../../utils/filter";
 import LoadingSpin from "../../components/LoadingSpin/LoadingSpin";
 
+
 function CardsPage() {
   const [theRentCards, setTheRentCards] = useState([]);
   const [theBuyCards, setTheBuyCards] = useState([]);
@@ -31,6 +32,8 @@ function CardsPage() {
         setIsLoading(false);
       });
   }, []);
+
+
 
   // return filtered Rent cards
   const filteredRentCards = searchFilterByGuests(

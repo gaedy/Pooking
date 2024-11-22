@@ -63,6 +63,7 @@ const router = createBrowserRouter([
                 path: "detailed-card/:id/:title",
                 element: <DetailedCard />,
               },
+              
             ],
           },
           {
