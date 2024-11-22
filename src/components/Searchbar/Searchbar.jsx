@@ -3,26 +3,12 @@ import location from "/src/assets/icons/location.svg";
 import guest from "/src/assets/icons/guest.svg";
 import { rentCardsData } from "../../api/cards/rentCardsData";
 import { useState } from "react";
-import {
-  ArrowUpWideNarrow,
-  CalendarSearch,
-  ChevronDown,
-  CircleXIcon,
-  Search,
-} from "lucide-react";
-import DropSelect from "../DropSelect/DropSelect";
-import Select from "../DropSelect/Select";
+import { CalendarSearch, CircleXIcon, Search } from "lucide-react";
 
 function Searchbar({ setSearchTerm, setGuestNmuber }) {
   const [dates, setDates] = useState();
   const [guests, setGuests] = useState("");
   const [search, setSearch] = useState("");
-
-  const [isRotate, setIsRotate] = useState(false);
-
-  const handleRotating = () => {
-    setIsRotate((prev) => !prev);
-  };
 
   const handleSubmit = () => {
     setSearchTerm(search);
@@ -55,7 +41,7 @@ function Searchbar({ setSearchTerm, setGuestNmuber }) {
 
   return (
     <>
-      <div className="flex  flex-col justify-center items-center  gap-10 h-fit ">
+      <div className="flex flex-col  justify-center items-center gap-10 h-fit ">
         <div className="font-bold md:text-3xl text-xl flex justify-center items-center text-pretty">
           Find your next stay ...
         </div>
@@ -161,39 +147,6 @@ function Searchbar({ setSearchTerm, setGuestNmuber }) {
               <Search size={20} color="white" />
             </Button>
           </div>
-        </div>
-      </div>
-
-      <div>
-        <div
-          className="transition-all mx-20 duration-300 hover:bg-background hover:shadow-md border border-input
-         hover:text-baseText p-2 px-3 w-fit rounded-full cursor-pointer text-sm font-bold"
-        >
-          <DropSelect size="med"
-            label="Choose one"
-            content={
-              <>
-                <Select
-                  text="Top Rated"
-                  icon={<ArrowUpWideNarrow size={22} />}
-                />
-              </>
-            }
-          >
-            <div
-              
-              className="flex items-center justify-between gap-2"
-            >
-              {/* <ArrowUpDown size={18}/> */}
-              <p>Sort by</p>
-              <ChevronDown
-                size={18}
-                className={` transition-transform duration-200 ${
-                  isRotate ? "rotate-180" : "rotate-0"
-                }`}
-              />
-            </div>
-          </DropSelect>
         </div>
       </div>
     </>

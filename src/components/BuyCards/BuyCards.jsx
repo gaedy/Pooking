@@ -8,20 +8,14 @@ function BuyCards() {
     <>
       <ListingCards>
         {buyCardsData.length > 0 ? (
-          buyCardsData.map((buycard) => (
-            <Card
-              key={buycard.id}
-              {...buycard}
-              
-            />
-          ))
+          buyCardsData.map((buycard) => <Card key={buycard.id} {...buycard} />)
         ) : (
           <div className="font-medium h-screen">
             No results found for your search.
           </div>
         )}
       </ListingCards>
-      <Outlet context={{buyCardsData}}/>
+      <Outlet context={{ buyCardsData }} />
     </>
   );
 }

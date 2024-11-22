@@ -23,7 +23,8 @@ function Card({
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`detailed-card/${id}/${title}`);
+    const betterURLTitle = title.replace(/\s+/g, "_").toLowerCase();
+    navigate(`detailed-card/${id}/${betterURLTitle}`);
   };
 
   const [currentThumbnail, setCurrentThumbnail] = useState(0);
@@ -43,7 +44,7 @@ function Card({
 
   return (
     <>
-      <div className="group w-72 bg-background hover:shadow-lg transition-all cursor-pointer duration-300 h-80 rounded-3xl flex flex-col items-center gap-2 p-2">
+      <div className="group w-72 bg-background hover:shadow-xl transition-all cursor-pointer duration-300 h-80 rounded-3xl flex flex-col items-center gap-2 p-2">
         <div className=" h-56 w-full relative">
           <img
             className="object-cover transition-all select-none duration-200 group-hover:brightness-[80%] rounded-2xl w-full h-full absolute pointer-events-none"
@@ -126,7 +127,8 @@ function Card({
 
             <div className="text-base flex px-0 gap-1 justify-start items-center font-bold">
               <p className="text-buttonHover2">
-                {currency} {price}
+                {currency} {price.toLocaleString()}
+                {/* {(price * 49) - 1} */}
               </p>
 
               <p className="text-alternateText text-xs font-medium"> {per}</p>

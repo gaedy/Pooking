@@ -11,12 +11,10 @@ function Navbar() {
     <>
       <div
         className="h-16 flex sticky top-0 z-20 items-center justify-between  px-10 p-2 mt-5 bg-hover gap-2 
-    text-baseHoverText font-semibold text-sm
-    
-    "
+        text-baseHoverText font-semibold text-sm"
       >
         <NavLink to="/">
-          <div className="text-lg font-bold mr-10 hover:text-baseText transition-all duration-300">
+          <div className="text-lg  font-bold mr-10 hover:text-baseText transition-all duration-300">
             <p>Pooking</p>
           </div>
         </NavLink>
@@ -107,7 +105,6 @@ function Navbar() {
                 <NavLink to="settings" className="w-full">
                   <Select text="Settings" icon={<Settings size={22} />} />
                 </NavLink>
-
               </>
             }
           >

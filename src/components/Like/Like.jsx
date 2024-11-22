@@ -1,5 +1,4 @@
 import { Heart } from "lucide-react";
-import like from "/src/assets/icons/like.svg";
 
 function Like() {
   return (

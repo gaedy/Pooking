@@ -2,14 +2,12 @@ import { useEffect, useState } from "react";
 import Searchbar from "../../components/Searchbar/Searchbar";
 import { fetchBuyCards, fetchRentCards, fetchSellCards } from "../../api/api";
 import { Outlet } from "react-router-dom";
-import { LoaderIcon } from "lucide-react";
 import {
   searchFilterByGuests,
   searchFilterByRate,
   searchFilterByTitle,
 } from "../../utils/filter";
 import LoadingSpin from "../../components/LoadingSpin/LoadingSpin";
-
 
 function CardsPage() {
   const [theRentCards, setTheRentCards] = useState([]);
@@ -54,17 +52,16 @@ function CardsPage() {
 
   return (
     <>
-      <div className="w-full h-full py-10 flex flex-col gap-4">
+      <div className="w-full h-full py-4 gap-6 flex flex-col">
         <Searchbar
           setSearchTerm={setSearchTerm}
           setGuestNmuber={setGuestNmuber}
         />
 
         {isLoading ? (
-          <LoadingSpin className="h-screen"/>
+          <LoadingSpin className="h-screen" />
         ) : (
           <>
-          
             <Outlet
               context={{
                 rentCardsData: filteredRentCards,

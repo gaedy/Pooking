@@ -128,7 +128,7 @@ function DetailedCard() {
               {card.price && (
                 <>
                   <p className="text-xl font-medium">
-                    {card.price}
+                    {card.price.toLocaleString()}
                     {card.currency === "USD"
                       ? "$"
                       : card.currency === "EUR"
@@ -143,7 +143,7 @@ function DetailedCard() {
               {card.askingPrice && (
                 <>
                   <p className="text-xl font-medium">
-                    {card.askingPrice}
+                    {card.askingPrice.toLocaleString()}
                     {card.currency === "USD"
                       ? "$"
                       : card.currency === "EUR"

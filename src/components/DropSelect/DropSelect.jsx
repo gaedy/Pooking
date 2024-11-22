@@ -51,8 +51,8 @@ function DropSelect({
 
   return (
     <>
-      <div ref={dropRef} className="relative inline-block">
-        <button className="flex items-center" onClick={handleToggle}>
+      <div ref={dropRef} className="relative inline-block ">
+        <button className="flex items-center " onClick={handleToggle}>
           {children}
         </button>
 

@@ -23,7 +23,7 @@ function SellCards() {
           </div>
         )}
       </ListingCards>
-      <Outlet context={{sellCardsData}}/>
+      <Outlet context={{ sellCardsData }} />
     </>
   );
 }

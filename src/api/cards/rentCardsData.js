@@ -194,6 +194,7 @@ export const rentCardsData = [
     reviews: 27,
   },
   
+  
 ];
 
   

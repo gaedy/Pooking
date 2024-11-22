@@ -6,11 +6,11 @@ function Rating({
   textSize = "sm",
   showGrade = false,
 }) {
-
-  
   return (
     <>
-      <div className={`text-${textSize} flex items-center  w-fit justify-end gap-1`}>
+      <div
+        className={`text-${textSize} flex items-center  w-fit justify-end gap-1`}
+      >
         <img
           className={`w-${iconSize} pointer-events-none select-none`}
           src={star}
@@ -29,11 +29,7 @@ function Rating({
             </p>
           )}
 
-          {reviews && (
-            <p className="text-baseHoverText">({reviews})</p>
-          )}
-
-          
+          {reviews && <p className="text-baseHoverText">({reviews})</p>}
         </div>
       </div>
     </>

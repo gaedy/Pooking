@@ -1,6 +1,6 @@
 import { LoaderIcon } from "lucide-react";
 
-function LoadingSpin({className}) {
+function LoadingSpin({ className }) {
   return (
     <div className={`flex justify-center ${className}`}>
       <LoaderIcon className="animate-spin" />
