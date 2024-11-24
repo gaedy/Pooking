@@ -72,7 +72,7 @@ function Navbar() {
         </div>
       </NavLink> */}
 
-        <div className=" ml-auto transition-all md:flex hidden duration-300 hover:bg-background hover:shadow-md border border-input hover:text-baseText p-2 w-fit h-full rounded-full justify-between items-center gap-4 cursor-pointer">
+        <div className=" ml-auto transition-all md:flex hidden duration-300 hover:bg-background border border-input hover:text-baseText p-2 w-fit h-full rounded-full justify-between items-center gap-4 cursor-pointer">
           <div className="bg-hover rounded-full">
             <img
               className="w-8 p-1 pointer-events-none select-none"

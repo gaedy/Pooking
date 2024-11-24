@@ -2,6 +2,8 @@
 import { theImages } from "../../utils/imagesImport"
 
 
+
+
 export const rentCardsData = [
   {
     id: 1,

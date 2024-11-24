@@ -13,6 +13,7 @@ import DropSelect from "../DropSelect/DropSelect";
 import Select from "../DropSelect/Select";
 import { buyCardsData } from "../../api/cards/buyCardsData";
 import { sellCardsData } from "../../api/cards/sellCardsData";
+import { useTranslation } from "react-i18next";
 
 function Searchbar({ setSearchTerm, setGuestNmuber, setLocationTerm }) {
   const [dates, setDates] = useState();
@@ -20,6 +21,8 @@ function Searchbar({ setSearchTerm, setGuestNmuber, setLocationTerm }) {
   const [search, setSearch] = useState("");
 
   const [location, setLocation] = useState("");
+
+  const { t } = useTranslation();
 
   const handleLocationSelect = (location) => {
     setLocation(location);
@@ -69,7 +72,8 @@ function Searchbar({ setSearchTerm, setGuestNmuber, setLocationTerm }) {
     <>
       <div className="flex flex-col w-full justify-center items-center gap-10 h-fit ">
         <div className="font-bold md:text-3xl text-xl flex justify-center items-center text-pretty">
-          Find your next stay ...
+          {/* Find your next stay ... */}
+          {t("frontWelcome")}
         </div>
 
         <div
@@ -78,7 +82,9 @@ function Searchbar({ setSearchTerm, setGuestNmuber, setLocationTerm }) {
         >
           <div className="md:w-full w-full relative group ">
             <input
-              className="md:w-full pr-10 p-4 w-full shrink border border-input hover:bg-hover placeholder-alternateText transition-all duration-200 focus-within:bg-hover bg-background rounded-full outline-none "
+              className={`md:w-full ${
+                search !== "" && "shadow-lg bg-hover"
+              } pr-10 p-4 w-full shrink border border-input hover:bg-hover placeholder-alternateText transition-all duration-200 focus-within:bg-hover bg-background rounded-full outline-none `}
               placeholder="Search here"
               value={search}
               onChange={handleSearchChange}
