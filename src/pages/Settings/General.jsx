@@ -1,4 +1,4 @@
-import { ChevronDown, CircleDollarSign, Globe } from "lucide-react";
+import { ChevronDown, CircleDollarSign, Globe, House } from "lucide-react";
 import DropSelect from "../../components/DropSelect/DropSelect";
 import Select from "../../components/DropSelect/Select";
 import { useState } from "react";
@@ -55,6 +55,31 @@ function General() {
         >
           <div className="bg-hover2 hover:bg-border cursor-pointer transition-all p-2 px-4 items-center rounded-full flex gap-1 justify-around">
             <p>USD</p>
+            <ChevronDown size={18} />
+          </div>
+        </DropSelect>
+      </div>
+
+
+      <div className="flex justify-between  md:flex-row md:items-center gap-2 items-start flex-col transition-all duration-300 hover:text-baseText  font-medium">
+        <div className=" items-center flex gap-2 justify-around">
+          <House size={16} />
+          <p>Default Page</p>
+        </div>
+
+        <DropSelect
+          position="right"
+          className="w-full"
+          content={
+            <>
+              <Select text="Rent" />
+              <Select text="Buy" />
+              <Select text="Sell" />
+            </>
+          }
+        >
+          <div className="bg-hover2 hover:bg-border cursor-pointer transition-all p-2 px-4 items-center rounded-full flex gap-1 justify-around">
+            <p>Rent</p>
             <ChevronDown size={18} />
           </div>
         </DropSelect>

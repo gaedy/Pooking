@@ -25,6 +25,13 @@ export default {
         baseText: 'var(--baseText)',
         alternateText: 'var(--alternateText)',
         baseHoverText: 'var(--baseHoverText)',
+        
+      },
+      fontFamily: {
+        fontEnglishInter: 'var(--fontEnglishInter)',
+        fontEnglishJost: 'var(--fontEnglishJost)',
+        fontEnglishSystem: 'var(--fontEnglishSystem)',
+        fontEnglishArial: 'var(--fontEnglishArial)',
       }
     },
   },

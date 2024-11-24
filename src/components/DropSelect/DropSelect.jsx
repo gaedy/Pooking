@@ -7,6 +7,7 @@ function DropSelect({
   size,
   position = "left",
   className,
+  hight,
 }) {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -23,8 +24,6 @@ function DropSelect({
   const handleToggle = () => {
     setIsVisible(!isVisible);
   };
-
-
 
   const handleClickOutside = (e) => {
     if (dropRef.current && !dropRef.current.contains(e.target)) {
@@ -44,6 +43,11 @@ function DropSelect({
     lg: "w-64",
   };
 
+  const hights = {
+    fit: "h-fit",
+    fixed: "h-52",
+  };
+
   const positions = {
     left: "left-0",
     right: "right-0",
@@ -57,11 +61,18 @@ function DropSelect({
         </button>
 
         {isVisible && (
-          <div onClick={handleHide}
-            className={`absolute z-10 ${positions[position]} ${className} flex flex-col border border-input shadow-lg my-4 rounded-xl items-start 
-           p-3 ${sizes[size]} bg-hover`}
+          <div
+            onClick={handleHide}
+            className={`absolute z-10 ${positions[position]} ${className} flex ${hights[hight]}  flex-col border border-input shadow-lg my-4 rounded-xl items-start 
+           p-3 gap-1 ${sizes[size]} bg-hover`}
           >
-            {label && <p className="text-xs font-medium pb-2">{label}</p>}
+            {label && (
+              <p className="text-xs font-medium w-full h-full top-0 sticky">
+                <div className="bg-hover py-2 w-full">
+                  {label}
+                </div>
+              </p>
+            )}
 
             {content}
           </div>

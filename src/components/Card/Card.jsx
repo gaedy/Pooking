@@ -19,7 +19,6 @@ function Card({
   per,
   id,
   status,
-  
 }) {
   const navigate = useNavigate();
 
@@ -27,7 +26,6 @@ function Card({
     const betterURLTitle = title.replace(/\s+/g, "_").toLowerCase();
     navigate(`detailed-card/${id}/${betterURLTitle}`);
   };
-
 
   const [currentThumbnail, setCurrentThumbnail] = useState(0);
 

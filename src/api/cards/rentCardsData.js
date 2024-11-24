@@ -40,6 +40,7 @@ export const rentCardsData = [
     checkOut: "2024-12-12",
     rate: 9.1,
     reviews: 118,
+   
   },
   {
     id: 3,
