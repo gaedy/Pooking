@@ -89,7 +89,10 @@ function CardsPage() {
     guestNmuber,
     searchFilterByTitle(
       searchTerm,
-      searchFilterByLocation(locationTerm, searchFilterByRating(rateTerm, buyCards))
+      searchFilterByLocation(
+        locationTerm,
+        searchFilterByRating(rateTerm, buyCards)
+      )
     )
   );
 

@@ -5,6 +5,7 @@ import Tooltip from "../Tooltip/Tooltip";
 import img00 from "/src/assets/img/img00.jpg";
 import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
+import useCurrency from "../../hooks/useCurrency";
 
 function Card({
   title = "Add Title Here",
@@ -43,9 +44,11 @@ function Card({
     );
   };
 
+  const { isEGPCurrency } = useCurrency();
+
   return (
     <>
-      <div className="group w-72 bg-background hover:shadow-xl transition-all cursor-pointer duration-300 h-80 rounded-3xl flex flex-col items-center gap-2 p-2">
+      <div className="group w-72 bg-background hover:shadow-xl  transition-all cursor-pointer duration-300 h-80 rounded-3xl flex flex-col items-center gap-2 p-2">
         <div className=" h-56 w-full relative">
           <img
             className="object-cover transition-all select-none duration-200 group-hover:brightness-[80%] rounded-2xl w-full h-full absolute pointer-events-none"
@@ -56,22 +59,25 @@ function Card({
             }
           ></img>
 
-          <div className="  flex-col flex justify-between h-full text-sm  text-baseText font-semibold p-2 gap-2 group">
+          <div className=" flex-col flex justify-between h-full text-sm  text-baseText font-semibold p-2 gap-2 group">
             <div className="flex items-center justify-between">
               {rate && (
-                <div className="bg-white p-1 px-2 rounded-full backdrop-filter backdrop-blur-md bg-opacity-60">
-                  <Rating rate={rate.toPrecision(2)} reviews={reviews} />
+                <div className="bg-white dark:bg-zinc-900 p-1 px-2 rounded-full backdrop-filter dark:backdrop-filter backdrop-blur-md dark:backdrop-blur-md bg-opacity-60 dark:bg-opacity-60">
+                  <Rating
+                    rate={rate.toPrecision(2)}
+                    reviews={reviews.toLocaleString()}
+                  />
                 </div>
               )}
 
               {status && (
-                <div className="bg-white p-1 px-3 rounded-full backdrop-filter backdrop-blur-md bg-opacity-70">
+                <div className="bg-white dark:bg-zinc-800 p-1 px-3 rounded-full backdrop-filter backdrop-blur-md bg-opacity-70 dark:backdrop-blur-md dark:bg-opacity-70">
                   {/* <p className="text-baseText">{status === "Available" ? "text-white" : status}</p> */}
                   <p
                     className={`${
                       status === "Available"
-                        ? "text-greenColor "
-                        : "text-redColor"
+                        ? "dark:text-green-400 text-green-700 "
+                        : "dark:text-red-400 text-red-600"
                     }`}
                   >
                     {status}
@@ -79,7 +85,7 @@ function Card({
                 </div>
               )}
               <Tooltip text="Save">
-                <div className="bg-white p-2 rounded-full backdrop-filter backdrop-blur-md bg-opacity-60">
+                <div className="bg-white dark:bg-zinc-900 p-2 rounded-full dark:backdrop-filter dark:backdrop-blur-md dark:bg-opacity-60 backdrop-filter backdrop-blur-md bg-opacity-60">
                   <Like />
                 </div>
               </Tooltip>
@@ -87,14 +93,14 @@ function Card({
 
             <div className="group-hover:flex md:hidden flex justify-between items-center z-10">
               <div
-                className="bg-white p-2 rounded-full backdrop-filter backdrop-blur-md bg-opacity-60 active:scale-95 transition-transform"
+                className="bg-white dark:bg-zinc-900 p-2 rounded-full dark:backdrop-filter dark:backdrop-blur-md dark:bg-opacity-60 backdrop-filter backdrop-blur-md bg-opacity-60 active:scale-95 transition-transform"
                 onClick={handlePrevThumbnail}
               >
                 <ChevronLeft size={16} />
               </div>
 
               <div
-                className="bg-white p-2 rounded-full backdrop-filter backdrop-blur-md bg-opacity-60 active:scale-95 transition-transform"
+                className="bg-white dark:bg-zinc-900 p-2 rounded-full dark:backdrop-filter dark:backdrop-blur-md dark:bg-opacity-60 backdrop-filter backdrop-blur-md bg-opacity-60 active:scale-95 transition-transform"
                 onClick={handleNextThumbnail}
               >
                 <ChevronRight size={16} />
@@ -103,7 +109,7 @@ function Card({
 
             <div
               onClick={handleDetailsClick}
-              className="bg-white select-none p-2 gap-1 hover:underline px-2 w-full  md:hidden flex group-hover:flex items-center justify-center rounded-full backdrop-filter backdrop-blur-md bg-opacity-60"
+              className="bg-white dark:bg-zinc-900 select-none p-2 gap-1 hover:underline px-2 w-full  md:hidden flex group-hover:flex items-center justify-center rounded-full dark:backdrop-filter dark:backdrop-blur-md dark:bg-opacity-50 backdrop-filter backdrop-blur-md bg-opacity-60"
             >
               <p>Click For Details</p>
               <ArrowUpRight className="" size={18} />
@@ -128,8 +134,15 @@ function Card({
 
             <div className="text-base flex px-0 gap-1 justify-start items-center font-bold">
               <p className="text-buttonHover2">
-                {currency} {price.toLocaleString()}
-                {/* {(price * 49) - 1} */}
+                {!isEGPCurrency ? (
+                  <>
+                    {currency} {price.toLocaleString()}
+                  </>
+                ) : (
+                  <>
+                    {"EGP"} {(price * 49).toLocaleString()}
+                  </>
+                )}
               </p>
 
               <p className="text-alternateText text-xs font-medium"> {per}</p>

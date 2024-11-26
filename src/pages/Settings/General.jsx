@@ -1,16 +1,27 @@
-import { ChevronDown, CircleDollarSign, Globe, House } from "lucide-react";
+import { ChevronDown, CircleDollarSign, House, Languages } from "lucide-react";
 import DropSelect from "../../components/DropSelect/DropSelect";
 import Select from "../../components/DropSelect/Select";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import useCurrency from "../../hooks/useCurrency";
 
 function General() {
-  const [changeLang, setChangeLang] = useState("English (US)"); // make it global
+  const { i18n } = useTranslation();
+  const [theLang, setTheLang] = useState(i18n.language);
+
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+    setTheLang(lang);
+  };
+
+  const { setEGPCurrency, isEGPCurrency } = useCurrency();
+
   return (
     <>
       <div className="flex justify-between  md:flex-row md:items-center gap-2 items-start flex-col transition-all duration-300 hover:text-baseText  font-medium">
         <div className=" items-center flex gap-2 justify-around">
-          <Globe size={16} />
-          <p>Change Language</p>
+          <Languages size={16} />
+          <p>Language</p>
         </div>
 
         <DropSelect
@@ -19,18 +30,18 @@ function General() {
           content={
             <>
               <Select
-                text="English"
-                onClick={() => setChangeLang("English (US)")}
+                text="English (US)"
+                onClick={() => changeLanguage("en")}
               />
               <Select
-                text="Arabic"
-                onClick={() => setChangeLang("Arabic (EG)")}
+                text="(مصر) العربية"
+                onClick={() => changeLanguage("ar")}
               />
             </>
           }
         >
           <div className="bg-hover2 hover:bg-border cursor-pointer transition-all p-2 px-4 items-center rounded-full flex gap-1 justify-around">
-            <p>{changeLang}</p>
+            <p>{theLang !== "ar" ? "English (US)" : "(مصر) العربية"}</p>
             <ChevronDown size={18} />
           </div>
         </DropSelect>
@@ -44,22 +55,22 @@ function General() {
 
         <DropSelect
           position="right"
-          className="w-full"
+          className="w-32"
           content={
             <>
-              <Select text="USD" />
-              <Select text="EUR" />
-              <Select text="EGP" />
+              <Select text="Default" onClick={() => setEGPCurrency(false)} />
+              {/* <Select text="EUR" /> */}
+
+              <Select onClick={() => setEGPCurrency(true)} text="EGP" />
             </>
           }
         >
           <div className="bg-hover2 hover:bg-border cursor-pointer transition-all p-2 px-4 items-center rounded-full flex gap-1 justify-around">
-            <p>USD</p>
+            <p>{isEGPCurrency ? "EGP" : "Default"}</p>
             <ChevronDown size={18} />
           </div>
         </DropSelect>
       </div>
-
 
       <div className="flex justify-between  md:flex-row md:items-center gap-2 items-start flex-col transition-all duration-300 hover:text-baseText  font-medium">
         <div className=" items-center flex gap-2 justify-around">

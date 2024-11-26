@@ -1,8 +1,4 @@
-
-import { theImages } from "../../utils/imagesImport"
-
-
-
+import { theImages } from "../../utils/imagesImport";
 
 export const rentCardsData = [
   {
@@ -12,12 +8,12 @@ export const rentCardsData = [
     price: 120,
     currency: "USD",
     guests: 2,
-    thumbnail: theImages['img01'],
+    thumbnail: theImages["img01"],
     thumbnails: {
-      img01_01: theImages['img01_01'],
-      img01_02: theImages['img01_02'],
-      img01_03: theImages['img01_03'],
-      img01_04: theImages['img01_04'],
+      img01_01: theImages["img01_01"],
+      img01_02: theImages["img01_02"],
+      img01_03: theImages["img01_03"],
+      img01_04: theImages["img01_04"],
     },
     checkIn: "2024-11-10",
     checkOut: "2024-11-15",
@@ -31,18 +27,17 @@ export const rentCardsData = [
     price: 250,
     currency: "USD",
     guests: 4,
-    thumbnail: theImages['img02'],
+    thumbnail: theImages["img02"],
     thumbnails: {
-      img02_01: theImages['img02_01'],
-      img02_02: theImages['img02_02'],
-      img02_03: theImages['img02_03'],
-      img02_04: theImages['img02_04'],
+      img02_01: theImages["img02_01"],
+      img02_02: theImages["img02_02"],
+      img02_03: theImages["img02_03"],
+      img02_04: theImages["img02_04"],
     },
     checkIn: "2024-12-05",
     checkOut: "2024-12-12",
     rate: 9.1,
     reviews: 118,
-   
   },
   {
     id: 3,
@@ -51,12 +46,12 @@ export const rentCardsData = [
     price: 500,
     currency: "EUR",
     guests: 6,
-    thumbnail: theImages['img03'],
+    thumbnail: theImages["img03"],
     thumbnails: {
-      img03_01: theImages['img03_01'],
-      img03_02: theImages['img03_02'],
-      img03_03: theImages['img03_03'],
-      img03_04: theImages['img03_04'],
+      img03_01: theImages["img03_01"],
+      img03_02: theImages["img03_02"],
+      img03_03: theImages["img03_03"],
+      img03_04: theImages["img03_04"],
     },
     checkIn: "2024-11-18",
     checkOut: "2024-11-25",
@@ -70,12 +65,12 @@ export const rentCardsData = [
     price: 200,
     currency: "USD",
     guests: 5,
-    thumbnail: theImages['img04'],
+    thumbnail: theImages["img04"],
     thumbnails: {
-      img04_01: theImages['img04_01'],
-      img04_02: theImages['img04_02'],
-      img04_03: theImages['img04_03'],
-      img04_04: theImages['img04_04'],
+      img04_01: theImages["img04_01"],
+      img04_02: theImages["img04_02"],
+      img04_03: theImages["img04_03"],
+      img04_04: theImages["img04_04"],
     },
     checkIn: "2025-01-15",
     checkOut: "2025-01-22",
@@ -89,12 +84,12 @@ export const rentCardsData = [
     price: 180,
     currency: "JPY",
     guests: 2,
-    thumbnail: theImages['img05'],
+    thumbnail: theImages["img05"],
     thumbnails: {
-      img05_01: theImages['img05_01'],
-      img05_02: theImages['img05_02'],
-      img05_03: theImages['img05_03'],
-      img05_04: theImages['img05_04'],
+      img05_01: theImages["img05_01"],
+      img05_02: theImages["img05_02"],
+      img05_03: theImages["img05_03"],
+      img05_04: theImages["img05_04"],
     },
     checkIn: "2024-11-25",
     checkOut: "2024-12-02",
@@ -108,12 +103,12 @@ export const rentCardsData = [
     price: 220,
     currency: "EUR",
     guests: 4,
-    thumbnail: theImages['img06'],
+    thumbnail: theImages["img06"],
     thumbnails: {
-      img06_01: theImages['img06_01'],
-      img06_02: theImages['img06_02'],
-      img06_03: theImages['img06_03'],
-      img06_04: theImages['img06_04'],
+      img06_01: theImages["img06_01"],
+      img06_02: theImages["img06_02"],
+      img06_03: theImages["img06_03"],
+      img06_04: theImages["img06_04"],
     },
     checkIn: "2024-12-20",
     checkOut: "2024-12-27",
@@ -127,12 +122,12 @@ export const rentCardsData = [
     price: 150,
     currency: "EUR",
     guests: 2,
-    thumbnail: theImages['img07'],
+    thumbnail: theImages["img07"],
     thumbnails: {
-      img07_01: theImages['img07_01'],
-      img07_02: theImages['img07_02'],
-      img07_03: theImages['img07_03'],
-      img07_04: theImages['img07_04'],
+      img07_01: theImages["img07_01"],
+      img07_02: theImages["img07_02"],
+      img07_03: theImages["img07_03"],
+      img07_04: theImages["img07_04"],
     },
     checkIn: "2024-11-30",
     checkOut: "2024-12-05",
@@ -146,12 +141,12 @@ export const rentCardsData = [
     price: 300,
     currency: "EUR",
     guests: 6,
-    thumbnail: theImages['img08'],
+    thumbnail: theImages["img08"],
     thumbnails: {
-      img08_01: theImages['img08_01'],
-      img08_02: theImages['img08_02'],
-      img08_03: theImages['img08_03'],
-      img08_04: theImages['img08_04'],
+      img08_01: theImages["img08_01"],
+      img08_02: theImages["img08_02"],
+      img08_03: theImages["img08_03"],
+      img08_04: theImages["img08_04"],
     },
     checkIn: "2025-01-05",
     checkOut: "2025-01-12",
@@ -165,12 +160,12 @@ export const rentCardsData = [
     price: 160,
     currency: "EUR",
     guests: 3,
-    thumbnail: theImages['img09'],
+    thumbnail: theImages["img09"],
     thumbnails: {
-      img09_01: theImages['img09_01'],
-      img09_02: theImages['img09_02'],
-      img09_03: theImages['img09_03'],
-      img09_04: theImages['img09_04'],
+      img09_01: theImages["img09_01"],
+      img09_02: theImages["img09_02"],
+      img09_03: theImages["img09_03"],
+      img09_04: theImages["img09_04"],
     },
     checkIn: "2024-12-10",
     checkOut: "2024-12-17",
@@ -184,24 +179,16 @@ export const rentCardsData = [
     price: 280,
     currency: "CAD",
     guests: 4,
-    thumbnail: theImages['img10'],
+    thumbnail: theImages["img10"],
     thumbnails: {
-      img10_01: theImages['img10_01'],
-      img10_02: theImages['img10_02'],
-      img10_03: theImages['img10_03'],
-      img10_04: theImages['img10_04'],
+      img10_01: theImages["img10_01"],
+      img10_02: theImages["img10_02"],
+      img10_03: theImages["img10_03"],
+      img10_04: theImages["img10_04"],
     },
     checkIn: "2024-12-25",
     checkOut: "2024-12-30",
     rate: 9.2,
     reviews: 27,
   },
-  
-  
 ];
-
-  
-
-
-
-  

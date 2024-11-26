@@ -1,9 +1,13 @@
+import { useSelector } from "react-redux";
 import FrontPage from "./pages/FrontPage/FrontPage";
 
 function App() {
+  const font = useSelector((state) => state.font.font);
   return (
     <>
-      <FrontPage />
+      <div className={`${font}`}>
+        <FrontPage />
+      </div>
     </>
   );
 }

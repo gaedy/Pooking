@@ -5,23 +5,20 @@ import { reviewsData } from "./reviews/reviews";
 import { savedCardsData } from "./savedCards/savedCards";
 
 function fetchApi(apiData, delay = 800) {
-    return new Promise((resolve, reject) => {
-      if (!apiData) {
-        reject(new Error('Data not found or invalid!'));
-      } else {
-        setTimeout(() => resolve(apiData), delay);
-      }
-    })
-    .catch(error => {
-      console.warn('Warning:', error.message);
-    });
+  return new Promise((resolve, reject) => {
+    if (!apiData) {
+      reject(new Error("Data not found or invalid!"));
+    } else {
+      setTimeout(() => resolve(apiData), delay);
+    }
+  }).catch((error) => {
+    console.warn("Warning:", error.message);
+  });
 }
-
 
 export const fetchBuyCards = () => fetchApi(buyCardsData);
 export const fetchRentCards = () => fetchApi(rentCardsData);
 export const fetchSellCards = () => fetchApi(sellCardsData);
-
 
 export const fetchReviews = () => fetchApi(reviewsData);
 

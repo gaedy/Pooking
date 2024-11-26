@@ -1,4 +1,3 @@
-
 function Select({ text = "test", icon, onClick }) {
   return (
     <>
@@ -11,7 +10,7 @@ function Select({ text = "test", icon, onClick }) {
         ) : (
           <>
             <div>{icon}</div>
-            
+
             <p>{text}</p>
           </>
         )}

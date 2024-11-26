@@ -6,6 +6,7 @@ function Button({
   className,
   onClick,
   onSubmit,
+  onKeyDown,
 }) {
   const types = {
     default:
@@ -19,6 +20,7 @@ function Button({
       <button
         onClick={onClick}
         onSubmit={onSubmit}
+        onKeyDown={onKeyDown}
         className={`${className} select-none transition-all duration-200 text-sm rounded-full ${types[type]}`}
       >
         <p>{text}</p>

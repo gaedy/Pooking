@@ -6,6 +6,7 @@ import {
   CalendarSearch,
   ChevronDown,
   CircleXIcon,
+  House,
   MapPin,
   Search,
 } from "lucide-react";
@@ -14,6 +15,7 @@ import Select from "../DropSelect/Select";
 import { buyCardsData } from "../../api/cards/buyCardsData";
 import { sellCardsData } from "../../api/cards/sellCardsData";
 import { useTranslation } from "react-i18next";
+import Tooltip from "../Tooltip/Tooltip";
 
 function Searchbar({ setSearchTerm, setGuestNmuber, setLocationTerm }) {
   const [dates, setDates] = useState();
@@ -78,7 +80,7 @@ function Searchbar({ setSearchTerm, setGuestNmuber, setLocationTerm }) {
 
         <div
           className=" rounded-[1.8rem] md:rounded-full mx-2 flex-shrink h-fit md:w-fit w-11/12 flex md:flex-row flex-col justify-center items-center text-xs font-semibold
-         p-2 gap-1 bg-background hover:shadow-lg focus-within:shadow-lg transition-shadow duration-300"
+         p-2 gap-1 bg-background hover:shadow-lg  focus-within:shadow-lg transition-shadow duration-300"
         >
           <div className="md:w-full w-full relative group ">
             <input
@@ -91,10 +93,15 @@ function Searchbar({ setSearchTerm, setGuestNmuber, setLocationTerm }) {
             ></input>
             {search !== "" && (
               <div
-                className="absolute right-3 top-1/4 scale-75 cursor-pointer opacity-75 hover:opacity-100"
+                className="absolute right-4 top-0 translate-y-4 scale-100 cursor-pointer opacity-75 hover:opacity-100"
                 onClick={handleAllClear}
               >
-                <CircleXIcon color="var(--redColorHover)" />
+                <Tooltip
+                  text="Clear search results"
+                  className="-translate-x-10 md:-translate-x-0"
+                >
+                  <CircleXIcon size={16} color="var(--redColorHover)" />
+                </Tooltip>
               </div>
             )}
           </div>
@@ -141,11 +148,13 @@ function Searchbar({ setSearchTerm, setGuestNmuber, setLocationTerm }) {
                 ) : (
                   <>
                     <div className="opacity-75 cursor-pointer hover:opacity-100">
-                      <CircleXIcon
-                        color="var(--redColorHover)"
-                        size={16}
-                        onClick={handleLocationClear}
-                      />
+                      <Tooltip text="Clear location results">
+                        <CircleXIcon
+                          color="var(--redColorHover)"
+                          size={16}
+                          onClick={handleLocationClear}
+                        />
+                      </Tooltip>
                     </div>
                   </>
                 )}
@@ -178,10 +187,11 @@ function Searchbar({ setSearchTerm, setGuestNmuber, setLocationTerm }) {
             } p-4 md:w-fit w-full border border-input focus-within:bg-hover rounded-full transition-all duration-200 group`}
           >
             <div className="flex flex-row justify-start items-center gap-1">
-              <img
+              {/* <img
                 className="w-4 pointer-events-none select-none"
                 src={guest}
-              ></img>
+              ></img> */}
+              <House size={16} />
 
               <input
                 className={`group-hover:bg-hover ${
@@ -197,7 +207,7 @@ function Searchbar({ setSearchTerm, setGuestNmuber, setLocationTerm }) {
             </div>
           </div>
 
-          <div className="flex hover:bg-hover focus-within:bg-hover rounded-full transition-all duration-200">
+          <div className="flex hover:bg-hover focus-within:bg-hover  rounded-full transition-all duration-200">
             <Button onClick={handleSubmit} className="p-4" type="circle">
               <Search size={20} color="white" />
             </Button>

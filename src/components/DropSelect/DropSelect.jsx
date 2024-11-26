@@ -68,9 +68,7 @@ function DropSelect({
           >
             {label && (
               <p className="text-xs font-medium w-full h-full top-0 sticky">
-                <div className="bg-hover py-2 w-full">
-                  {label}
-                </div>
+                <div className="bg-hover py-2 w-full">{label}</div>
               </p>
             )}
 

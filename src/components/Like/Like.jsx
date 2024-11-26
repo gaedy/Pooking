@@ -7,7 +7,7 @@ function Like({onClick, isSaved}) {
         <Heart
           size={18}
           stroke="none"
-          className={`${isSaved ? "fill-red-600" : "fill-gray-800"} active:scale-90`}
+          className={`${isSaved ? "fill-red-600" : "fill-gray-800 dark:fill-gray-300"} active:scale-90`}
         />
       </div>
     </>

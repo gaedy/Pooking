@@ -11,7 +11,7 @@ function Saved() {
 
         <div
           className="flex md:flex-row h-full flex-col shadow-xl text-baseHoverText
-        justify-start items-start gap-4 w-full rounded-xl bg-hover2 p-4"
+        justify-start items-start gap-4 w-full rounded-xl bg-background p-4"
         >
         
          

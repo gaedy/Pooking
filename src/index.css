@@ -9,9 +9,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
 }
-
 
 @layer base {
   :root {
@@ -23,10 +21,11 @@
     --input: hsl(210, 14%, 89%);
 
     --border: hsl(220, 3%, 82%);
+    --tooltip: hsl(207, 10%, 83%);
 
     --button: hsl(202, 56%, 38%);
     --buttonHover: hsl(202, 56%, 35%);
-    --buttonHover2: hsl(202, 56%, 30%);
+    --buttonHover2: hsl(202, 56%, 35%);
 
     --goldColor: hsl(24, 100%, 50%);
     --goldColorHover: hsl(24, 100%, 45%);
@@ -42,25 +41,24 @@
     --baseHoverText: hsl(0, 1%, 20%);
 
     --fontEnglishInter: "Inter", "system-ui", "Arial", "sans-serif";
-    --fontEnglishJost: "Jost", "system-ui", "Arial","sans-serif";
-    --fontEnglishSystem: "system-ui", "Arial","sans-serif";
-    --fontEnglishArial: "Arial","sans-serif";
-
- 
+    --fontEnglishJost: "Jost", "system-ui", "Arial", "sans-serif";
+    --fontEnglishSystem: "system-ui", "Arial", "sans-serif";
+    --fontEnglishArial: "Arial", "sans-serif";
   }
   .dark {
-    --background: hsl(210, 10%, 23%);
-    --hover: hsl(210, 11%, 15%);
-    --hover2: hsl(210, 9%, 30%);
+    --background: hsl(220, 11%, 11%);
+    --hover: hsl(210, 10%, 16%);
+    --hover2: hsl(202, 10%, 23%);
 
-    --input: hsl(0, 0%, 25%);
+    --input: hsl(220, 6%, 20%);
 
-    --border: hsl(208, 7%, 46%);
+    --border: hsl(206, 9%, 29%);
+    --tooltip: hsl(205, 9%, 39%);
 
     --button: hsl(202, 56%, 38%);
     --buttonHover: hsl(202, 56%, 35%);
-    --buttonHover2: hsl(202, 56%, 40%);
-    
+    --buttonHover2: hsl(202, 56%, 47%);
+
     --goldColor: hsl(24, 100%, 50%);
     --goldColorHover: hsl(24, 100%, 45%);
 
@@ -68,16 +66,16 @@
     --greenColorHover: hsl(141, 44%, 42%);
 
     --redColor: hsl(357, 93%, 59%);
-    --redColorHover: hsl(357, 93%, 57%);
+    --redColorHover: hsl(357, 100%, 69%);
 
     --baseText: hsl(0, 0%, 100%);
     --alternateText: hsl(300, 0%, 55%);
     --baseHoverText: hsl(0, 0%, 85%);
 
     --fontEnglishInter: "Inter", "system-ui", "Arial", "sans-serif";
-    --fontEnglishJost: "Jost", "system-ui", "Arial","sans-serif";
-    --fontEnglishSystem: "system-ui", "Arial","sans-serif";
-    --fontEnglishArial: "Arial","sans-serif";
+    --fontEnglishJost: "Jost", "system-ui", "Arial", "sans-serif";
+    --fontEnglishSystem: "system-ui", "Arial", "sans-serif";
+    --fontEnglishArial: "Arial", "sans-serif";
   }
 }
 

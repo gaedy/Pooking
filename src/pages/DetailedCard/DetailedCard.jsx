@@ -7,6 +7,7 @@ import GridImages from "./GridImages";
 import { useEffect, useState } from "react";
 import { fetchReviews } from "../../api/api";
 import LoadingSpin from "../../components/LoadingSpin/LoadingSpin";
+import useCurrency from "../../hooks/useCurrency";
 
 function DetailedCard() {
   const { id } = useParams();
@@ -14,6 +15,8 @@ function DetailedCard() {
   const [theReviews, setTheReviews] = useState([]);
 
   const [isLoading, setIsLoading] = useState(true);
+  const {isEGPCurrency} = useCurrency();
+
 
   const {
     rentCardsData = [],
@@ -55,11 +58,7 @@ function DetailedCard() {
           </Tooltip>
         </div>
 
-        {card.thumbnails ? (
-          <GridImages card={card} />
-        ) : (
-          <p>no thumbnails</p>
-        )}
+        {card.thumbnails ? <GridImages card={card} /> : <p>no thumbnails</p>}
 
         <div className="flex-col md:flex-row flex gap-6 w-full md:w-full justify-between">
           <div className="flex flex-col justify-start w-full gap-2">
@@ -125,10 +124,13 @@ function DetailedCard() {
 
           <div className="w-full md:w-1/2 flex-col flex items-start md:items-end ">
             <div className="flex gap-1 pb-2">
-              {card.price && (
+              {/* {(card.price || card.askingPrice) && (
                 <>
                   <p className="text-xl font-medium">
-                    {card.price.toLocaleString()}
+                    {card.price
+                      ? card.price.toLocaleString()
+                      : card.askingPrice.toLocaleString()}
+
                     {card.currency === "USD"
                       ? "$"
                       : card.currency === "EUR"
@@ -139,11 +141,12 @@ function DetailedCard() {
                   </p>
                   <p className="text-xl font-medium">{card.currency}</p>
                 </>
-              )}
-              {card.askingPrice && (
+              )} */}
+              {!isEGPCurrency ?
+               (card.price || card.askingPrice) && (
                 <>
                   <p className="text-xl font-medium">
-                    {card.askingPrice.toLocaleString()}
+                    
                     {card.currency === "USD"
                       ? "$"
                       : card.currency === "EUR"
@@ -151,22 +154,37 @@ function DetailedCard() {
                       : card.currency === "CAD"
                       ? "$"
                       : ""}
+                      {card.price
+                      ? card.price.toLocaleString()
+                      : card.askingPrice.toLocaleString()}
                   </p>
                   <p className="text-xl font-medium">{card.currency}</p>
+                </>
+              ): (card.price || card.askingPrice) && (
+                <>
+                  <p className="text-xl font-medium">
+                    €
+                    {card.price
+                      ? (card.price * 49).toLocaleString()
+                      : (card.askingPrice * 49).toLocaleString()}
+
+                    
+                  </p>
+                  <p className="text-xl font-medium">EGP</p>
                 </>
               )}
             </div>
 
             {card.checkIn && (
-              <div className="bg-hover2 w-fit p-4 gap-4 flex flex-col items-start rounded-2xl">
+              <div className="bg-background w-fit p-4 gap-4 flex flex-col items-start rounded-2xl">
                 {/* <Calendar /> */}
                 <div className="flex flex-row gap-2 text-sm font-bold items-center w-full justify-between flex-wrap ">
-                  <p className="bg-green-300 p-1 px-3 rounded-full">Check In</p>
+                  <p className="bg-green-300 dark:bg-green-900 p-1 px-3 rounded-full">Check In</p>
                   <p className="font-semibold">{card.checkIn}</p>
                 </div>
 
                 <div className="flex flex-row gap-2 items-center text-sm font-bold w-full justify-between flex-wrap ">
-                  <p className="bg-red-300 p-1 px-3 rounded-full">Check Out</p>
+                  <p className="bg-red-300 dark:bg-red-900 p-1 px-3 rounded-full">Check Out</p>
                   <p className="font-semibold">{card.checkOut}</p>
                 </div>
               </div>
@@ -184,7 +202,7 @@ function DetailedCard() {
               theReviews.map((review) => (
                 <div
                   key={review.id}
-                  className="bg-hover2 rounded-lg p-3 gap-2  justify-center flex flex-col"
+                  className="bg-background rounded-lg p-3 gap-2  justify-center flex flex-col"
                 >
                   <div className="flex justify-start gap-2 items-center text-sm font-bold flex-wrap">
                     <div className="rounded-full bg-hover p-1">

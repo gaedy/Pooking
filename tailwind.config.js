@@ -25,6 +25,7 @@ export default {
         baseText: 'var(--baseText)',
         alternateText: 'var(--alternateText)',
         baseHoverText: 'var(--baseHoverText)',
+        tooltip: 'var(--tooltip)',
         
       },
       fontFamily: {
