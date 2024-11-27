@@ -48,12 +48,12 @@ function Tooltip({
   };
 
   const tooltipAnimation = useSpring({
-    y: isVisible ? 0 : -20,
+    y: isVisible ? 0 : -5,
     opacity: isVisible ? 1 : 0,
 
     config: {
       tension: 280,
-      friction: 20,
+      friction: 16,
     },
   });
 

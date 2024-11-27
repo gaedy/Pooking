@@ -239,10 +239,6 @@ function Navbar() {
 
         <div className=" transition-all md:flex hidden duration-300 hover:bg-background border border-input hover:text-baseText p-2 w-fit h-full rounded-full justify-between items-center gap-4 cursor-pointer">
           <div className="bg-hover rounded-full">
-            {/* <img
-              className="w-8 p-1 pointer-events-none select-none"
-              src={profile}
-            ></img> */}
             <CircleUserRound size={30} className="p-1" />
           </div>
 

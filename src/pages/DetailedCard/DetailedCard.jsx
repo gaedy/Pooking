@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { fetchReviews } from "../../api/api";
 import LoadingSpin from "../../components/LoadingSpin/LoadingSpin";
 import useCurrency from "../../hooks/useCurrency";
+import { animated, useSpring } from "@react-spring/web";
 
 function DetailedCard() {
   const { id } = useParams();
@@ -15,8 +16,7 @@ function DetailedCard() {
   const [theReviews, setTheReviews] = useState([]);
 
   const [isLoading, setIsLoading] = useState(true);
-  const {isEGPCurrency} = useCurrency();
-
+  const { isEGPCurrency } = useCurrency();
 
   const {
     rentCardsData = [],
@@ -45,9 +45,22 @@ function DetailedCard() {
     navigate(-1);
   };
 
+  const detailedPageAnimation = useSpring({
+    opacity: 1,
+    y: 0,
+    transform: "scale(1)",
+    from: { opacity: 0, y: 40, transform: "scale(0.60)" },
+    config: { duration: 80 },
+  });
+
   return (
     <>
-      <div className="fixed w-full h-full overflow-auto  bg-hover z-20 gap-4 inset-0 flex flex-col items-start p-5">
+      <animated.div
+        style={detailedPageAnimation}
+        className="fixed w-full bg-slate-300 dark:bg-zinc-800 px-2 
+        backdrop-filter dark:backdrop-filter backdrop-blur-3xl dark:backdrop-blur-3xl bg-opacity-80 
+        dark:bg-opacity-80 h-full overflow-auto bg-hover z-20 gap-4 inset-0 flex flex-col items-start p-5"
+      >
         <div className="flex w-full justify-between items-center">
           <h1 className="md:text-3xl text-xl font-semibold">{card.title}</h1>
 
@@ -142,49 +155,51 @@ function DetailedCard() {
                   <p className="text-xl font-medium">{card.currency}</p>
                 </>
               )} */}
-              {!isEGPCurrency ?
-               (card.price || card.askingPrice) && (
-                <>
-                  <p className="text-xl font-medium">
-                    
-                    {card.currency === "USD"
-                      ? "$"
-                      : card.currency === "EUR"
-                      ? "€"
-                      : card.currency === "CAD"
-                      ? "$"
-                      : ""}
-                      {card.price
-                      ? card.price.toLocaleString()
-                      : card.askingPrice.toLocaleString()}
-                  </p>
-                  <p className="text-xl font-medium">{card.currency}</p>
-                </>
-              ): (card.price || card.askingPrice) && (
-                <>
-                  <p className="text-xl font-medium">
-                  £
-                    {card.price
-                      ? (card.price * 49).toLocaleString()
-                      : (card.askingPrice * 49).toLocaleString()}
-
-                    
-                  </p>
-                  <p className="text-xl font-medium">EGP</p>
-                </>
-              )}
+              {!isEGPCurrency
+                ? (card.price || card.askingPrice) && (
+                    <>
+                      <p className="text-xl font-medium">
+                        {card.currency === "USD"
+                          ? "$"
+                          : card.currency === "EUR"
+                          ? "€"
+                          : card.currency === "CAD"
+                          ? "$"
+                          : ""}
+                        {card.price
+                          ? card.price.toLocaleString()
+                          : card.askingPrice.toLocaleString()}
+                      </p>
+                      <p className="text-xl font-medium">{card.currency}</p>
+                    </>
+                  )
+                : (card.price || card.askingPrice) && (
+                    <>
+                      <p className="text-xl font-medium">
+                        £
+                        {card.price
+                          ? (card.price * 49).toLocaleString()
+                          : (card.askingPrice * 49).toLocaleString()}
+                      </p>
+                      <p className="text-xl font-medium">EGP</p>
+                    </>
+                  )}
             </div>
 
             {card.checkIn && (
               <div className="bg-background w-fit p-4 gap-4 flex flex-col items-start rounded-2xl">
                 {/* <Calendar /> */}
                 <div className="flex flex-row gap-2 text-sm font-bold items-center w-full justify-between flex-wrap ">
-                  <p className="bg-green-300 dark:bg-green-900 p-1 px-3 rounded-full">Check In</p>
+                  <p className="bg-green-300 dark:bg-green-900 p-1 px-3 rounded-full">
+                    Check In
+                  </p>
                   <p className="font-semibold">{card.checkIn}</p>
                 </div>
 
                 <div className="flex flex-row gap-2 items-center text-sm font-bold w-full justify-between flex-wrap ">
-                  <p className="bg-red-300 dark:bg-red-900 p-1 px-3 rounded-full">Check Out</p>
+                  <p className="bg-red-300 dark:bg-red-900 p-1 px-3 rounded-full">
+                    Check Out
+                  </p>
                   <p className="font-semibold">{card.checkOut}</p>
                 </div>
               </div>
@@ -225,7 +240,7 @@ function DetailedCard() {
             )}
           </div>
         )}
-      </div>
+      </animated.div>
     </>
   );
 }

@@ -4,8 +4,9 @@ import Rating from "../Rating/Rating";
 import Tooltip from "../Tooltip/Tooltip";
 import img00 from "/src/assets/img/img00.jpg";
 import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import useCurrency from "../../hooks/useCurrency";
+import { animated, useSpring } from "@react-spring/web";
 
 function Card({
   title = "Add Title Here",
@@ -46,9 +47,19 @@ function Card({
 
   const { isEGPCurrency } = useCurrency();
 
+  const animation = useSpring({
+    opacity: 1,
+    transform: "scale(1)",
+    from: { opacity: 0, transform: "scale(0.95)" },
+    config: { duration: 50, tension: 10 },
+  });
+
   return (
     <>
-      <div className="group w-72 bg-background hover:shadow-xl  transition-all cursor-pointer duration-300 h-80 rounded-3xl flex flex-col items-center gap-2 p-2">
+      <animated.div
+        style={animation}
+        className="group w-72 bg-background hover:shadow-xl  transition-all cursor-pointer duration-300 h-80 rounded-3xl flex flex-col items-center gap-2 p-2"
+      >
         <div className=" h-56 w-full relative">
           <img
             className="object-cover transition-all dark:brightness-[70%] select-none duration-200 group-hover:brightness-[80%] rounded-2xl w-full h-full absolute pointer-events-none"
@@ -165,7 +176,7 @@ function Card({
             </div> */}
           </div>
         </div>
-      </div>
+      </animated.div>
     </>
   );
 }
