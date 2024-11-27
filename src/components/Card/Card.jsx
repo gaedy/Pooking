@@ -51,7 +51,7 @@ function Card({
       <div className="group w-72 bg-background hover:shadow-xl  transition-all cursor-pointer duration-300 h-80 rounded-3xl flex flex-col items-center gap-2 p-2">
         <div className=" h-56 w-full relative">
           <img
-            className="object-cover transition-all select-none duration-200 group-hover:brightness-[80%] rounded-2xl w-full h-full absolute pointer-events-none"
+            className="object-cover transition-all dark:brightness-[70%] select-none duration-200 group-hover:brightness-[80%] rounded-2xl w-full h-full absolute pointer-events-none"
             src={
               currentThumbnail === 0
                 ? thumbnail

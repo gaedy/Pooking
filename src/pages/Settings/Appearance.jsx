@@ -15,10 +15,10 @@ import { useState } from "react";
 import useTheme from "../../hooks/useTheme";
 
 function Appearance() {
-  const dispatach = useDispatch();
+  const dispatch = useDispatch();
 
   const changeFont = (newFont) => {
-    dispatach(setFont(newFont));
+    dispatch(setFont(newFont));
   };
 
   const { isDarkTheme, handleSetTheme } = useTheme();
@@ -50,7 +50,7 @@ function Appearance() {
       <div className="flex justify-between  md:flex-row md:items-center gap-2 items-start flex-col transition-all duration-300 hover:text-baseText  font-medium">
         <div className=" items-center flex gap-2 justify-around">
           <MoonIcon size={16} />
-          <p>Change Theme</p>
+          <p>Default Theme</p>
         </div>
 
         <DropSelect
@@ -93,7 +93,7 @@ function Appearance() {
       <div className="flex justify-between  md:flex-row md:items-center gap-2 items-start flex-col transition-all duration-300 hover:text-baseText  font-medium">
         <div className=" items-center flex gap-2 justify-around">
           <Type size={16} />
-          <p>Font Style</p>
+          <p>Font Family</p>
         </div>
 
         <DropSelect
@@ -123,7 +123,7 @@ function Appearance() {
                 onClick={handleSystemUI}
                 className="w-full font-fontEnglishSystem"
               >
-                <Select text="System UI font" />
+                <Select text="System default" />
               </div>
             </>
           }

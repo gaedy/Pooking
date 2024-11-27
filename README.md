@@ -1,4 +1,4 @@
-# 🏠 Pooking
+# Pooking
 
 A modern property listing platform for renting, buying, and selling real estate, built with React and modern web technologies.
 

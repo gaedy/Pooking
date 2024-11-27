@@ -1,6 +1,12 @@
+import { animated, useSpring } from "@react-spring/web";
 import { useReducer } from "react";
 
-function Tooltip({ children, text = "This is Tooltip" , className}) {
+function Tooltip({
+  children,
+  text = "This is Tooltip",
+  className,
+  arrowPosition,
+}) {
   // const [isVisible, setIsVisible] = useState(false);
 
   const initValue = false;
@@ -26,7 +32,7 @@ function Tooltip({ children, text = "This is Tooltip" , className}) {
 
   const [isVisible, dispatch] = useReducer(reducer, initValue);
 
-  const hanldeHover = () => {
+  const handleHover = () => {
     // setIsVisible(true);
     dispatch({ type: Visible });
   };
@@ -36,24 +42,42 @@ function Tooltip({ children, text = "This is Tooltip" , className}) {
     dispatch({ type: notVisible });
   };
 
+  const arrows = {
+    left: "left-1 translate-x-full",
+    right: "right-1 -translate-x-full",
+  };
+
+  const tooltipAnimation = useSpring({
+    y: isVisible ? 0 : -20,
+    opacity: isVisible ? 1 : 0,
+
+    config: {
+      tension: 280,
+      friction: 20,
+    },
+  });
+
   return (
     <>
       <div
         className="relative flex justify-center items-center"
-        onMouseEnter={hanldeHover}
+        onMouseEnter={handleHover}
         onMouseLeave={handleClose}
         onClick={handleClose}
       >
         {children}
         {isVisible && (
           <>
-            <div
-              className={`absolute ${className} text-nowrap bg-tooltip font-medium text-sm rounded-lg 
+            <animated.div
+              style={tooltipAnimation}
+              className={`absolute ${className} flex justify-center items-center text-nowrap bg-tooltip font-medium text-sm rounded-lg 
             w-fit h-fit p-2 top-0 z-40 mt-12 shadow-md`}
             >
-              <div className="w-2 h-2 absolute rotate-45 -top-[4px] right-1/2 translate-x-1 bg-tooltip"></div>
+              <div
+                className={`w-2 h-2 absolute rotate-45 -top-[4px] bg-tooltip ${arrows[arrowPosition]}`}
+              ></div>
               <p>{text}</p>
-            </div>
+            </animated.div>
           </>
         )}
       </div>

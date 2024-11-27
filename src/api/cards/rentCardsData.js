@@ -2,7 +2,7 @@ import { theImages } from "../../utils/imagesImport";
 
 export const rentCardsData = [
   {
-    id: 1,
+    id: 1,  // Primary Key
     title: "Cozy Apartment in Downtown",
     location: "New York, USA",
     price: 120,

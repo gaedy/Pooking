@@ -47,7 +47,7 @@ function DetailedCard() {
 
   return (
     <>
-      <div className="fixed w-full h-full overflow-auto bg-hover z-20 gap-4 inset-0 flex flex-col items-start p-5">
+      <div className="fixed w-full h-full overflow-auto  bg-hover z-20 gap-4 inset-0 flex flex-col items-start p-5">
         <div className="flex w-full justify-between items-center">
           <h1 className="md:text-3xl text-xl font-semibold">{card.title}</h1>
 
@@ -163,7 +163,7 @@ function DetailedCard() {
               ): (card.price || card.askingPrice) && (
                 <>
                   <p className="text-xl font-medium">
-                    €
+                  £
                     {card.price
                       ? (card.price * 49).toLocaleString()
                       : (card.askingPrice * 49).toLocaleString()}

@@ -1,3 +1,4 @@
+import { animated, useSpring } from "@react-spring/web";
 import { useEffect, useRef, useState } from "react";
 
 function DropSelect({
@@ -53,15 +54,25 @@ function DropSelect({
     right: "right-0",
   };
 
+  const dropAnimation = useSpring({
+    y: isVisible ? 0 : -20,
+    opacity: isVisible ? 1 : 0,
+    config: {
+      tension: 200,
+      friction: 18,
+    },
+  });
+
   return (
     <>
-      <div ref={dropRef} className="relative inline-block ">
-        <button className="flex items-center " onClick={handleToggle}>
+      <div ref={dropRef} className="relative inline-block">
+        <button className="flex items-center" onClick={handleToggle}>
           {children}
         </button>
 
         {isVisible && (
-          <div
+          <animated.div
+            style={dropAnimation}
             onClick={handleHide}
             className={`absolute z-10 ${positions[position]} ${className} flex ${hights[hight]}  flex-col border border-input shadow-lg my-4 rounded-xl items-start 
            p-3 gap-1 ${sizes[size]} bg-hover`}
@@ -73,7 +84,7 @@ function DropSelect({
             )}
 
             {content}
-          </div>
+          </animated.div>
         )}
       </div>
     </>

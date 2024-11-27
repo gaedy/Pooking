@@ -1,5 +1,4 @@
 import Button from "../Button/Button";
-import guest from "/src/assets/icons/guest.svg";
 import { rentCardsData } from "../../api/cards/rentCardsData";
 import { useState } from "react";
 import {
@@ -17,7 +16,7 @@ import { sellCardsData } from "../../api/cards/sellCardsData";
 import { useTranslation } from "react-i18next";
 import Tooltip from "../Tooltip/Tooltip";
 
-function Searchbar({ setSearchTerm, setGuestNmuber, setLocationTerm }) {
+function Searchbar({ setSearchTerm, setGuestNumber, setLocationTerm }) {
   const [dates, setDates] = useState();
   const [guests, setGuests] = useState("");
   const [search, setSearch] = useState("");
@@ -34,7 +33,7 @@ function Searchbar({ setSearchTerm, setGuestNmuber, setLocationTerm }) {
 
   const handleSubmit = () => {
     setSearchTerm(search);
-    setGuestNmuber(guests);
+    setGuestNumber(guests);
     setLocationTerm(location);
   };
 
@@ -42,14 +41,15 @@ function Searchbar({ setSearchTerm, setGuestNmuber, setLocationTerm }) {
     setSearchTerm("");
     setSearch("");
 
-    setGuestNmuber(0);
+    setGuestNumber(0);
     setGuests("");
 
     setLocation("");
     setLocationTerm("");
   };
 
-  const handleLocationClear = () => {
+  const handleLocationClear = (e) => {
+    e.stopPropagation();
     setLocation("");
     setLocationTerm("");
   };
@@ -66,13 +66,13 @@ function Searchbar({ setSearchTerm, setGuestNmuber, setLocationTerm }) {
     const value = e.target.value;
     setGuests(value);
     if (value === "") {
-      setGuestNmuber("");
+      setGuestNumber("");
     }
   };
 
   return (
     <>
-      <div className="flex flex-col w-full justify-center items-center gap-10 h-fit ">
+      <div className="flex flex-col flex-wrap w-full justify-center items-center gap-10 h-fit ">
         <div className="font-bold md:text-3xl text-xl flex justify-center items-center text-pretty">
           {/* Find your next stay ... */}
           {t("frontWelcome")}
@@ -80,9 +80,9 @@ function Searchbar({ setSearchTerm, setGuestNmuber, setLocationTerm }) {
 
         <div
           className=" rounded-[1.8rem] md:rounded-full mx-2 flex-shrink h-fit md:w-fit w-11/12 flex md:flex-row flex-col justify-center items-center text-xs font-semibold
-         p-2 gap-1 bg-background hover:shadow-lg  focus-within:shadow-lg transition-shadow duration-300"
+         p-2 gap-1 bg-background hover:shadow-lg focus-within:shadow-lg transition-shadow duration-300"
         >
-          <div className="md:w-full w-full relative group ">
+          <div className="md:w-full w-full relative group">
             <input
               className={`md:w-full ${
                 search !== "" && "shadow-lg bg-hover"
@@ -106,61 +106,63 @@ function Searchbar({ setSearchTerm, setGuestNmuber, setLocationTerm }) {
             )}
           </div>
 
-          <DropSelect
-            label="Select location"
-            position="left"
-            hight="fixed"
-            className="w-52 "
-            content={
-              <>
-                <div className="overflow-auto w-full">
-                  <Select
-                    text="USA"
-                    onClick={() => handleLocationSelect("USA")}
-                  ></Select>
-                  {cardsData.map((card) => (
+          <div className="md:w-fit w-full">
+            <DropSelect
+              label="Select location"
+              position="left"
+              hight="fixed"
+              className="md:w-52 w-full"
+              content={
+                <>
+                  <div className="overflow-auto w-full ">
                     <Select
-                      key={card.id}
-                      onClick={() => handleLocationSelect(card.location)}
-                      text={card.location}
+                      text="USA"
+                      onClick={() => handleLocationSelect("USA")}
                     ></Select>
-                  ))}
-                </div>
-              </>
-            }
-          >
-            <div
-              className={`flex hover:bg-hover ${
-                location !== "" && "bg-hover shadow-lg"
-              }  p-4 h-fit md:w-fit w-full border border-input focus-within:bg-hover rounded-full transition-all duration-200 group`}
-            >
-              <div className="flex  gap-2 flex-row text-nowrap justify-between items-center  ">
-                <MapPin size={16} />
-
-                <div className="flex items-center justify-between gap-2">
-                  <div>
-                    <p>{location || "Select Location"}</p>
+                    {cardsData.map((card) => (
+                      <Select
+                        key={card.id}
+                        onClick={() => handleLocationSelect(card.location)}
+                        text={card.location}
+                      ></Select>
+                    ))}
                   </div>
-                </div>
+                </>
+              }
+            >
+              <div
+                className={`flex hover:bg-hover ${
+                  location !== "" && "bg-hover shadow-lg"
+                }  p-4 h-fit md:w-fit w-full border border-input focus-within:bg-hover rounded-full transition-all duration-200 group`}
+              >
+                <div className="flex gap-2 flex-row text-nowrap justify-between items-center">
+                  <MapPin size={16} />
 
-                {location === "" ? (
-                  <ChevronDown size={16} className="scale-110" />
-                ) : (
-                  <>
-                    <div className="opacity-75 cursor-pointer hover:opacity-100">
-                      <Tooltip text="Clear location results">
-                        <CircleXIcon
-                          color="var(--redColorHover)"
-                          size={16}
-                          onClick={handleLocationClear}
-                        />
-                      </Tooltip>
+                  <div className="flex items-center justify-between gap-2">
+                    <div>
+                      <p>{location || "Select Location"}</p>
                     </div>
-                  </>
-                )}
+                  </div>
+
+                  {location === "" ? (
+                    <ChevronDown size={16} className="scale-110" />
+                  ) : (
+                    <>
+                      <div className="opacity-75 cursor-pointer hover:opacity-100">
+                        <Tooltip text="Clear location results">
+                          <CircleXIcon
+                            color="var(--redColorHover)"
+                            size={16}
+                            onClick={handleLocationClear}
+                          />
+                        </Tooltip>
+                      </div>
+                    </>
+                  )}
+                </div>
               </div>
-            </div>
-          </DropSelect>
+            </DropSelect>
+          </div>
 
           <div className="flex hover:bg-hover p-4 md:w-fit w-full border border-input focus-within:bg-hover rounded-full transition-all duration-200 group">
             <div className="flex flex-row justify-start items-center gap-2">

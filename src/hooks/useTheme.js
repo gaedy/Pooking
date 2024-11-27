@@ -5,7 +5,7 @@ import { setTheme, toggleTheme } from "../features/themeSlice/themeSlice";
 const useTheme = () => {
   const isDarkTheme = useSelector((state) => state.darkMode.darkMode);
 
-  const dispatach = useDispatch();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (isDarkTheme) {
@@ -16,10 +16,10 @@ const useTheme = () => {
   }, [isDarkTheme]);
 
   const handleToggleTheme = () => {
-    dispatach(toggleTheme());
+    dispatch(toggleTheme());
   };
   const handleSetTheme = (newValue) => {
-    dispatach(setTheme(newValue));
+    dispatch(setTheme(newValue));
   };
 
   return { isDarkTheme, handleToggleTheme, handleSetTheme };

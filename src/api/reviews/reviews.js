@@ -1,17 +1,8 @@
 export const reviewsData = [
+  // one-to-many relationship
   {
-    id: "r1_1",
-    cardId: 1,
-    rating: 9,
-    date: "2024-10-15",
-    userName: "Sarah M.",
-    comment:
-      "Perfect downtown location! The apartment was cozy and well-maintained. Walking distance to great restaurants.",
-    stayLength: "4 nights",
-  },
-  {
-    id: "r1_2",
-    cardId: 1,
+    id: "r1_2", // Primary Key ( Unique key )
+    cardId: 1, // Foreign Key => because (The "cardId" refers to the "id" in the rentCardsData entity)
     rating: 8,
     date: "2024-10-18",
     userName: "John D.",

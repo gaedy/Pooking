@@ -5,7 +5,6 @@ import { Outlet } from "react-router-dom";
 import {
   searchFilterByGuests,
   searchFilterByLocation,
-  searchFilterByRate,
   searchFilterByRating,
   searchFilterByTitle,
 } from "../../utils/filter";
@@ -27,7 +26,7 @@ function CardsPage() {
   const [searchTerm, setSearchTerm] = useState("");
 
   const [rateTerm, setRateTerm] = useState(0);
-  const [guestNmuber, setGuestNmuber] = useState(0);
+  const [guestNumber, setGuestNumber] = useState(0);
   const [locationTerm, setLocationTerm] = useState("");
 
   const dispatch = useDispatch();
@@ -75,7 +74,7 @@ function CardsPage() {
   // }, []);
 
   const filteredRentCards = searchFilterByGuests(
-    guestNmuber,
+    guestNumber,
     searchFilterByTitle(
       searchTerm,
       searchFilterByLocation(
@@ -86,7 +85,7 @@ function CardsPage() {
   );
 
   const filteredBuyCards = searchFilterByGuests(
-    guestNmuber,
+    guestNumber,
     searchFilterByTitle(
       searchTerm,
       searchFilterByLocation(
@@ -97,7 +96,7 @@ function CardsPage() {
   );
 
   const filteredSellCards = searchFilterByGuests(
-    guestNmuber,
+    guestNumber,
     searchFilterByTitle(
       searchTerm,
       searchFilterByLocation(locationTerm, sellCards)
@@ -109,7 +108,7 @@ function CardsPage() {
       <div className="w-full h-full py-4 gap-4 items-center flex flex-col">
         <Searchbar
           setSearchTerm={setSearchTerm}
-          setGuestNmuber={setGuestNmuber}
+          setGuestNumber={setGuestNumber}
           setLocationTerm={setLocationTerm}
         />
 

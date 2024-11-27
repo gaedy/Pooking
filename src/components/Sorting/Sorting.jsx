@@ -13,7 +13,8 @@ function Sorting({setRatingTerm}) {
     setRatingTerm(ratingNumber);
     
   };
-  const handleSortingClear = () => {
+  const handleSortingClear = (e) => {
+    e.stopPropagation();
     setTopRated("");
     setRatingTerm(0);
   };
