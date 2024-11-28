@@ -48,7 +48,7 @@ function General() {
 
         <DropSelect
           position="right"
-          className="w-32"
+          className="w-fit"
           content={
             <>
               <Select text="Default" onClick={() => setEGPCurrency(false)} />

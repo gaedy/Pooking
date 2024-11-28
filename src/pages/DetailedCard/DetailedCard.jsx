@@ -57,7 +57,7 @@ function DetailedCard() {
     <>
       <animated.div
         style={detailedPageAnimation}
-        className="fixed w-full bg-slate-300 dark:bg-zinc-800 px-2 
+        className="fixed  w-full bg-slate-300 dark:bg-zinc-800 px-2 
         backdrop-filter dark:backdrop-filter backdrop-blur-3xl dark:backdrop-blur-3xl bg-opacity-80 
         dark:bg-opacity-80 h-full overflow-auto bg-hover z-20 gap-4 inset-0 flex flex-col items-start p-5"
       >

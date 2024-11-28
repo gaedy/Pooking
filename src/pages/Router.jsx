@@ -15,12 +15,33 @@ import Settings from "./Settings/Settings";
 import General from "./Settings/General";
 import Appearance from "./Settings/Appearance";
 import CardSystem from "./Settings/CardSystem";
+import Signup from "./SignPage/Signup";
+import Signin from "./SignPage/Signin";
+import LoginPage from "./SignPage/LoginPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
+      {
+        path: "login",
+        element: <LoginPage />,
+        children: [
+          {
+            path: "",
+            element: <Navigate to="signin" replace/>,
+          },
+          {
+            path: "signin",
+            element: <Signin />,
+          },
+          {
+            path: "signup",
+            element: <Signup />,
+          },
+        ],
+      },
       {
         path: "dashboard",
         element: <Dashboard />,

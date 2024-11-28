@@ -19,10 +19,12 @@ function DropSelect({
   };
 
   const handleHide = () => {
+    
     setIsVisible(false);
   };
 
   const handleToggle = () => {
+    
     setIsVisible(!isVisible);
   };
 
@@ -66,7 +68,10 @@ function DropSelect({
   return (
     <>
       <div ref={dropRef} className="relative inline-block">
-        <button className="flex items-center" onClick={handleToggle}>
+        <button
+          className="flex items-center justify-center"
+          onClick={handleToggle}
+        >
           {children}
         </button>
 
@@ -74,7 +79,7 @@ function DropSelect({
           <animated.div
             style={dropAnimation}
             onClick={handleHide}
-            className={`absolute z-10 ${positions[position]} ${className} flex ${hights[hight]}  flex-col border border-input shadow-lg my-4 rounded-xl items-start 
+            className={`absolute z-10 ${positions[position]} ${className} flex ${hights[hight]} flex-col border border-input shadow-lg my-3 rounded-xl items-start 
            p-3 gap-1 ${sizes[size]} bg-hover`}
           >
             {label && (

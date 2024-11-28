@@ -19,6 +19,8 @@ import { animated, useSpring } from "@react-spring/web";
 import logo from "/public/logo.svg";
 import logo2 from "/public/logocolor.svg";
 import logodark from "/public/logodark.svg";
+import NotifAlert from "../Notification/NotifAlert";
+import { useNotification } from "../../hooks/useNotification";
 
 function Navbar() {
   const { isDarkTheme, handleToggleTheme } = useTheme();
@@ -70,8 +72,19 @@ function Navbar() {
     },
   });
 
+  const { isNotification, handleNotification, setIsNotification } =
+    useNotification(true);
+
   return (
     <>
+      {isNotification && (
+        <NotifAlert
+          message="Welcome to my website :)"
+          delay={5000}
+          onClosing={() => setIsNotification(false)}
+        />
+      )}
+
       <div
         className="h-16 flex sticky top-0 z-20 items-center  justify-between px-10 p-2 mt-5 bg-hover gap-2 
         text-baseHoverText font-semibold text-sm"
@@ -148,7 +161,7 @@ function Navbar() {
           </Tooltip>
         </div> */}
 
-        <button className="md:hidden flex">
+        <button className="md:hidden flex opacity-85 hover:opacity-100">
           <Menu onClick={toggleSidebar} />
         </button>
 
@@ -156,7 +169,7 @@ function Navbar() {
           <animated.div
             style={sidebarAnimation}
             ref={sidebarRef}
-            className="h-full  border-l border-input md:hidden z-20 right-0 w-5/6 gap-4 p-4 max-w-sm top-0 fixed flex flex-col bg-background"
+            className="h-full overflow-auto border-l border-input md:hidden z-20 right-0 w-5/6 gap-4 p-4 max-w-sm top-0 fixed flex flex-col bg-background"
           >
             <div className="flex justify-between px-3 items-center">
               <p className="text-lg">Menu</p>
@@ -204,10 +217,16 @@ function Navbar() {
             </div>
 
             <div className="flex flex-col select-none w-full mt-auto text-baseHoverText">
-              <div className=" h-fit w-full transition-hover duration-200 cursor-pointer rounded-lg hover:text-baseText active:bg-hover2 hover:bg-hover p-3 flex gap-2 justify-start items-center">
-                <CircleUserRound size={16} />
-                <p>Sign in</p>
-              </div>
+              <NavLink to="/login/signin">
+                <div
+                  onClick={toggleSidebar}
+                  className=" h-fit w-full transition-hover duration-200 cursor-pointer rounded-lg hover:text-baseText active:bg-hover2 hover:bg-hover p-3 flex gap-2 justify-start items-center"
+                >
+                  <CircleUserRound size={16} />
+                  <p>Sign in</p>
+                </div>
+              </NavLink>
+
               <NavLink to="saved" className="h-fit w-full">
                 <div
                   onClick={toggleSidebar}
@@ -232,53 +251,58 @@ function Navbar() {
         )}
 
         {isSidebar && (
-          <div className="w-full h-full bg-black opacity-60 z-10 fixed inset-0" />
+          <div className="w-full h-full  bg-black opacity-60 z-10 fixed inset-0" />
         )}
 
-        <div className=" transition-all md:flex hidden duration-300 hover:bg-background border border-input hover:text-baseText p-2 w-fit h-full rounded-full justify-between items-center gap-4 cursor-pointer">
-          <div className="bg-hover rounded-full">
-            <CircleUserRound size={30} className="p-1" />
-          </div>
+        <NavLink to="/login/signin" className="hidden md:flex">
+          <div className=" transition-all md:flex hidden duration-300 hover:bg-background border border-input hover:text-baseText p-2 w-fit h-full rounded-full justify-between items-center gap-4 cursor-pointer">
+            <div className="bg-hover bg rounded-full">
+              <CircleUserRound size={30} className="p-1" />
+            </div>
 
-          <div className="flex select-none flex-col justify-center items-start">
-            {/* <p className="text-alternateText text-xs">Good morning</p> */}
-            <p>Sign in</p>
-          </div>
-
-          <DropSelect
-            label="Menu"
-            size="lg"
-            position="right"
-            content={
-              <>
-                <NavLink to="dashboard" className="w-full">
-                  <Select
-                    text="Dashboard"
-                    icon={<LayoutDashboard size={22} />}
-                  />
-                </NavLink>
-
-                <NavLink to="saved" className="w-full">
-                  <Select text="Saved Cards" icon={<Heart size={22} />} />
-                </NavLink>
-
-                <NavLink to="settings" className="w-full">
-                  <Select text="Settings" icon={<Settings size={22} />} />
-                </NavLink>
-              </>
-            }
-          >
-            <Tooltip text="Open Menu">
-              <div className="bg-hover hover:bg-hover2 rounded-full">
-                {/* <img
-                  className="w-8 p-[6px] pointer-events-none select-none "
-                  src={down}
-                ></img> */}
-                <ChevronDown size={30} className="p-[7px]" />
+            <Tooltip text="Login Page">
+              <div className="flex select-none flex-col justify-center items-start">
+                {/* <p className="text-alternateText text-xs">Good morning</p> */}
+                <p>Sign in</p>
               </div>
             </Tooltip>
-          </DropSelect>
-        </div>
+
+            <DropSelect
+              label="Menu"
+              size="lg"
+              position="right"
+              content={
+                <>
+                  <NavLink to="dashboard" className="w-full">
+                    <Select
+                      text="Dashboard"
+                      icon={<LayoutDashboard size={22} />}
+                    />
+                  </NavLink>
+
+                  <NavLink to="saved" className="w-full">
+                    <Select text="Saved Cards" icon={<Heart size={22} />} />
+                  </NavLink>
+
+                  <NavLink to="settings" className="w-full">
+                    <Select text="Settings" icon={<Settings size={22} />} />
+                  </NavLink>
+                </>
+              }
+            >
+              <Tooltip text="Open Menu">
+                <div
+                  className="bg-hover hover:bg-hover2 rounded-full"
+                  onClick={(e) => {
+                    e.preventDefault();
+                  }}
+                >
+                  <ChevronDown size={30} className="p-[7px]" />
+                </div>
+              </Tooltip>
+            </DropSelect>
+          </div>
+        </NavLink>
       </div>
     </>
   );

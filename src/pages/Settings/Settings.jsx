@@ -1,13 +1,15 @@
 import { FileSlidersIcon, MoonIcon, Settings2 } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
+import { useTitle } from "../../hooks/useTitle";
 
 function Settings() {
+  useTitle("Settings - Pooking");
   return (
     <>
-      <div className="flex flex-col items-ce justify-center gap-2 p-10 h-screen">
+      <div className="flex flex-col items-ce justify-center gap-2 p-4 py-8 h-full max-w-5xl mx-auto">
         <p className="px-4 text-xl font-bold">Settings</p>
 
-        <div className="flex md:flex-row flex-col shadow-xl text-baseHoverText  justify-between items-start gap-4 w-full rounded-xl bg-background p-4 h-full">
+        <div className="flex md:flex-row flex-col shadow-xl text-baseHoverText justify-between items-start gap-4 w-full max-w-5xl mx-auto rounded-xl bg-background p-4 h-screen">
           <div className="w-full md:w-1/4">
             <div className="flex flex-col gap-2 text-sm font-semibold ">
               <NavLink

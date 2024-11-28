@@ -15,6 +15,8 @@ import { buyCardsData } from "../../api/cards/buyCardsData";
 import { sellCardsData } from "../../api/cards/sellCardsData";
 import { useTranslation } from "react-i18next";
 import Tooltip from "../Tooltip/Tooltip";
+import { useNotification } from "../../hooks/useNotification";
+import NotifAlert from "../Notification/NotifAlert";
 
 function Searchbar({ setSearchTerm, setGuestNumber, setLocationTerm }) {
   const [dates, setDates] = useState();
@@ -46,6 +48,7 @@ function Searchbar({ setSearchTerm, setGuestNumber, setLocationTerm }) {
 
     setLocation("");
     setLocationTerm("");
+    handleNotification();
   };
 
   const handleLocationClear = (e) => {
@@ -70,6 +73,8 @@ function Searchbar({ setSearchTerm, setGuestNumber, setLocationTerm }) {
     }
   };
 
+  const { isNotification, handleNotification, setIsNotification } = useNotification();
+
   return (
     <>
       <div className="flex flex-col flex-wrap w-full justify-center items-center gap-10 h-fit ">
@@ -77,6 +82,14 @@ function Searchbar({ setSearchTerm, setGuestNumber, setLocationTerm }) {
           {/* Find your next stay ... */}
           {t("frontWelcome")}
         </div>
+
+        {/* {isNotification && (
+          <div className="fixed bg-red-600 p-6 rounded-lg z-50 top-10">
+            notification alert
+          </div>
+        )} */}
+
+        {isNotification && <NotifAlert onClosing={() => setIsNotification(false)} message="Cleared! :)" />}
 
         <div
           className=" rounded-[1.8rem] md:rounded-full mx-2 flex-shrink h-fit md:w-fit w-11/12 flex md:flex-row flex-col justify-center items-center text-xs font-semibold
@@ -111,7 +124,7 @@ function Searchbar({ setSearchTerm, setGuestNumber, setLocationTerm }) {
               label="Select location"
               position="left"
               hight="fixed"
-              className="md:w-52 w-full"
+              className="md:w-60 w-full"
               content={
                 <>
                   <div className="overflow-auto w-full ">
