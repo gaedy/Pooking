@@ -144,7 +144,7 @@ function Card({
             {/* <div className=" text-sm flex items-center">tags</div> */}
 
             <div className="text-base flex px-0 gap-1 justify-start items-center font-bold">
-              <p className="text-buttonHover2">
+              <p className="text-button">
                 {!isEGPCurrency ? (
                   <>
                     {currency} {price.toLocaleString()}

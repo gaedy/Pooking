@@ -52,8 +52,7 @@ function Tooltip({
     opacity: isVisible ? 1 : 0,
 
     config: {
-      tension: 280,
-      friction: 16,
+      duration: 150,
     },
   });
 

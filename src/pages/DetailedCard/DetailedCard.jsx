@@ -224,7 +224,7 @@ function DetailedCard() {
                       <CircleUser />
                     </div>
 
-                    <div>{review.userName}</div>
+                    <p>{review.userName}</p>
 
                     <p className="text-alternateText">&bull;</p>
 

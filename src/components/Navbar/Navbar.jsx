@@ -7,7 +7,6 @@ import {
   LayoutDashboard,
   Menu,
   Moon,
-  Scale,
   Settings,
   Sun,
   X,
@@ -16,7 +15,10 @@ import DropSelect from "../DropSelect/DropSelect";
 import Select from "../DropSelect/Select";
 import { useEffect, useRef, useState } from "react";
 import useTheme from "../../hooks/useTheme";
-import { animated, config, useSpring } from "@react-spring/web";
+import { animated, useSpring } from "@react-spring/web";
+import logo from "/public/logo.svg";
+import logo2 from "/public/logocolor.svg";
+import logodark from "/public/logodark.svg";
 
 function Navbar() {
   const { isDarkTheme, handleToggleTheme } = useTheme();
@@ -74,11 +76,16 @@ function Navbar() {
         className="h-16 flex sticky top-0 z-20 items-center  justify-between px-10 p-2 mt-5 bg-hover gap-2 
         text-baseHoverText font-semibold text-sm"
       >
-        <NavLink to="/">
-          <div className="text-lg  font-bold mr-10 hover:text-baseText transition-all duration-300">
-            <p>Pooking</p>
-          </div>
-        </NavLink>
+        <div className="text-lg flex justify-between items-center gap-2 font-bold mr-10 hover:text-baseText transition-all duration-300">
+          <NavLink to="/">
+            <img
+              src={isDarkTheme ? logodark : logo}
+              className="w-8 opacity-85 hover:opacity-95 transition-opacity duration-200"
+            ></img>
+          </NavLink>
+
+          {/* <p>Pooking</p> */}
+        </div>
 
         <div
           className=" md:flex hidden z-10 items-center justify-between  bg-hover gap-2 
@@ -87,10 +94,7 @@ function Navbar() {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              `${
-                isActive &&
-                "bg-background rounded-full dark:shadow-none transition-all duration-300 shadow-lg text-baseText"
-              }`
+              `${isActive && "bg-background rounded-full text-baseText"}`
             }
           >
             <div className="hover:text-baseText  cursor-pointer select-none hover:bg-background p-2 px-4 rounded-full transition-all duration-300">
@@ -101,10 +105,7 @@ function Navbar() {
           <NavLink
             to="buy"
             className={({ isActive }) =>
-              `${
-                isActive &&
-                "bg-background transition-all dark:shadow-none duration-300 shadow-lg rounded-full text-baseText"
-              }`
+              `${isActive && "bg-background rounded-full text-baseText"}`
             }
           >
             <div className="hover:text-baseText cursor-pointer select-none hover:bg-background p-2 px-4 rounded-full transition-all duration-300">
@@ -115,10 +116,7 @@ function Navbar() {
           <NavLink
             to="sell"
             className={({ isActive }) =>
-              `${
-                isActive &&
-                "bg-background transition-all duration-300 shadow-lg dark:shadow-none rounded-full text-baseText"
-              }`
+              `${isActive && "bg-background rounded-full text-baseText"}`
             }
           >
             <div className="hover:text-baseText cursor-pointer hover:bg-background p-2 px-4 rounded-full transition-all duration-300">

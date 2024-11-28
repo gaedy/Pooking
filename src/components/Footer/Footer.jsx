@@ -55,7 +55,6 @@ function Footer() {
         <p>Build by aGae</p>
 
         <div className="flex flex-row items-center justify-center  gap-2">
-
           <div className="cursor-pointer transition-opacity opacity-75 hover:opacity-100">
             <Facebook />
           </div>
@@ -63,11 +62,11 @@ function Footer() {
           <div className="cursor-pointer transition-opacity opacity-75 hover:opacity-100">
             <X />
           </div>
-
-          <div className="cursor-pointer transition-opacity opacity-75 hover:opacity-100">
-            <Github />
-          </div>
-
+          <NavLink to="https://github.com/gaedy" target="_blank">
+            <div className="cursor-pointer transition-opacity opacity-75 hover:opacity-100">
+              <Github />
+            </div>
+          </NavLink>
         </div>
       </div>
     </>

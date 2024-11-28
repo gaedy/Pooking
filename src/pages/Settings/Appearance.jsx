@@ -23,8 +23,21 @@ function Appearance() {
 
   const { isDarkTheme, handleSetTheme } = useTheme();
 
+  const selectedFont = localStorage.getItem("font");
+
   const [isFont, setIsFont] = useState(() => {
-    return localStorage.getItem("selectedFont") || "Default Font";
+    switch (selectedFont) {
+      case "font-fontEnglishJost":
+        return "Jost";
+      case "font-fontEnglishInter":
+        return "Default Font";
+      case "font-fontEnglishArial":
+        return "Arial";
+      case "font-fontEnglishSystem":
+        return "System default";
+      default:
+        break;
+    }
   });
 
   const handleJost = () => {
@@ -37,9 +50,8 @@ function Appearance() {
   };
   const handleSystemUI = () => {
     changeFont("font-fontEnglishSystem");
-    setIsFont("System UI");
+    setIsFont("System default");
   };
-
   const handleDefaultFont = () => {
     changeFont("font-fontEnglishInter");
     setIsFont("Default Font");

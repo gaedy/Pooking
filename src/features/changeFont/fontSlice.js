@@ -1,7 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const initialCurrent = localStorage.getItem("font") || "font-fontEnglishInter";
+
 const initialState = {
-  font: "font-fontEnglishInter",
+  font: initialCurrent,
 };
 
 const fontSlice = createSlice({
@@ -10,6 +12,7 @@ const fontSlice = createSlice({
   reducers: {
     setFont: (state, action) => {
       state.font = action.payload;
+      localStorage.setItem("font", state.font);
     },
   },
 });
