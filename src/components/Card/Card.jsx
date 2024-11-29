@@ -45,6 +45,11 @@ function Card({
     );
   };
 
+  const imgSrc =
+    currentThumbnail === 0
+      ? thumbnail
+      : thumbnails[thumbnailKey[currentThumbnail]];
+
   const { isEGPCurrency } = useCurrency();
 
   const animation = useSpring({
@@ -63,11 +68,7 @@ function Card({
         <div className=" h-56 w-full relative">
           <img
             className="object-cover transition-all dark:brightness-[70%] select-none duration-200 group-hover:brightness-[80%] rounded-2xl w-full h-full absolute pointer-events-none"
-            src={
-              currentThumbnail === 0
-                ? thumbnail
-                : thumbnails[thumbnailKey[currentThumbnail]]
-            }
+            src={imgSrc}
           ></img>
 
           <div className=" flex-col flex justify-between h-full text-sm  text-baseText font-semibold p-2 gap-2 group">

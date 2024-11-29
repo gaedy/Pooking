@@ -156,7 +156,7 @@ function Navbar() {
           <animated.div
             style={sidebarAnimation}
             ref={sidebarRef}
-            className="h-full overflow-auto border-l border-input md:hidden z-20 right-0 w-5/6 gap-4 p-4 max-w-sm top-0 fixed flex flex-col bg-background"
+            className="h-full bg-gray-100/80 dark:bg-zinc-900/85 backdrop-filter backdrop-blur-xl overflow-auto border-l border-input md:hidden z-20 right-0 w-5/6 gap-4 p-4 max-w-sm top-0 fixed flex flex-col"
           >
             <div className="flex justify-between px-3 items-center">
               <p className="text-lg">Menu</p>

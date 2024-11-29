@@ -52,7 +52,7 @@ function Tooltip({
     opacity: isVisible ? 1 : 0,
 
     config: {
-      duration: 150,
+      duration: 160,
     },
   });
 

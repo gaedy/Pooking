@@ -60,8 +60,8 @@ function DropSelect({
 
     config: {
       mass: 1,
-      tension: 420,
-      friction: 22,
+      tension: 210,
+      friction: 15,
     },
   });
 

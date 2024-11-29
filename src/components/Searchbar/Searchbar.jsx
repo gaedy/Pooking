@@ -84,12 +84,6 @@ function Searchbar({ setSearchTerm, setGuestNumber, setLocationTerm }) {
           {t("frontWelcome")}
         </div>
 
-        {/* {isNotification && (
-          <div className="fixed bg-red-600 p-6 rounded-lg z-50 top-10">
-            notification alert
-          </div>
-        )} */}
-
         {isNotification && (
           <NotifAlert
             onClosing={() => setIsNotification(false)}
