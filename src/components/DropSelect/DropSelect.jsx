@@ -19,12 +19,10 @@ function DropSelect({
   };
 
   const handleHide = () => {
-    
     setIsVisible(false);
   };
 
   const handleToggle = () => {
-    
     setIsVisible(!isVisible);
   };
 
@@ -57,11 +55,13 @@ function DropSelect({
   };
 
   const dropAnimation = useSpring({
-    y: isVisible ? 0 : -20,
     opacity: isVisible ? 1 : 0,
+    y: isVisible ? 0 : -16,
+
     config: {
-      tension: 200,
-      friction: 18,
+      mass: 1,
+      tension: 420,
+      friction: 22,
     },
   });
 

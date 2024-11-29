@@ -1,10 +1,16 @@
 import { NavLink } from "react-router-dom";
 import { useTitle } from "../../hooks/useTitle";
+import { animated, useSpring } from "@react-spring/web";
+import useNiceAnimation from "../../hooks/useNiceAnimation";
 
 function Signin() {
-    useTitle("Sign in - Pooking");
+  useTitle("Sign in - Pooking");
+
+  const animation = useNiceAnimation();
+
   return (
-    <div
+    <animated.div
+      style={animation}
       className="flex md:flex-row flex-col shadow-xl justify-between items-start gap-4 
         w-full max-w-5xl mx-auto rounded-xl bg-background flex-1 p-4 h-screen"
     >
@@ -44,7 +50,7 @@ function Signin() {
           </NavLink>
         </p>
       </div>
-    </div>
+    </animated.div>
   );
 }
 

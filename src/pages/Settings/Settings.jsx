@@ -1,12 +1,20 @@
 import { FileSlidersIcon, MoonIcon, Settings2 } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
 import { useTitle } from "../../hooks/useTitle";
+import { animated, useSpring } from "@react-spring/web";
+import useNiceAnimation from "../../hooks/useNiceAnimation";
 
 function Settings() {
   useTitle("Settings - Pooking");
+
+  const animation = useNiceAnimation();
+
   return (
     <>
-      <div className="flex flex-col items-ce justify-center gap-2 p-4 py-8 h-full max-w-5xl mx-auto">
+      <animated.div
+        style={animation}
+        className="flex flex-col items-ce justify-center gap-2 p-4 py-8 h-full max-w-5xl mx-auto"
+      >
         <p className="px-4 text-xl font-bold">Settings</p>
 
         <div className="flex md:flex-row flex-col shadow-xl text-baseHoverText justify-between items-start gap-4 w-full max-w-5xl mx-auto rounded-xl bg-background p-4 h-screen">
@@ -56,7 +64,7 @@ function Settings() {
             </div>
           </div>
         </div>
-      </div>
+      </animated.div>
     </>
   );
 }

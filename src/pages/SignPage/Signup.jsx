@@ -16,21 +16,19 @@ function Signup() {
           </p>
 
           <div className="flex flex-col transition-all w-full py-4 text-sm justify-center gap-2 items-center">
-
             <div className="flex md:flex-row flex-col justify-between items-center gap-2 w-full">
-            <input
-              placeholder="First name"
-              type="name"
-              className="w-full bg-hover transition-all focus-within:bg-hover2 hover:bg-hover2 p-2 px-2 outline-none border border-input rounded-lg "
-            ></input>    
-             <input
-              placeholder="Last name"
-              type="name"
-              className="w-full bg-hover transition-all focus-within:bg-hover2 hover:bg-hover2 p-2 px-2 outline-none border border-input rounded-lg "
-            ></input> 
+              <input
+                placeholder="First name"
+                type="name"
+                className="w-full bg-hover transition-all focus-within:bg-hover2 hover:bg-hover2 p-2 px-2 outline-none border border-input rounded-lg "
+              ></input>
+              <input
+                placeholder="Last name"
+                type="name"
+                className="w-full bg-hover transition-all focus-within:bg-hover2 hover:bg-hover2 p-2 px-2 outline-none border border-input rounded-lg "
+              ></input>
             </div>
-          
-            
+
             <input
               placeholder="Email"
               type="email"
@@ -46,8 +44,6 @@ function Signup() {
               type="password"
               className="w-full bg-hover transition-all focus-within:bg-hover2 hover:bg-hover2 p-2 px-2 outline-none border border-input rounded-lg "
             ></input>
-
-           
           </div>
 
           <div className="bg-button select-none transition-all cursor-pointer text-center hover:bg-buttonHover active:bg-buttonHover2 text-white p-2 w-full rounded-lg">

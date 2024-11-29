@@ -19,8 +19,6 @@ import { animated, useSpring } from "@react-spring/web";
 import logo from "/public/logo.svg";
 import logo2 from "/public/logocolor.svg";
 import logodark from "/public/logodark.svg";
-import NotifAlert from "../Notification/NotifAlert";
-import { useNotification } from "../../hooks/useNotification";
 
 function Navbar() {
   const { isDarkTheme, handleToggleTheme } = useTheme();
@@ -72,19 +70,8 @@ function Navbar() {
     },
   });
 
-  const { isNotification, handleNotification, setIsNotification } =
-    useNotification(true);
-
   return (
     <>
-      {isNotification && (
-        <NotifAlert
-          message="Welcome to my website :)"
-          delay={5000}
-          onClosing={() => setIsNotification(false)}
-        />
-      )}
-
       <div
         className="h-16 flex sticky top-0 z-20 items-center  justify-between px-10 p-2 mt-5 bg-hover gap-2 
         text-baseHoverText font-semibold text-sm"

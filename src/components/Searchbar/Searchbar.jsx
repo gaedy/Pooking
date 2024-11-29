@@ -73,7 +73,8 @@ function Searchbar({ setSearchTerm, setGuestNumber, setLocationTerm }) {
     }
   };
 
-  const { isNotification, handleNotification, setIsNotification } = useNotification();
+  const { isNotification, handleNotification, setIsNotification } =
+    useNotification();
 
   return (
     <>
@@ -89,7 +90,12 @@ function Searchbar({ setSearchTerm, setGuestNumber, setLocationTerm }) {
           </div>
         )} */}
 
-        {isNotification && <NotifAlert onClosing={() => setIsNotification(false)} message="Cleared! :)" />}
+        {isNotification && (
+          <NotifAlert
+            onClosing={() => setIsNotification(false)}
+            message="Cleared! :)"
+          />
+        )}
 
         <div
           className=" rounded-[1.8rem] md:rounded-full mx-2 flex-shrink h-fit md:w-fit w-11/12 flex md:flex-row flex-col justify-center items-center text-xs font-semibold

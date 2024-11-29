@@ -1,7 +1,7 @@
 import { animated, useSpring } from "@react-spring/web";
 import { X } from "lucide-react";
 
-function NotifAlert({ message = "This is Alert", onClosing, delay= 0, }) {
+function NotifAlert({ message = "This is Alert", onClosing, delay = 0 }) {
   const animation = useSpring({
     opacity: 1,
     y: 0,
