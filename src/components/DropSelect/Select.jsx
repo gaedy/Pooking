@@ -10,7 +10,6 @@ function Select({ text = "test", icon, onClick }) {
         ) : (
           <>
             <div>{icon}</div>
-
             <p>{text}</p>
           </>
         )}

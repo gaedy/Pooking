@@ -9,6 +9,8 @@ export default {
     extend: {
       colors: {
         background: 'var(--background)',
+        scrollbar: 'var(--scrollbar)',
+        scrollbarHover: 'var(--scrollbarHover)',
         hover: 'var(--hover)',
         hover2: 'var(--hover2)',
         input: 'var(--input)',

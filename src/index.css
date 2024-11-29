@@ -11,9 +11,28 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbarHover);
+}
+
 @layer base {
   :root {
     --background: hsl(210, 17%, 98%);
+    --scrollbar: hsl(0, 0%, 52%);
+    --scrollbarHover: hsl(0, 0%, 41%);
 
     --hover: hsl(210, 16%, 94%);
     --hover2: hsl(210, 14%, 89%);
@@ -47,6 +66,9 @@
   }
   .dark {
     --background: hsl(220, 11%, 11%);
+    --scrollbar: hsl(300, 0%, 55%);
+    --scrollbarHover: hsl(0, 0%, 65%);
+
     --hover: hsl(210, 10%, 16%);
     --hover2: hsl(202, 10%, 23%);
 

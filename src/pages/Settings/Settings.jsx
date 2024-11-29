@@ -9,6 +9,12 @@ function Settings() {
 
   const animation = useNiceAnimation();
 
+  const animation2 = useSpring({
+    from: { opacity: 0, y: 40 },
+    to: { opacity: 1, y: 0 },
+    config: { mass: 1, tension: 220, friction: 14 },
+  });
+
   return (
     <>
       <animated.div
@@ -59,9 +65,12 @@ function Settings() {
           </div>
 
           <div className="bg-hover rounded-lg w-full md:w-3/4 h-full overflow-auto">
-            <div className="p-4 flex flex-col gap-4 text-sm">
+            <animated.div
+              style={animation2}
+              className="p-4 flex flex-col gap-4 text-sm"
+            >
               <Outlet />
-            </div>
+            </animated.div>
           </div>
         </div>
       </animated.div>

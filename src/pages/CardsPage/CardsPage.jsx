@@ -16,6 +16,8 @@ import {
   getSellCards,
 } from "../../features/cards/cardsFetchSlice";
 import Sorting from "../../components/Sorting/Sorting";
+import useNiceAnimation from "../../hooks/useNiceAnimation";
+import { animated, useSpring } from "@react-spring/web";
 
 function CardsPage() {
   // const [theRentCards, setTheRentCards] = useState([]);
@@ -103,9 +105,18 @@ function CardsPage() {
     )
   );
 
+  const s = useSpring({
+    from: { opacity: 0, y: -30 },
+    to: { opacity: 1, y: 0 },
+    config: { mass: 1, tension: 210, friction: 14 },
+  });
+
   return (
     <>
-      <div className="w-full h-full py-4 gap-4 items-center flex flex-col">
+      <animated.div
+        style={s}
+        className="w-full h-full py-4 gap-4 items-center flex flex-col"
+      >
         <Searchbar
           setSearchTerm={setSearchTerm}
           setGuestNumber={setGuestNumber}
@@ -148,7 +159,7 @@ function CardsPage() {
             />
           </>
         )} */}
-      </div>
+      </animated.div>
     </>
   );
 }
