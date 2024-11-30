@@ -17,6 +17,7 @@ import { useTranslation } from "react-i18next";
 import Tooltip from "../Tooltip/Tooltip";
 import { useNotification } from "../../hooks/useNotification";
 import NotifAlert from "../Notification/NotifAlert";
+import { animated, useSpring } from "@react-spring/web";
 
 function Searchbar({ setSearchTerm, setGuestNumber, setLocationTerm }) {
   const [dates, setDates] = useState();
@@ -76,13 +77,23 @@ function Searchbar({ setSearchTerm, setGuestNumber, setLocationTerm }) {
   const { isNotification, handleNotification, setIsNotification } =
     useNotification();
 
+  const s = useSpring({
+    from: { opacity: 0, y: -60 },
+    to: { opacity: 1, y: 0 },
+    config: { mass: 1, tension: 190, friction: 14 },
+  });
+  animated;
+
   return (
     <>
       <div className="flex flex-col flex-wrap w-full justify-center items-center gap-10 h-fit ">
-        <div className="font-bold md:text-3xl text-xl flex justify-center items-center text-pretty">
+        <animated.div
+          style={s}
+          className="font-bold md:text-3xl text-xl flex justify-center items-center text-pretty"
+        >
           {/* Find your next stay ... */}
           {t("frontWelcome")}
-        </div>
+        </animated.div>
 
         {isNotification && (
           <NotifAlert

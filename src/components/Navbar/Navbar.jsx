@@ -16,9 +16,8 @@ import Select from "../DropSelect/Select";
 import { useEffect, useRef, useState } from "react";
 import useTheme from "../../hooks/useTheme";
 import { animated, useSpring } from "@react-spring/web";
-import logo from "/public/logo.svg";
-import logo2 from "/public/logocolor.svg";
-import logodark from "/public/logodark.svg";
+import logo from "/logo.svg";
+import logodark from "/logodark.svg";
 
 function Navbar() {
   const { isDarkTheme, handleToggleTheme } = useTheme();

@@ -10,9 +10,9 @@ function Settings() {
   const animation = useNiceAnimation();
 
   const animation2 = useSpring({
-    from: { opacity: 0, y: 40 },
+    from: { opacity: 0, y: 60 },
     to: { opacity: 1, y: 0 },
-    config: { mass: 1, tension: 220, friction: 14 },
+    config: { mass: 1, tension: 240, friction: 14 },
   });
 
   return (
