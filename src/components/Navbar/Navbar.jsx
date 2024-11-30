@@ -69,6 +69,19 @@ function Navbar() {
     },
   });
 
+  const [isLogoHovered, setIsLogoHover] = useState(false);
+
+  const sh = useSpring({
+    transform: isLogoHovered
+      ? "rotate(-6deg) scale(1.1)"
+      : "rotate(0deg) scale(1)",
+    x: isLogoHovered ? -3 : 0,
+
+    // from: { opacity: 0, rotate: 0 },
+    // to: { opacity: 1, rotate: 0 },
+    config: { mass: 2, tension: 280, friction: 12 },
+  });
+
   return (
     <>
       <div
@@ -77,10 +90,14 @@ function Navbar() {
       >
         <div className="text-lg flex justify-between items-center gap-2 font-bold mr-10 hover:text-baseText transition-all duration-300">
           <NavLink to="/">
-            <img
+            <animated.img
+              style={sh}
               src={isDarkTheme ? logodark : logo}
+              onMouseEnter={() => setIsLogoHover(true)}
+              onMouseLeave={() => setIsLogoHover(false)}
+              onClick={() => setIsLogoHover(false)}
               className="w-8 opacity-85 hover:opacity-95 transition-opacity duration-200"
-            ></img>
+            ></animated.img>
           </NavLink>
 
           {/* <p>Pooking</p> */}

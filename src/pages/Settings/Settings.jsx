@@ -50,7 +50,7 @@ function Settings() {
                 </div>
               </NavLink>
 
-              <NavLink
+              {/* <NavLink
                 to="card-system"
                 className={({ isActive }) =>
                   `${isActive && "bg-hover text-baseText rounded-md"}`
@@ -60,7 +60,7 @@ function Settings() {
                   <FileSlidersIcon size={18} className="" />
                   <p>Cards System</p>
                 </div>
-              </NavLink>
+              </NavLink> */}
             </div>
           </div>
 

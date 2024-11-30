@@ -82,7 +82,6 @@ function Searchbar({ setSearchTerm, setGuestNumber, setLocationTerm }) {
     to: { opacity: 1, y: 0 },
     config: { mass: 1, tension: 190, friction: 14 },
   });
-  animated;
 
   return (
     <>
