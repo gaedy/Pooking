@@ -1,4 +1,4 @@
-import { FileSlidersIcon, MoonIcon, Settings2 } from "lucide-react";
+import { MoonIcon, Settings2 } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
 import { useTitle } from "../../hooks/useTitle";
 import { animated, useSpring } from "@react-spring/web";

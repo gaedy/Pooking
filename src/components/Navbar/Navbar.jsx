@@ -73,9 +73,9 @@ function Navbar() {
 
   const sh = useSpring({
     transform: isLogoHovered
-      ? "rotate(-6deg) scale(1.1)"
+      ? "rotate(-1deg) scale(1.035)"
       : "rotate(0deg) scale(1)",
-    x: isLogoHovered ? -3 : 0,
+    x: isLogoHovered ? 2 : 0,
 
     // from: { opacity: 0, rotate: 0 },
     // to: { opacity: 1, rotate: 0 },

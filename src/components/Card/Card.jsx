@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import Like from "../Like/Like";
 import Rating from "../Rating/Rating";
 import Tooltip from "../Tooltip/Tooltip";
-import img00 from "/src/assets/img/img00.jpg";
+import img00 from "/src/assets/img/img00.webp";
 import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useTransition } from "react";
 import useCurrency from "../../hooks/useCurrency";
