@@ -1,0 +1,785 @@
+{
+  "rent": [
+    {
+      "id": 1,
+      "title": "Cozy Apartment in Downtown",
+      "location": "New York, USA",
+      "price": 120,
+      "currency": "USD",
+      "guests": 2,
+      "thumbnail": "/imgs/img01.webp",
+      "thumbnails": {
+        "img01_01": "/imgs/img01_01.webp",
+        "img01_02": "/imgs/img01_02.webp",
+        "img01_03": "/imgs/img01_03.webp",
+        "img01_04": "/imgs/img01_04.webp"
+      },
+      "checkIn": "2024-11-10",
+      "checkOut": "2024-11-15",
+      "rate": 8.5,
+      "reviews": 58
+    },
+    {
+      "id": 2,
+      "title": "Beachside Bungalow",
+      "location": "Malibu, USA",
+      "price": 250,
+      "currency": "USD",
+      "guests": 4,
+      "thumbnail": "/imgs/img02.webp",
+      "thumbnails": {
+        "img02_01": "/imgs/img02_01.webp",
+        "img02_02": "/imgs/img02_02.webp",
+        "img02_03": "/imgs/img02_03.webp",
+        "img02_04": "/imgs/img02_04.webp"
+      },
+      "checkIn": "2024-12-05",
+      "checkOut": "2024-12-12",
+      "rate": 9.1,
+      "reviews": 118
+    },
+    {
+      "id": 3,
+      "title": "Luxury Villa with Pool",
+      "location": "Santorini, Greece",
+      "price": 500,
+      "currency": "EUR",
+      "guests": 6,
+      "thumbnail": "/imgs/img03.webp",
+      "thumbnails": {
+        "img03_01": "/imgs/img03_01.webp",
+        "img03_02": "/imgs/img03_02.webp",
+        "img03_03": "/imgs/img03_03.webp",
+        "img03_04": "/imgs/img03_04.webp"
+      },
+      "checkIn": "2024-11-18",
+      "checkOut": "2024-11-25",
+      "rate": 9.8,
+      "reviews": 108
+    },
+    {
+      "id": 4,
+      "title": "Mountain Cabin Retreat",
+      "location": "Aspen, USA",
+      "price": 200,
+      "currency": "USD",
+      "guests": 5,
+      "thumbnail": "/imgs/img04.webp",
+      "thumbnails": {
+        "img04_01": "/imgs/img04_01.webp",
+        "img04_02": "/imgs/img04_02.webp",
+        "img04_03": "/imgs/img04_03.webp",
+        "img04_04": "/imgs/img04_04.webp"
+      },
+      "checkIn": "2025-01-15",
+      "checkOut": "2025-01-22",
+      "rate": 8.7,
+      "reviews": 241
+    },
+    {
+      "id": 5,
+      "title": "City Loft with Skyline View",
+      "location": "Tokyo, Japan",
+      "price": 180,
+      "currency": "JPY",
+      "guests": 2,
+      "thumbnail": "/imgs/img05.webp",
+      "thumbnails": {
+        "img05_01": "/imgs/img05_01.webp",
+        "img05_02": "/imgs/img05_02.webp",
+        "img05_03": "/imgs/img05_03.webp",
+        "img05_04": "/imgs/img05_04.webp"
+      },
+      "checkIn": "2024-11-25",
+      "checkOut": "2024-12-02",
+      "rate": 7.9,
+      "reviews": 712
+    },
+    {
+      "id": 6,
+      "title": "Historical Cottage in Countryside",
+      "location": "Provence, France",
+      "price": 220,
+      "currency": "EUR",
+      "guests": 4,
+      "thumbnail": "/imgs/img06.webp",
+      "thumbnails": {
+        "img06_01": "/imgs/img06_01.webp",
+        "img06_02": "/imgs/img06_02.webp",
+        "img06_03": "/imgs/img06_03.webp",
+        "img06_04": "/imgs/img06_04.webp"
+      },
+      "checkIn": "2024-12-20",
+      "checkOut": "2024-12-27",
+      "rate": 8.3,
+      "reviews": 319
+    },
+    {
+      "id": 7,
+      "title": "Modern Studio Near Beach",
+      "location": "Barcelona, Spain",
+      "price": 150,
+      "currency": "EUR",
+      "guests": 2,
+      "thumbnail": "/imgs/img07.webp",
+      "thumbnails": {
+        "img07_01": "/imgs/img07_01.webp",
+        "img07_02": "/imgs/img07_02.webp",
+        "img07_03": "/imgs/img07_03.webp",
+        "img07_04": "/imgs/img07_04.webp"
+      },
+      "checkIn": "2024-11-30",
+      "checkOut": "2024-12-05",
+      "rate": 8.9,
+      "reviews": 1012
+    },
+    {
+      "id": 8,
+      "title": "Rustic Farmhouse",
+      "location": "Tuscany, Italy",
+      "price": 300,
+      "currency": "EUR",
+      "guests": 6,
+      "thumbnail": "/imgs/img08.webp",
+      "thumbnails": {
+        "img08_01": "/imgs/img08_01.webp",
+        "img08_02": "/imgs/img08_02.webp",
+        "img08_03": "/imgs/img08_03.webp",
+        "img08_04": "/imgs/img08_04.webp"
+      },
+      "checkIn": "2025-01-05",
+      "checkOut": "2025-01-12",
+      "rate": 9.4,
+      "reviews": 542
+    },
+    {
+      "id": 9,
+      "title": "Urban Apartment in City Center",
+      "location": "Berlin, Germany",
+      "price": 160,
+      "currency": "EUR",
+      "guests": 3,
+      "thumbnail": "/imgs/img09.webp",
+      "thumbnails": {
+        "img09_01": "/imgs/img09_01.webp",
+        "img09_02": "/imgs/img09_02.webp",
+        "img09_03": "/imgs/img09_03.webp",
+        "img09_04": "/imgs/img09_04.webp"
+      },
+      "checkIn": "2024-12-10",
+      "checkOut": "2024-12-17",
+      "rate": 8.0,
+      "reviews": 82
+    },
+    {
+      "id": 10,
+      "title": "Lakefront Cabin",
+      "location": "Banff, Canada",
+      "price": 280,
+      "currency": "CAD",
+      "guests": 4,
+      "thumbnail": "/imgs/img10.webp",
+      "thumbnails": {
+        "img10_01": "/imgs/img10_01.webp",
+        "img10_02": "/imgs/img10_02.webp",
+        "img10_03": "/imgs/img10_03.webp",
+        "img10_04": "/imgs/img10_04.webp"
+      },
+      "checkIn": "2024-12-25",
+      "checkOut": "2024-12-30",
+      "rate": 9.2,
+      "reviews": 27
+    }
+  ],
+
+  "buy": [
+    {
+      "id": 11,
+      "title": "Modern Family House",
+      "location": "New York, USA",
+      "price": 450000,
+      "currency": "USD",
+      "bedrooms": 3,
+      "thumbnail": "/imgs/img11.webp",
+      "thumbnails": {
+        "img11_01": "/imgs/img11_01.webp",
+        "img11_02": "/imgs/img11_02.webp",
+        "img11_03": "/imgs/img11_03.webp",
+        "img11_04": "/imgs/img11_04.webp"
+      },
+      "yearBuilt": "2020",
+      "squareFeet": 2200,
+      "rate": 9.0,
+      "reviews": 12,
+      "propertyType": "House",
+      "features": ["Garage", "Garden", "Pool"]
+    },
+    {
+      "id": 12,
+      "title": "Luxury Condominium",
+      "location": "Miami, USA",
+      "price": 380000,
+      "currency": "USD",
+      "bedrooms": 2,
+      "thumbnail": "/imgs/img12.webp",
+      "thumbnails": {
+        "img12_01": "/imgs/img12_01.webp",
+        "img12_02": "/imgs/img12_02.webp",
+        "img12_03": "/imgs/img12_03.webp",
+        "img12_04": "/imgs/img12_04.webp"
+      },
+      "yearBuilt": "2021",
+      "squareFeet": 1800,
+      "rate": 8.8,
+      "reviews": 9,
+      "propertyType": "Condo",
+      "features": ["Gym", "Pool", "Security"]
+    },
+    {
+      "id": 13,
+      "title": "Mountain Estate",
+      "location": "Denver, USA",
+      "price": 750000,
+      "currency": "USD",
+      "bedrooms": 4,
+      "thumbnail": "/imgs/img13.webp",
+      "thumbnails": {
+        "img13_01": "/imgs/img13_01.webp",
+        "img13_02": "/imgs/img13_02.webp",
+        "img13_03": "/imgs/img13_03.webp",
+        "img13_04": "/imgs/img13_04.webp"
+      },
+      "yearBuilt": "2019",
+      "squareFeet": 3500,
+      "rate": 9.5,
+      "reviews": 15,
+      "propertyType": "House",
+      "features": ["Views", "Large Lot", "Garage"]
+    },
+    {
+      "id": 14,
+      "title": "City Center Apartment",
+      "location": "Chicago, USA",
+      "price": 320000,
+      "currency": "USD",
+      "bedrooms": 2,
+      "thumbnail": "/imgs/img14.webp",
+      "thumbnails": {
+        "img14_01": "/imgs/img14_01.webp",
+        "img14_02": "/imgs/img14_02.webp",
+        "img14_03": "/imgs/img14_03.webp",
+        "img14_04": "/imgs/img14_04.webp"
+      },
+      "yearBuilt": "2018",
+      "squareFeet": 1500,
+      "rate": 8.7,
+      "reviews": 8,
+      "propertyType": "Apartment",
+      "features": ["Balcony", "Parking", "Doorman"]
+    },
+    {
+      "id": 15,
+      "title": "Beachfront Villa",
+      "location": "Los Angeles, USA",
+      "price": 980000,
+      "currency": "USD",
+      "bedrooms": 5,
+      "thumbnail": "/imgs/img15.webp",
+      "thumbnails": {
+        "img15_01": "/imgs/img15_01.webp",
+        "img15_02": "/imgs/img15_02.webp",
+        "img15_03": "/imgs/img15_03.webp",
+        "img15_04": "/imgs/img15_04.webp"
+      },
+      "yearBuilt": "2022",
+      "squareFeet": 4200,
+      "rate": 9.7,
+      "reviews": 18,
+      "propertyType": "Villa",
+      "features": ["Beach Access", "Pool", "Garden"]
+    },
+    {
+      "id": 16,
+      "title": "Victorian Townhouse",
+      "location": "San Francisco, USA",
+      "price": 850000,
+      "currency": "USD",
+      "bedrooms": 3,
+      "thumbnail": "/imgs/img16.webp",
+      "thumbnails": {
+        "img16_01": "/imgs/img16_01.webp",
+        "img16_02": "/imgs/img16_02.webp",
+        "img16_03": "/imgs/img16_03.webp",
+        "img16_04": "/imgs/img16_04.webp"
+      },
+      "yearBuilt": "1915",
+      "squareFeet": 2800,
+      "rate": 9.2,
+      "reviews": 14,
+      "propertyType": "Townhouse",
+      "features": ["Historic", "Garden", "Parking"]
+    },
+    {
+      "id": 17,
+      "title": "Suburban Family Home",
+      "location": "Boston, USA",
+      "price": 520000,
+      "currency": "USD",
+      "bedrooms": 4,
+      "thumbnail": "/imgs/img17.webp",
+      "thumbnails": {
+        "img17_01": "/imgs/img17_01.webp",
+        "img17_02": "/imgs/img17_02.webp",
+        "img17_03": "/imgs/img17_03.webp",
+        "img17_04": "/imgs/img17_04.webp"
+      },
+      "yearBuilt": "2017",
+      "squareFeet": 2600,
+      "rate": 8.9,
+      "reviews": 11,
+      "propertyType": "House",
+      "features": ["Garage", "Basement", "Yard"]
+    },
+    {
+      "id": 18,
+      "title": "Waterfront Property",
+      "location": "Seattle, USA",
+      "price": 890000,
+      "currency": "USD",
+      "bedrooms": 4,
+      "thumbnail": "/imgs/img18.webp",
+      "thumbnails": {
+        "img18_01": "/imgs/img18_01.webp",
+        "img18_02": "/imgs/img18_02.webp",
+        "img18_03": "/imgs/img18_03.webp",
+        "img18_04": "/imgs/img18_04.webp"
+      },
+      "yearBuilt": "2020",
+      "squareFeet": 3200,
+      "rate": 9.4,
+      "reviews": 16,
+      "propertyType": "House",
+      "features": ["Dock", "Views", "Garage"]
+    },
+    {
+      "id": 19,
+      "title": "Modern Loft",
+      "location": "Austin, USA",
+      "price": 420000,
+      "currency": "USD",
+      "bedrooms": 2,
+      "thumbnail": "/imgs/img19.webp",
+      "thumbnails": {
+        "img19_01": "/imgs/img19_01.webp",
+        "img19_02": "/imgs/img19_02.webp",
+        "img19_03": "/imgs/img19_03.webp",
+        "img19_04": "/imgs/img19_04.webp"
+      },
+      "yearBuilt": "2021",
+      "squareFeet": 1700,
+      "rate": 8.8,
+      "reviews": 10,
+      "propertyType": "Loft",
+      "features": ["High Ceilings", "Open Plan", "Parking"]
+    },
+    {
+      "id": 20,
+      "title": "Historic Mansion",
+      "location": "New Orleans, USA",
+      "price": 1200000,
+      "currency": "USD",
+      "bedrooms": 6,
+      "thumbnail": "/imgs/img20.webp",
+      "thumbnails": {
+        "img20_01": "/imgs/img20_01.webp",
+        "img20_02": "/imgs/img20_02.webp",
+        "img20_03": "/imgs/img20_03.webp",
+        "img20_04": "/imgs/img20_04.webp"
+      },
+      "yearBuilt": "1890",
+      "squareFeet": 5500,
+      "rate": 9.6,
+      "reviews": 20,
+      "propertyType": "Mansion",
+      "features": ["Pool", "Garden", "Carriage House"]
+    }
+  ],
+
+  "sell": [
+    {
+      "id": 21,
+      "title": "Luxury Penthouse",
+      "location": "New York, USA",
+      "askingPrice": 750000,
+      "currency": "USD",
+      "bedrooms": 4,
+      "thumbnail": "/imgs/img21.webp",
+      "thumbnails": {
+        "img21_01": "/imgs/img15_02.webp",
+        "img21_02": "/imgs/img03_04.webp",
+        "img21_03": "/imgs/img08_01.webp",
+        "img21_04": "/imgs/img12_03.webp"
+      },
+      "listingDate": "2024-11-06",
+      "squareFeet": 3000,
+      "status": "Available",
+      "views": 245,
+      "inquiries": 15,
+      "sellerInfo": {
+        "name": "John Smith",
+        "contact": "123-456-7890",
+        "email": "john@example.com"
+      }
+    },
+    {
+      "id": 22,
+      "title": "Beach House",
+      "location": "Miami, USA",
+      "askingPrice": 620000,
+      "currency": "USD",
+      "bedrooms": 3,
+      "thumbnail": "/imgs/img22.webp",
+      "thumbnails": {
+        "img22_01": "/imgs/img02_03.webp",
+        "img22_02": "/imgs/img17_01.webp",
+        "img22_03": "/imgs/img09_04.webp",
+        "img22_04": "/imgs/img11_02.webp"
+      },
+      "listingDate": "2024-11-05",
+      "squareFeet": 2500,
+      "status": "Under Contract",
+      "views": 180,
+      "inquiries": 12,
+      "sellerInfo": {
+        "name": "Sarah Johnson",
+        "contact": "234-567-8901",
+        "email": "sarah@example.com"
+      }
+    },
+    {
+      "id": 23,
+      "title": "Mountain Retreat",
+      "location": "Denver, USA",
+      "askingPrice": 480000,
+      "currency": "USD",
+      "bedrooms": 3,
+      "thumbnail": "/imgs/img23.webp",
+      "thumbnails": {
+        "img23_01": "/imgs/img05_02.webp",
+        "img23_02": "/imgs/img14_03.webp",
+        "img23_03": "/imgs/img19_01.webp",
+        "img23_04": "/imgs/img07_04.webp"
+      },
+      "listingDate": "2024-11-04",
+      "squareFeet": 2200,
+      "status": "Available",
+      "views": 156,
+      "inquiries": 8,
+      "sellerInfo": {
+        "name": "Mike Wilson",
+        "contact": "345-678-9012",
+        "email": "mike@example.com"
+      }
+    },
+    {
+      "id": 24,
+      "title": "Downtown Condo",
+      "location": "Chicago, USA",
+      "askingPrice": 390000,
+      "currency": "USD",
+      "bedrooms": 2,
+      "thumbnail": "/imgs/img24.webp",
+      "thumbnails": {
+        "img24_01": "/imgs/img16_03.webp",
+        "img24_02": "/imgs/img04_01.webp",
+        "img24_03": "/imgs/img11_04.webp",
+        "img24_04": "/imgs/img08_02.webp"
+      },
+      "listingDate": "2024-11-03",
+      "squareFeet": 1800,
+      "status": "Available",
+      "views": 210,
+      "inquiries": 14,
+      "sellerInfo": {
+        "name": "Lisa Brown",
+        "contact": "456-789-0123",
+        "email": "lisa@example.com"
+      }
+    },
+    {
+      "id": 25,
+      "title": "Hollywood Hills Villa",
+      "location": "Los Angeles, USA",
+      "askingPrice": 1200000,
+      "currency": "USD",
+      "bedrooms": 5,
+      "thumbnail": "/imgs/img25.webp",
+      "thumbnails": {
+        "img25_01": "/imgs/img01_04.webp",
+        "img25_02": "/imgs/img18_02.webp",
+        "img25_03": "/imgs/img13_01.webp",
+        "img25_04": "/imgs/img06_03.webp"
+      },
+      "listingDate": "2024-11-02",
+      "squareFeet": 4500,
+      "status": "Available",
+      "views": 320,
+      "inquiries": 25,
+      "sellerInfo": {
+        "name": "David Lee",
+        "contact": "567-890-1234",
+        "email": "david@example.com"
+      }
+    },
+    {
+      "id": 26,
+      "title": "Bay Area Townhouse",
+      "location": "San Francisco, USA",
+      "askingPrice": 950000,
+      "currency": "USD",
+      "bedrooms": 3,
+      "thumbnail": "/imgs/img26.webp",
+      "thumbnails": {
+        "img26_01": "/imgs/img20_02.webp",
+        "img26_02": "/imgs/img07_01.webp",
+        "img26_03": "/imgs/img12_04.webp",
+        "img26_04": "/imgs/img03_02.webp"
+      },
+      "listingDate": "2024-11-01",
+      "squareFeet": 2800,
+      "status": "Under Contract",
+      "views": 275,
+      "inquiries": 18,
+      "sellerInfo": {
+        "name": "Emma Davis",
+        "contact": "678-901-2345",
+        "email": "emma@example.com"
+      }
+    },
+    {
+      "id": 27,
+      "title": "Colonial Estate",
+      "location": "Boston, USA",
+      "askingPrice": 850000,
+      "currency": "USD",
+      "bedrooms": 4,
+      "thumbnail": "/imgs/img27.webp",
+      "thumbnails": {
+        "img27_01": "/imgs/img09_02.webp",
+        "img27_02": "/imgs/img15_04.webp",
+        "img27_03": "/imgs/img02_01.webp",
+        "img27_04": "/imgs/img19_03.webp"
+      },
+      "listingDate": "2024-10-31",
+      "squareFeet": 3200,
+      "status": "Available",
+      "views": 198,
+      "inquiries": 11,
+      "sellerInfo": {
+        "name": "Tom Anderson",
+        "contact": "789-012-3456",
+        "email": "tom@example.com"
+      }
+    },
+    {
+      "id": 28,
+      "title": "Lake House",
+      "location": "Seattle, USA",
+      "askingPrice": 720000,
+      "currency": "USD",
+      "bedrooms": 3,
+      "thumbnail": "/imgs/img28.webp",
+      "thumbnails": {
+        "img28_01": "/imgs/img10_03.webp",
+        "img28_02": "/imgs/img16_01.webp",
+        "img28_03": "/imgs/img05_04.webp",
+        "img28_04": "/imgs/img14_02.webp"
+      },
+      "listingDate": "2024-10-30",
+      "squareFeet": 2600,
+      "status": "Available",
+      "views": 165,
+      "inquiries": 9,
+      "sellerInfo": {
+        "name": "Rachel Green",
+        "contact": "890-123-4567",
+        "email": "rachel@example.com"
+      }
+    },
+    {
+      "id": 29,
+      "title": "Tech District Apartment",
+      "location": "Austin, USA",
+      "askingPrice": 440000,
+      "currency": "USD",
+      "bedrooms": 2,
+      "thumbnail": "/imgs/img29.webp",
+      "thumbnails": {
+        "img29_01": "/imgs/img04_02.webp",
+        "img29_02": "/imgs/img17_03.webp",
+        "img29_03": "/imgs/img08_04.webp",
+        "img29_04": "/imgs/img13_01.webp"
+      },
+      "listingDate": "2024-10-29",
+      "squareFeet": 1600,
+      "status": "Under Contract",
+      "views": 230,
+      "inquiries": 16,
+      "sellerInfo": {
+        "name": "Daniel Martinez",
+        "contact": "901-234-5678",
+        "email": "daniel@example.com"
+      }
+    },
+    {
+      "id": 30,
+      "title": "French Quarter Home",
+      "location": "New Orleans, USA",
+      "askingPrice": 580000,
+      "currency": "USD",
+      "bedrooms": 3,
+      "thumbnail": "/imgs/img30.webp",
+      "thumbnails": {
+        "img30_01": "/imgs/img11_03.webp",
+        "img30_02": "/imgs/img19_02.webp",
+        "img30_03": "/imgs/img06_04.webp",
+        "img30_04": "/imgs/img15_01.webp"
+      },
+      "listingDate": "2024-10-28",
+      "squareFeet": 2400,
+      "status": "Available",
+      "views": 185,
+      "inquiries": 13,
+      "sellerInfo": {
+        "name": "Sophie Turner",
+        "contact": "012-345-6789",
+        "email": "sophie@example.com"
+      }
+    },
+    {
+      "id": 31,
+      "title": "Skyline View Apartment",
+      "location": "Portland, USA",
+      "askingPrice": 495000,
+      "currency": "USD",
+      "bedrooms": 2,
+      "thumbnail": "/imgs/img31.webp",
+      "thumbnails": {
+        "img31_01": "/imgs/img03_01.webp",
+        "img31_02": "/imgs/img18_04.webp",
+        "img31_03": "/imgs/img07_02.webp",
+        "img31_04": "/imgs/img12_03.webp"
+      },
+      "listingDate": "2024-10-27",
+      "squareFeet": 1900,
+      "status": "Available",
+      "views": 167,
+      "inquiries": 10,
+      "sellerInfo": {
+        "name": "Alex Wong",
+        "contact": "123-789-4560",
+        "email": "alex@example.com"
+      }
+    },
+    {
+      "id": 32,
+      "title": "Historic District Manor",
+      "location": "Charleston, USA",
+      "askingPrice": 890000,
+      "currency": "USD",
+      "bedrooms": 5,
+      "thumbnail": "/imgs/img32.webp",
+      "thumbnails": {
+        "img32_01": "/imgs/img20_03.webp",
+        "img32_02": "/imgs/img05_01.webp",
+        "img32_03": "/imgs/img14_04.webp",
+        "img32_04": "/imgs/img09_02.webp"
+      },
+      "listingDate": "2024-10-26",
+      "squareFeet": 3800,
+      "status": "Under Contract",
+      "views": 289,
+      "inquiries": 20,
+      "sellerInfo": {
+        "name": "Emily White",
+        "contact": "234-890-5671",
+        "email": "emily@example.com"
+      }
+    },
+    {
+      "id": 33,
+      "title": "Desert Oasis Villa",
+      "location": "Phoenix, USA",
+      "askingPrice": 680000,
+      "currency": "USD",
+      "bedrooms": 4,
+      "thumbnail": "/imgs/img33.webp",
+      "thumbnails": {
+        "img33_01": "/imgs/img02_04.webp",
+        "img33_02": "/imgs/img16_02.webp",
+        "img33_03": "/imgs/img08_03.webp",
+        "img33_04": "/imgs/img11_01.webp"
+      },
+      "listingDate": "2024-10-25",
+      "squareFeet": 2900,
+      "status": "Available",
+      "views": 178,
+      "inquiries": 12,
+      "sellerInfo": {
+        "name": "James Rodriguez",
+        "contact": "345-901-6782",
+        "email": "james@example.com"
+      }
+    },
+    {
+      "id": 34,
+      "title": "Riverside Cottage",
+      "location": "Nashville, USA",
+      "askingPrice": 420000,
+      "currency": "USD",
+      "bedrooms": 2,
+      "thumbnail": "/imgs/img34.webp",
+      "thumbnails": {
+        "img34_01": "/imgs/img17_04.webp",
+        "img34_02": "/imgs/img01_02.webp",
+        "img34_03": "/imgs/img13_03.webp",
+        "img34_04": "/imgs/img06_01.webp"
+      },
+      "listingDate": "2024-10-24",
+      "squareFeet": 1700,
+      "status": "Available",
+      "views": 145,
+      "inquiries": 8,
+      "sellerInfo": {
+        "name": "Laura Chen",
+        "contact": "456-012-7893",
+        "email": "laura@example.com"
+      }
+    },
+    {
+      "id": 35,
+      "title": "Modern High-Rise",
+      "location": "Dallas, USA",
+      "askingPrice": 550000,
+      "currency": "USD",
+      "bedrooms": 3,
+      "thumbnail": "/imgs/img35.webp",
+      "thumbnails": {
+        "img35_01": "/imgs/img10_02.webp",
+        "img35_02": "/imgs/img19_04.webp",
+        "img35_03": "/imgs/img04_03.webp",
+        "img35_04": "/imgs/img15_01.webp"
+      },
+      "listingDate": "2024-10-23",
+      "squareFeet": 2100,
+      "status": "Under Contract",
+      "views": 234,
+      "inquiries": 15,
+      "sellerInfo": {
+        "name": "Robert Kim",
+        "contact": "567-123-8904",
+        "email": "robert@example.com"
+      }
+    }
+  ]
+}

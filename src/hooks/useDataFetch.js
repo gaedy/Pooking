@@ -1,32 +1,22 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  getBuyCards,
-  getRentCards,
-  getSellCards,
-} from "../features/cards/cardsFetchSlice";
+  getBuyThunk,
+  getRentThunk,
+  getSellThunk,
+} from "../features/cards/fetchingSlice";
 
 const useDataFetch = () => {
   const dispatch = useDispatch();
 
   const { rentCards, buyCards, sellCards, status, error } = useSelector(
-    (state) => ({
-      rentCards: state.cards.rentCards,
-      buyCards: state.cards.buyCards,
-      sellCards: state.cards.sellCards,
-      status: {
-        rent: state.cards.status.rent,
-        buy: state.cards.status.buy,
-        sell: state.cards.status.sell,
-      },
-      error: state.cards.error,
-    })
+    (state) => state.cards
   );
 
   useEffect(() => {
-    if (status.rent === "idle") dispatch(getRentCards());
-    if (status.buy === "idle") dispatch(getBuyCards());
-    if (status.sell === "idle") dispatch(getSellCards());
+    if (status.rent === "idle") dispatch(getRentThunk());
+    if (status.buy === "idle") dispatch(getBuyThunk());
+    if (status.sell === "idle") dispatch(getSellThunk());
   }, [status, dispatch]);
 
   const isLoading =

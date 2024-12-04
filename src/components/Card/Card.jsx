@@ -2,9 +2,9 @@ import { useNavigate } from "react-router-dom";
 import Like from "../Like/Like";
 import Rating from "../Rating/Rating";
 import Tooltip from "../Tooltip/Tooltip";
-import img00 from "/src/assets/img/img00.webp";
+import img00 from "/imgs/img00.webp";
 import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
-import { useState, useTransition } from "react";
+import { useState } from "react";
 import useCurrency from "../../hooks/useCurrency";
 import { animated, useSpring } from "@react-spring/web";
 

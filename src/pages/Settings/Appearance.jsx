@@ -141,7 +141,7 @@ function Appearance() {
           }
         >
           <div className="bg-hover2 hover:bg-border cursor-pointer transition-all p-2 px-4 items-center rounded-full flex gap-1 justify-around">
-            <p>{isFont}</p>
+            <p>{isFont || "Default Font"}</p>
             <ChevronDown size={18} />
           </div>
         </DropSelect>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Searchbar from "../../components/Searchbar/Searchbar";
 // import { fetchBuyCards, fetchRentCards, fetchSellCards } from "../../api/api";
 import { Outlet } from "react-router-dom";
@@ -9,25 +9,12 @@ import {
   searchFilterByTitle,
 } from "../../utils/filter";
 import LoadingSpin from "../../components/LoadingSpin/LoadingSpin";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  getBuyCards,
-  getRentCards,
-  getSellCards,
-} from "../../features/cards/cardsFetchSlice";
 import Sorting from "../../components/Sorting/Sorting";
-import useNiceAnimation from "../../hooks/useNiceAnimation";
 import { animated, useSpring } from "@react-spring/web";
 import useDataFetch from "../../hooks/useDataFetch";
 
 function CardsPage() {
-  // const [theRentCards, setTheRentCards] = useState([]);
-  // const [theBuyCards, setTheBuyCards] = useState([]);
-  // const [theSellCards, setTheSellCards] = useState([]);
-  // const [isLoading, setIsLoading] = useState(false);
-
   const [searchTerm, setSearchTerm] = useState("");
-
   const [rateTerm, setRateTerm] = useState(0);
   const [guestNumber, setGuestNumber] = useState(0);
   const [locationTerm, setLocationTerm] = useState("");
@@ -105,21 +92,6 @@ function CardsPage() {
             />
           </>
         )}
-
-        {/* {isLoading ? (
-          <LoadingSpin className="h-screen" />
-        ) : (
-          <>
-            <Outlet
-              context={{
-                rentCardsData: filteredRentCards,
-                buyCardsData: filteredBuyCards,
-                sellCardsData: filteredSellCards,
-
-              }}
-            />
-          </>
-        )} */}
       </animated.div>
     </>
   );

@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import cardsReducer from "/src/features/cards/cardsFetchSlice";
+import cardsReducer from "/src/features/cards/fetchingSlice";
 import fontReducer from "/src/features/changeFont/fontSlice";
 import themeReducer from "/src/features/themeSlice/themeSlice";
 import currencyReducer from "/src/features/currency/currencySlice";

@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "server": "json-server -p8000 data/db.json",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -12,6 +13,7 @@
   "dependencies": {
     "@react-spring/web": "^9.7.5",
     "@reduxjs/toolkit": "^2.3.0",
+    "axios": "^1.7.9",
     "i18next": "^24.0.0",
     "lucide-react": "^0.454.0",
     "react": "^18.3.1",

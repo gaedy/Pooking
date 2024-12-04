@@ -72,14 +72,8 @@ function Navbar() {
   const [isLogoHovered, setIsLogoHover] = useState(false);
 
   const sh = useSpring({
-    transform: isLogoHovered
-      ? "rotate(-1deg) scale(1.035)"
-      : "rotate(0deg) scale(1)",
-    x: isLogoHovered ? 2 : 0,
-
-    // from: { opacity: 0, rotate: 0 },
-    // to: { opacity: 1, rotate: 0 },
-    config: { mass: 2, tension: 280, friction: 12 },
+    transform: isLogoHovered ? "scale(1.040)" : "scale(1)",
+    config: { mass: 3, tension: 180, friction: 18 },
   });
 
   return (

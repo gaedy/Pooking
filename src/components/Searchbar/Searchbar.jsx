@@ -1,5 +1,4 @@
 import Button from "../Button/Button";
-import { rentCardsData } from "../../api/cards/rentCardsData";
 import { useState } from "react";
 import {
   CalendarSearch,
@@ -11,13 +10,12 @@ import {
 } from "lucide-react";
 import DropSelect from "../DropSelect/DropSelect";
 import Select from "../DropSelect/Select";
-import { buyCardsData } from "../../api/cards/buyCardsData";
-import { sellCardsData } from "../../api/cards/sellCardsData";
 import { useTranslation } from "react-i18next";
 import Tooltip from "../Tooltip/Tooltip";
 import { useNotification } from "../../hooks/useNotification";
 import NotifAlert from "../Notification/NotifAlert";
 import { animated, useSpring } from "@react-spring/web";
+import useDataFetch from "../../hooks/useDataFetch";
 
 function Searchbar({ setSearchTerm, setGuestNumber, setLocationTerm }) {
   const [dates, setDates] = useState();
@@ -32,7 +30,9 @@ function Searchbar({ setSearchTerm, setGuestNumber, setLocationTerm }) {
     setLocation(location);
   };
 
-  const cardsData = [...rentCardsData, ...buyCardsData, sellCardsData];
+  const { rentCards, buyCards, sellCards } = useDataFetch();
+
+  const cards = [...rentCards, ...buyCards, ...sellCards];
 
   const handleSubmit = () => {
     setSearchTerm(search);
@@ -142,7 +142,7 @@ function Searchbar({ setSearchTerm, setGuestNumber, setLocationTerm }) {
                       text="USA"
                       onClick={() => handleLocationSelect("USA")}
                     ></Select>
-                    {cardsData.map((card) => (
+                    {cards.map((card) => (
                       <Select
                         key={card.id}
                         onClick={() => handleLocationSelect(card.location)}

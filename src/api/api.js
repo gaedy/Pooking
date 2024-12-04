@@ -1,8 +1,7 @@
-import { buyCardsData } from "./cards/buyCardsData";
-import { rentCardsData } from "./cards/rentCardsData";
-import { sellCardsData } from "./cards/sellCardsData";
+import axios from "axios";
 import { reviewsData } from "./reviews/reviews";
-import { savedCardsData } from "./savedCards/savedCards";
+
+const BASE_URL = "http://localhost:8000";
 
 function fetchApi(apiData, delay = 800) {
   return new Promise((resolve, reject) => {
@@ -16,10 +15,21 @@ function fetchApi(apiData, delay = 800) {
   });
 }
 
-export const fetchBuyCards = () => fetchApi(buyCardsData);
-export const fetchRentCards = () => fetchApi(rentCardsData);
-export const fetchSellCards = () => fetchApi(sellCardsData);
-
 export const fetchReviews = () => fetchApi(reviewsData);
 
-export const fetchSavedCards = () => fetchApi(savedCardsData);
+export const getRentJSON = async () => {
+  const response = await axios.get(`${BASE_URL}/rent`);
+  return response.data;
+};
+
+export const getBuyJSON = async () => {
+  const response = await axios.get(`${BASE_URL}/buy`);
+
+  return response.data;
+};
+
+export const getSellJSON = async () => {
+  const response = await axios.get(`${BASE_URL}/sell`);
+
+  return response.data;
+};
