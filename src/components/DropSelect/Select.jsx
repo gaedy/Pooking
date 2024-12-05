@@ -1,4 +1,4 @@
-function Select({ text = "test", icon, onClick }) {
+function Select({ text = "test", icon, onClick, smallText }) {
   return (
     <>
       <button
@@ -10,7 +10,14 @@ function Select({ text = "test", icon, onClick }) {
         ) : (
           <>
             <div>{icon}</div>
-            <p>{text}</p>
+            {!smallText ? (
+              <p>{text}</p>
+            ) : (
+              <div className="flex w-full items-center justify-between">
+                <p>{text}</p>
+                <p>{smallText}</p>
+              </div>
+            )}
           </>
         )}
       </button>

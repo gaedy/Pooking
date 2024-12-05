@@ -18,12 +18,15 @@ import useTheme from "../../hooks/useTheme";
 import { animated, useSpring } from "@react-spring/web";
 import logo from "/logo.svg";
 import logodark from "/logodark.svg";
+import { useSelector } from "react-redux";
+import { selectSavedCards } from "../../features/saved/savedSlice";
 
 function Navbar() {
   const { isDarkTheme, handleToggleTheme } = useTheme();
 
   const [isSidebar, setIsSidebar] = useState(false);
 
+  const savedCards = useSelector(selectSavedCards);
   const toggleSidebar = () => {
     setIsSidebar((prev) => !prev);
   };
@@ -230,7 +233,10 @@ function Navbar() {
                   className=" h-fit w-full transition-hover duration-200 active:bg-hover2 cursor-pointer rounded-lg hover:text-baseText hover:bg-hover p-3 flex gap-2 justify-start items-center"
                 >
                   <Heart size={16} />
-                  <p>Saved Cards</p>
+                  <div className="flex items-center w-full justify-between">
+                    <p>Saved Cards</p>
+                    {savedCards.length < 1 ? "" : savedCards.length}
+                  </div>
                 </div>
               </NavLink>
 
@@ -278,7 +284,11 @@ function Navbar() {
                   </NavLink>
 
                   <NavLink to="saved" className="w-full">
-                    <Select text="Saved Cards" icon={<Heart size={22} />} />
+                    <Select
+                      text="Saved Cards"
+                      smallText={savedCards.length < 1 ? "" : savedCards.length}
+                      icon={<Heart size={22} />}
+                    />
                   </NavLink>
 
                   <NavLink to="settings" className="w-full">
