@@ -49,6 +49,12 @@ const router = createBrowserRouter([
       {
         path: "saved",
         element: <Saved />,
+        children: [
+          {
+            path: "detailed-card/:id/:title",
+            element: <DetailedCard />,
+          },
+        ],
       },
       {
         path: "settings",

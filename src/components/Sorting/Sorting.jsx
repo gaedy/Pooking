@@ -3,22 +3,19 @@ import DropSelect from "../DropSelect/DropSelect";
 import Select from "../DropSelect/Select";
 import { useState } from "react";
 
-
-function Sorting({setRatingTerm}) {
+function Sorting({ setRatingTerm }) {
   const [topRated, setTopRated] = useState("");
   const [ratingNumber, setRatingNumber] = useState(9);
 
   const handleSortingSelct = (topRated) => {
     setTopRated(topRated);
     setRatingTerm(ratingNumber);
-    
   };
   const handleSortingClear = (e) => {
     e.stopPropagation();
     setTopRated("");
     setRatingTerm(0);
   };
-
 
   return (
     <div

@@ -1,23 +1,12 @@
 import axios from "axios";
-import { reviewsData } from "./reviews/reviews";
 
 const BASE_URL = "http://localhost:8000";
 
-function fetchApi(apiData, delay = 800) {
-  return new Promise((resolve, reject) => {
-    if (!apiData) {
-      reject(new Error("Data not found or invalid!"));
-    } else {
-      setTimeout(() => resolve(apiData), delay);
-    }
-  }).catch((error) => {
-    console.warn("Warning:", error.message);
-  });
-}
-
-export const fetchReviews = () => fetchApi(reviewsData);
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+const delayAmount = 800;
 
 export const getRentJSON = async () => {
+  if (delayAmount) await delay(delayAmount);
   const response = await axios.get(`${BASE_URL}/rent`);
   return response.data;
 };
@@ -31,5 +20,11 @@ export const getBuyJSON = async () => {
 export const getSellJSON = async () => {
   const response = await axios.get(`${BASE_URL}/sell`);
 
+  return response.data;
+};
+
+export const getReviewsJSON = async () => {
+  if (delayAmount) await delay(delayAmount);
+  const response = await axios.get(`${BASE_URL}/reviews`);
   return response.data;
 };

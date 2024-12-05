@@ -7,8 +7,11 @@ import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import useCurrency from "../../hooks/useCurrency";
 import { animated, useSpring } from "@react-spring/web";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleSaveCard } from "../../features/saved/savedSlice";
 
 function Card({
+  id,
   title = "Add Title Here",
   location = "Add location here",
   currency = "EGP",
@@ -19,10 +22,14 @@ function Card({
   thumbnails,
   propertyType,
   per,
-  id,
   status,
 }) {
   const navigate = useNavigate();
+
+  const dispatch = useDispatch();
+
+  const savedCards = useSelector((state) => state.saved.savedCards);
+  const isSaved = savedCards.some((card) => card.id === id);
 
   const handleDetailsClick = () => {
     const betterURLTitle = title.replace(/\s+/g, "_").toLowerCase();
@@ -58,6 +65,25 @@ function Card({
     from: { opacity: 0, transform: "scale(0.95)" },
     config: { duration: 50, tension: 10 },
   });
+
+  const handleSave = () => {
+    dispatch(
+      toggleSaveCard({
+        id,
+        title,
+        location,
+        currency,
+        price,
+        rate,
+        reviews,
+        thumbnail,
+        thumbnails,
+        propertyType,
+        per,
+        status,
+      })
+    );
+  };
 
   return (
     <>
@@ -96,9 +122,26 @@ function Card({
                   </p>
                 </div>
               )}
-              <Tooltip text="Save">
+              <Tooltip text={isSaved ? "Unsave Card" : "Save Card"}>
                 <div className="bg-white dark:bg-zinc-900 p-2 rounded-full dark:backdrop-filter dark:backdrop-blur-md dark:bg-opacity-60 backdrop-filter backdrop-blur-md bg-opacity-60">
-                  <Like />
+                  <Like
+                    cardData={{
+                      id,
+                      title,
+                      location,
+                      currency,
+                      price,
+                      rate,
+                      reviews,
+                      thumbnail,
+                      thumbnails,
+                      propertyType,
+                      per,
+                      status,
+                    }}
+                    onClick={handleSave}
+                    isSaved={isSaved}
+                  />
                 </div>
               </Tooltip>
             </div>

@@ -1,4 +1,3 @@
-
 function ListingCards({ children }) {
   return (
     <div className=" h-full flex flex-col w-full px-10 justify-center items-center">

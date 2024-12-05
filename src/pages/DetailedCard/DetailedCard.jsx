@@ -5,7 +5,7 @@ import Rating from "../../components/Rating/Rating";
 import Tooltip from "../../components/Tooltip/Tooltip";
 import GridImages from "./GridImages";
 import { useEffect, useState } from "react";
-import { fetchReviews } from "../../api/api";
+import { getReviewsJSON } from "../../api/api";
 import LoadingSpin from "../../components/LoadingSpin/LoadingSpin";
 import useCurrency from "../../hooks/useCurrency";
 import { animated, useSpring } from "@react-spring/web";
@@ -22,24 +22,33 @@ function DetailedCard() {
     rentCardsData = [],
     buyCardsData = [],
     sellCardsData = [],
+    savedCards = [],
   } = useOutletContext();
 
-  const card = [...rentCardsData, ...buyCardsData, ...sellCardsData].find(
-    (item) => item.id.toString() === id.toString()
-  );
+  const card = [
+    ...rentCardsData,
+    ...buyCardsData,
+    ...sellCardsData,
+    ...savedCards,
+  ].find((item) => item.id.toString() === id.toString());
 
   useEffect(() => {
     setIsLoading(true);
-    fetchReviews().then((reviewsData) => {
-      const reviewsByCardID = reviewsData.filter(
-        (review) => review.cardId === card.id
-      );
+    getReviewsJSON()
+      .then((reviewsData) => {
+        const reviewsByCardID = reviewsData.filter(
+          (review) => review.cardId === card.id
+        );
 
-      setTheReviews(reviewsByCardID);
-
-      setIsLoading(false);
-    });
-  }, [card.id]);
+        setTheReviews(reviewsByCardID);
+      })
+      .catch((error) => {
+        console.error("Error fetching reviews:", error);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  }, [card]);
 
   const handleClose = () => {
     navigate(-1);
