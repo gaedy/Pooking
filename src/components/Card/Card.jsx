@@ -9,6 +9,7 @@ import useCurrency from "../../hooks/useCurrency";
 import { animated, useSpring } from "@react-spring/web";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleSaveCard } from "../../features/saved/savedSlice";
+import { useTranslation } from "react-i18next";
 
 function Card({
   id,
@@ -27,18 +28,17 @@ function Card({
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
-
+  const [currentThumbnail, setCurrentThumbnail] = useState(0);
+  const { isEGPCurrency, isEURCurrency } = useCurrency();
   const savedCards = useSelector((state) => state.saved.savedCards);
   const isSaved = savedCards.some((card) => card.id === id);
+  const thumbnailKey = Object.keys(thumbnails);
+  const { t } = useTranslation();
 
   const handleDetailsClick = () => {
     const betterURLTitle = title.replace(/\s+/g, "_").toLowerCase();
     navigate(`detailed-card/${id}/${betterURLTitle}`);
   };
-
-  const [currentThumbnail, setCurrentThumbnail] = useState(0);
-
-  const thumbnailKey = Object.keys(thumbnails);
 
   const handleNextThumbnail = () => {
     setCurrentThumbnail((prevIndex) =>
@@ -56,8 +56,6 @@ function Card({
     currentThumbnail === 0
       ? thumbnail
       : thumbnails[thumbnailKey[currentThumbnail]];
-
-  const { isEGPCurrency, isEURCurrency } = useCurrency();
 
   const animation = useSpring({
     opacity: 1,
@@ -89,18 +87,23 @@ function Card({
     <>
       <animated.div
         style={animation}
-        className="group w-72 bg-background hover:shadow-xl  transition-all cursor-pointer duration-300 h-80 rounded-3xl flex flex-col items-center gap-2 p-2"
+        className="group w-72 bg-background hover:shadow-xl  transition-all cursor-pointer duration-300 
+        h-80 rounded-3xl flex flex-col items-center gap-2 p-2"
       >
         <div className=" h-56 w-full relative">
           <img
-            className="object-cover transition-all dark:brightness-[70%] select-none duration-200 group-hover:brightness-[80%] rounded-2xl w-full h-full absolute pointer-events-none"
+            className="object-cover transition-all dark:brightness-[70%] select-none duration-200 
+            group-hover:brightness-[80%] rounded-2xl w-full h-full absolute pointer-events-none"
             src={imgSrc}
           ></img>
 
           <div className=" flex-col flex justify-between h-full text-sm  text-baseText font-semibold p-2 gap-2 group">
             <div className="flex items-center justify-between">
               {rate && (
-                <div className="bg-white dark:bg-zinc-900 p-1 px-2 rounded-full backdrop-filter dark:backdrop-filter backdrop-blur-md dark:backdrop-blur-md bg-opacity-60 dark:bg-opacity-60">
+                <div
+                  className="bg-white dark:bg-zinc-900 p-1 px-2 rounded-full backdrop-filter 
+                dark:backdrop-filter backdrop-blur-md dark:backdrop-blur-md bg-opacity-60 dark:bg-opacity-60"
+                >
                   <Rating
                     rate={rate.toPrecision(2)}
                     reviews={reviews.toLocaleString()}
@@ -109,7 +112,10 @@ function Card({
               )}
 
               {status && (
-                <div className="bg-white dark:bg-zinc-800 p-1 px-3 rounded-full backdrop-filter backdrop-blur-md bg-opacity-70 dark:backdrop-blur-md dark:bg-opacity-70">
+                <div
+                  className="bg-white dark:bg-zinc-800 p-1 px-3 rounded-full backdrop-filter 
+                backdrop-blur-md bg-opacity-70 dark:backdrop-blur-md dark:bg-opacity-70"
+                >
                   {/* <p className="text-baseText">{status === "Available" ? "text-white" : status}</p> */}
                   <p
                     className={`${
@@ -122,8 +128,11 @@ function Card({
                   </p>
                 </div>
               )}
-              <Tooltip text={isSaved ? "Unsave Card" : "Save Card"}>
-                <div className="bg-white dark:bg-zinc-900 p-2 rounded-full dark:backdrop-filter dark:backdrop-blur-md dark:bg-opacity-60 backdrop-filter backdrop-blur-md bg-opacity-60">
+              <Tooltip text={isSaved ? t("card.saving1") : t("card.saving1_2")}>
+                <div
+                  className="bg-white dark:bg-zinc-900 p-2 rounded-full dark:backdrop-filter 
+                dark:backdrop-blur-md dark:bg-opacity-60 backdrop-filter backdrop-blur-md bg-opacity-60"
+                >
                   <Like
                     cardData={{
                       id,
@@ -148,14 +157,18 @@ function Card({
 
             <div className="group-hover:flex md:hidden flex justify-between items-center z-10">
               <div
-                className="bg-white dark:bg-zinc-900 p-2 rounded-full dark:backdrop-filter dark:backdrop-blur-md dark:bg-opacity-60 backdrop-filter backdrop-blur-md bg-opacity-60 active:scale-95 transition-transform"
+                className="bg-white dark:bg-zinc-900 p-2 rounded-full dark:backdrop-filter 
+                dark:backdrop-blur-md dark:bg-opacity-60 backdrop-filter backdrop-blur-md bg-opacity-60 
+                active:scale-95 transition-transform"
                 onClick={handlePrevThumbnail}
               >
                 <ChevronLeft size={16} />
               </div>
 
               <div
-                className="bg-white dark:bg-zinc-900 p-2 rounded-full dark:backdrop-filter dark:backdrop-blur-md dark:bg-opacity-60 backdrop-filter backdrop-blur-md bg-opacity-60 active:scale-95 transition-transform"
+                className="bg-white dark:bg-zinc-900 p-2 rounded-full dark:backdrop-filter 
+                dark:backdrop-blur-md dark:bg-opacity-60 backdrop-filter backdrop-blur-md bg-opacity-60 
+                active:scale-95 transition-transform"
                 onClick={handleNextThumbnail}
               >
                 <ChevronRight size={16} />
@@ -164,9 +177,11 @@ function Card({
 
             <div
               onClick={handleDetailsClick}
-              className="bg-white dark:bg-zinc-900 select-none p-2 gap-1 hover:underline px-2 w-full  md:hidden flex group-hover:flex items-center justify-center rounded-full dark:backdrop-filter dark:backdrop-blur-md dark:bg-opacity-50 backdrop-filter backdrop-blur-md bg-opacity-60"
+              className="bg-white dark:bg-zinc-900 select-none p-2 gap-1 hover:underline px-2 w-full 
+              md:hidden flex group-hover:flex items-center justify-center rounded-full dark:backdrop-filter 
+              dark:backdrop-blur-md dark:bg-opacity-50 backdrop-filter backdrop-blur-md bg-opacity-60"
             >
-              <p>Click For Details</p>
+              <p>{t("card.2")}</p>
               <ArrowUpRight className="" size={18} />
             </div>
           </div>

@@ -26,5 +26,6 @@ export const getSellJSON = async () => {
 export const getReviewsJSON = async () => {
   if (delayAmount) await delay(delayAmount);
   const response = await axios.get(`${BASE_URL}/reviews`);
+  
   return response.data;
 };

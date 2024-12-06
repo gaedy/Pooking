@@ -1,6 +1,53 @@
 {
-    "frontWelcome": "Find your next stay ..."
+  "frontWelcome": "Find your next stay ...",
 
+  "searchbar": {
+    "search1": "Search here",
+    "search2": "Clear search results",
+    "search3": "Select location",
+    "search4": "Select location",
+    "search5": "Clear location results",
+    "search6": "Guests"
+  },
+  "navbar": {
+    "nav1": "Rent",
+    "nav2": "Buy",
+    "nav3": "Sell",
+    "nav4": "Change to Light",
+    "nav4_1": "Change to Dark",
+    "nav5": "Go to Saved Cards",
+    "nav6": "Close Sidebar",
+    "nav7": "Sign in",
+    "nav8": "Saved Cards",
+    "nav9": "Settings",
+    "nav10": "Sign in",
+    "nav11": "Dashboard",
+    "nav12": "Saved Cards",
+    "nav13": "Settings",
+    "nav14": "Open Menu",
+    "nav20": "Login Page",
+    "nav30": "Menu"
+  },
+  "saved": {
+    "sav1": "Saved Cards",
+    "sav2": "No saved cards yet."
+  },
+  "settings": {
+    "gen1": "Default Language",
+    "gen2": "Currency",
+    "gen3": "Default",
+    "app1": "Default Theme",
+    "app2": "Light",
+    "app2_1": "Dark",
+    "app3": "Font Family",
+    "app4": "Default Font",
+    "1": "Settings",
+    "2": "General",
+    "3": "Appearance"
+  },
+  "card": {
+    "saving1": "Unsave Card",
+    "saving1_2": "Save Card",
+    "2": "Click For Details"
+  }
 }
-
-

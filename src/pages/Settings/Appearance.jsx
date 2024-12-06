@@ -13,9 +13,11 @@ import { useDispatch } from "react-redux";
 import { setFont } from "../../features/changeFont/fontSlice";
 import { useState } from "react";
 import useTheme from "../../hooks/useTheme";
+import { useTranslation } from "react-i18next";
 
 function Appearance() {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   const changeFont = (newFont) => {
     dispatch(setFont(newFont));
@@ -30,7 +32,7 @@ function Appearance() {
       case "font-fontEnglishJost":
         return "Jost";
       case "font-fontEnglishInter":
-        return "Default Font";
+        return t('settings.app4');
       case "font-fontEnglishArial":
         return "Arial";
       case "font-fontEnglishSystem":
@@ -54,15 +56,17 @@ function Appearance() {
   };
   const handleDefaultFont = () => {
     changeFont("font-fontEnglishInter");
-    setIsFont("Default Font");
+    setIsFont(t('settings.app4'));
   };
+
+  
 
   return (
     <>
       <div className="flex justify-between  md:flex-row md:items-center gap-2 items-start flex-col transition-all duration-300 hover:text-baseText  font-medium">
         <div className=" items-center flex gap-2 justify-around">
           <MoonIcon size={16} />
-          <p>Default Theme</p>
+          <p>{t("settings.app1")}</p>
         </div>
 
         <DropSelect
@@ -73,12 +77,12 @@ function Appearance() {
               <Select
                 icon={<Sun size={16} />}
                 onClick={() => handleSetTheme(false)}
-                text="Light"
+                text={t("settings.app2")}
               />
               <Select
                 icon={<Moon size={16} />}
                 onClick={() => handleSetTheme(true)}
-                text="Dark"
+                text={t("settings.app2_1")}
               />
             </>
           }
@@ -88,12 +92,12 @@ function Appearance() {
               {isDarkTheme ? (
                 <div className="flex items-center gap-2">
                   <Moon size={16} />
-                  <p>Dark</p>
+                  <p>{t("settings.app2_1")}</p>
                 </div>
               ) : (
                 <div className="flex items-center gap-2">
                   <Sun size={16} />
-                  <p>Light</p>
+                  <p>{t("settings.app2")}</p>
                 </div>
               )}
             </p>
@@ -105,7 +109,7 @@ function Appearance() {
       <div className="flex justify-between  md:flex-row md:items-center gap-2 items-start flex-col transition-all duration-300 hover:text-baseText  font-medium">
         <div className=" items-center  flex gap-2 justify-around">
           <Type size={16} />
-          <p>Font Family</p>
+          <p>{t("settings.app3")}</p>
         </div>
 
         <DropSelect
@@ -117,7 +121,7 @@ function Appearance() {
                 onClick={handleDefaultFont}
                 className="w-full font-fontEnglishInter"
               >
-                <Select text="Default Font" />
+                <Select text={t('settings.app4')} />
               </div>
 
               <div onClick={handleJost} className="w-full font-fontEnglishJost">
@@ -141,7 +145,7 @@ function Appearance() {
           }
         >
           <div className="bg-hover2 hover:bg-border cursor-pointer transition-all p-2 px-4 items-center rounded-full flex gap-1 justify-around">
-            <p>{isFont || "Default Font"}</p>
+            <p>{isFont || t("settings.app4") }</p>
             <ChevronDown size={18} />
           </div>
         </DropSelect>

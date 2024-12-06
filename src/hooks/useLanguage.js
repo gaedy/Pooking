@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useNotification } from "./useNotification";
 
 function useLanguage() {
   const { i18n } = useTranslation();

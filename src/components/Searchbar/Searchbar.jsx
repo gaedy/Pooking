@@ -110,7 +110,7 @@ function Searchbar({ setSearchTerm, setGuestNumber, setLocationTerm }) {
               className={`md:w-full ${
                 search !== "" && "shadow-lg bg-hover"
               } pr-10 p-4 w-full shrink border border-input hover:bg-hover placeholder-alternateText transition-all duration-200 focus-within:bg-hover bg-background rounded-full outline-none `}
-              placeholder="Search here"
+              placeholder={t('searchbar.search1')} 
               value={search}
               onChange={handleSearchChange}
             ></input>
@@ -120,7 +120,7 @@ function Searchbar({ setSearchTerm, setGuestNumber, setLocationTerm }) {
                 onClick={handleAllClear}
               >
                 <Tooltip
-                  text="Clear search results"
+                  text={t('searchbar.search2')} 
                   className="-translate-x-10 md:-translate-x-0"
                 >
                   <CircleXIcon size={16} color="var(--redColorHover)" />
@@ -131,7 +131,7 @@ function Searchbar({ setSearchTerm, setGuestNumber, setLocationTerm }) {
 
           <div className="md:w-fit w-full">
             <DropSelect
-              label="Select location"
+              label={t('searchbar.search3')} 
               position="left"
               hight="fixed"
               className="md:w-60 w-full"
@@ -163,7 +163,7 @@ function Searchbar({ setSearchTerm, setGuestNumber, setLocationTerm }) {
 
                   <div className="flex items-center justify-between gap-2">
                     <div>
-                      <p>{location || "Select Location"}</p>
+                      <p>{location || t('searchbar.search4') }</p>
                     </div>
                   </div>
 
@@ -172,7 +172,7 @@ function Searchbar({ setSearchTerm, setGuestNumber, setLocationTerm }) {
                   ) : (
                     <>
                       <div className="opacity-75 cursor-pointer hover:opacity-100">
-                        <Tooltip text="Clear location results">
+                        <Tooltip text={t('searchbar.search5')} >
                           <CircleXIcon
                             color="var(--redColorHover)"
                             size={16}
@@ -222,7 +222,7 @@ function Searchbar({ setSearchTerm, setGuestNumber, setLocationTerm }) {
                 className={`group-hover:bg-hover ${
                   guests !== "" && "bg-hover"
                 } px-2 mr-2 w-20 transition-all duration-200 focus-within:bg-hover bg-background rounded-full outline-none`}
-                placeholder="Guests"
+                placeholder={t('searchbar.search6')} 
                 type="number"
                 value={guests}
                 min="0"

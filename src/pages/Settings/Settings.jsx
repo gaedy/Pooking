@@ -3,9 +3,11 @@ import { NavLink, Outlet } from "react-router-dom";
 import { useTitle } from "../../hooks/useTitle";
 import { animated, useSpring } from "@react-spring/web";
 import useNiceAnimation from "../../hooks/useNiceAnimation";
+import { useTranslation } from "react-i18next";
 
 function Settings() {
   useTitle("Settings - Pooking");
+  const {t} = useTranslation();
 
   const animation = useNiceAnimation();
 
@@ -15,13 +17,15 @@ function Settings() {
     config: { mass: 1, tension: 240, friction: 14 },
   });
 
+
+
   return (
     <>
       <animated.div
         style={animation}
         className="flex flex-col items-ce justify-center gap-2 p-4 py-8 h-full max-w-5xl mx-auto"
       >
-        <p className="px-4 text-xl font-bold">Settings</p>
+        <p className="px-4 text-xl font-bold">{t('settings.1')}</p>
 
         <div className="flex md:flex-row flex-col shadow-xl text-baseHoverText justify-between items-start gap-4 w-full max-w-5xl mx-auto rounded-xl bg-background p-4 h-screen">
           <div className="w-full md:w-1/4">
@@ -34,7 +38,7 @@ function Settings() {
               >
                 <div className="hover:bg-hover transition-all duration-300 p-2 hover:text-baseText rounded-md flex items-center gap-2">
                   <Settings2 size={18} className="" />
-                  <p>General</p>
+                  <p>{t('settings.2')}</p>
                 </div>
               </NavLink>
 
@@ -46,7 +50,7 @@ function Settings() {
               >
                 <div className="hover:bg-hover transition-all duration-300 hover:text-baseText p-2 rounded-md flex items-center gap-2">
                   <MoonIcon size={18} className="" />
-                  <p>Appearance</p>
+                  <p>{t('settings.3')}</p>
                 </div>
               </NavLink>
 
