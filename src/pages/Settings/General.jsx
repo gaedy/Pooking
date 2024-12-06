@@ -3,11 +3,12 @@ import DropSelect from "../../components/DropSelect/DropSelect";
 import Select from "../../components/DropSelect/Select";
 import useCurrency from "../../hooks/useCurrency";
 import useLanguage from "../../hooks/useLanguage";
+import { EGIcon, EURIcon, UKIcon, USIcon } from "./someIcons/icons";
 
 function General() {
   const { currentLanguage, changeLanguage } = useLanguage();
 
-  const { isEGPCurrency, setEGPCurrency } = useCurrency();
+  const { setCurrencyHandler, selectedCurrency } = useCurrency();
 
   return (
     <>
@@ -51,15 +52,38 @@ function General() {
           className="w-fit"
           content={
             <>
-              <Select text="Default" onClick={() => setEGPCurrency(false)} />
+              <Select
+                text="Default"
+                onClick={() => setCurrencyHandler("Default")}
+                icon={<USIcon />}
+              />
               {/* <Select text="EUR" /> */}
 
-              <Select onClick={() => setEGPCurrency(true)} text="EGP" />
+              <Select
+                onClick={() => setCurrencyHandler("EGP")}
+                text="EGP"
+                icon={<EGIcon />}
+              />
+
+              <Select
+                onClick={() => setCurrencyHandler("EUR")}
+                text="EUR"
+                icon={<EURIcon />}
+              />
             </>
           }
         >
-          <div className="bg-hover2 hover:bg-border cursor-pointer transition-all p-2 px-4 items-center rounded-full flex gap-1 justify-around">
-            <p>{isEGPCurrency ? "EGP" : "Default"}</p>
+          <div className="bg-hover2 hover:bg-border cursor-pointer transition-all p-2 px-4 items-center rounded-full flex gap-2 justify-between">
+            <p>
+              {selectedCurrency === "EGP" ? (
+                <EGIcon />
+              ) : selectedCurrency === "EUR" ? (
+                <EURIcon />
+              ) : (
+                <USIcon />
+              )}
+            </p>
+            <p>{selectedCurrency || "Default"}</p>
             <ChevronDown size={18} />
           </div>
         </DropSelect>

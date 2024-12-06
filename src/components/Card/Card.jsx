@@ -57,7 +57,7 @@ function Card({
       ? thumbnail
       : thumbnails[thumbnailKey[currentThumbnail]];
 
-  const { isEGPCurrency } = useCurrency();
+  const { isEGPCurrency, isEURCurrency } = useCurrency();
 
   const animation = useSpring({
     opacity: 1,
@@ -189,13 +189,17 @@ function Card({
 
             <div className="text-base flex px-0 gap-1 justify-start items-center font-bold">
               <p className="text-button">
-                {!isEGPCurrency ? (
+                {isEGPCurrency ? (
                   <>
-                    {currency} {price.toLocaleString()}
+                    {"EGP"} {(price * 51).toLocaleString()}
+                  </>
+                ) : isEURCurrency ? (
+                  <>
+                    {"EUR"} {(price * 0.95).toLocaleString()}
                   </>
                 ) : (
                   <>
-                    {"EGP"} {(price * 49).toLocaleString()}
+                    {currency} {price.toLocaleString()}
                   </>
                 )}
               </p>

@@ -5,18 +5,30 @@ import {
 } from "../features/currency/currencySlice";
 
 const useCurrency = () => {
-  const isEGPCurrency = useSelector((state) => state.currency.currency);
+  const selectedCurrency = useSelector((state) => state.currency.currency);
 
   const dispatch = useDispatch();
 
-  const toggleEGPCurrency = () => {
+  const toggleCurrencyHandler = () => {
     dispatch(toggleCurrency());
   };
-  const setEGPCurrency = (newValue) => {
-    dispatch(setCurrency(newValue));
+
+  const setCurrencyHandler = (currency) => {
+    dispatch(setCurrency(currency));
   };
 
-  return { toggleEGPCurrency, setEGPCurrency, isEGPCurrency };
+  const isEGPCurrency = selectedCurrency === "EGP";
+  const isEURCurrency = selectedCurrency === "EUR";
+  const isDefaultCurrency = !isEGPCurrency && !isEURCurrency;
+
+  return {
+    toggleCurrencyHandler,
+    setCurrencyHandler,
+    isEGPCurrency,
+    isEURCurrency,
+    isDefaultCurrency,
+    selectedCurrency,
+  };
 };
 
 export default useCurrency;

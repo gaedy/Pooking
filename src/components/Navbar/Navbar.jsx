@@ -139,7 +139,10 @@ function Navbar() {
         </div>
 
         <div className="ml-auto hidden md:flex">
-          <Tooltip text={isDarkTheme ? "Change to Light" : "Change to Dark"}>
+          <Tooltip
+            text={isDarkTheme ? "Change to Light" : "Change to Dark"}
+            className="top-2"
+          >
             <div
               onClick={handleToggleTheme}
               className="hover:bg-background transition-all duration-300 cursor-pointer border border-input p-3 flex rounded-full items-center gap-2"
@@ -149,17 +152,26 @@ function Navbar() {
           </Tooltip>
         </div>
 
-        {/* for curreny button */}
-        {/* <div className="hidden md:flex">
-          <Tooltip text={isDarkTheme ? "Change to Light" : "Change to Dark"}>
-            <div
-              onClick={handleToggleTheme}
-              className="hover:bg-background transition-all duration-300 cursor-pointer border border-input p-3 flex rounded-full items-center gap-2"
+        <div className="hidden md:flex">
+          <Tooltip text={"Go to Saved Cards"} className="top-2">
+            <NavLink
+              to="saved"
+              className={({ isActive }) =>
+                `${isActive && "bg-background rounded-full"}`
+              }
             >
-              {isDarkTheme ? <Sun size={18} /> : <Moon size={18} />}
-            </div>
+              <div className="hover:bg-background relative transition-all duration-300 cursor-pointer border border-input p-3 flex rounded-full items-center gap-2">
+                <Heart size={18} />
+
+                {savedCards.length > 0 && (
+                  <div className="absolute flex justify-center flex-grow items-center text-white bg-redColor text-baseText rounded-full text-xs px-2 w-fit p-1 -top-1 -right-1 min-w-[1.5rem] h-[1.5rem]">
+                    <p>{savedCards.length}</p>
+                  </div>
+                )}
+              </div>
+            </NavLink>
           </Tooltip>
-        </div> */}
+        </div>
 
         <button className="md:hidden flex opacity-85 hover:opacity-100">
           <Menu onClick={toggleSidebar} />
@@ -257,7 +269,14 @@ function Navbar() {
           <div className="w-full h-full  bg-black opacity-60 z-10 fixed inset-0" />
         )}
 
-        <NavLink to="/login/signin" className="hidden md:flex">
+        <NavLink
+          to="/login"
+          className={({ isActive }) =>
+            `${
+              isActive && "bg-background rounded-full text-baseText"
+            } md:flex hidden `
+          }
+        >
           <div className=" transition-all md:flex hidden duration-300 hover:bg-background border border-input hover:text-baseText p-2 w-fit h-full rounded-full justify-between items-center gap-4 cursor-pointer">
             <div className="bg-hover bg rounded-full">
               <CircleUserRound size={30} className="p-1" />

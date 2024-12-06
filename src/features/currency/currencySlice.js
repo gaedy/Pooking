@@ -10,12 +10,10 @@ const currencySlice = createSlice({
     setCurrency: (state, action) => {
       state.currency = action.payload;
       localStorage.setItem("currency", JSON.stringify(state.currency));
-
     },
     toggleCurrency: (state) => {
       state.currency = !state.currency;
       localStorage.setItem("currency", JSON.stringify(state.currency));
-
     },
   },
 });
