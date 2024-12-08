@@ -37,7 +37,7 @@ function Card({
 
   const handleDetailsClick = () => {
     const betterURLTitle = title.replace(/\s+/g, "_").toLowerCase();
-    navigate(`detailed-card/${id}/${betterURLTitle}`);
+    navigate(`cards/${id}/${betterURLTitle}`);
   };
 
   const handleNextThumbnail = () => {

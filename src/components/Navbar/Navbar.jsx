@@ -324,12 +324,12 @@ function Navbar() {
               position="right"
               content={
                 <>
-                  <NavLink to="dashboard" className="w-full">
+                  {/* <NavLink to="dashboard" className="w-full">
                     <Select
                       text={t("navbar.nav11")}
                       icon={<LayoutDashboard size={22} />}
                     />
-                  </NavLink>
+                  </NavLink> */}
 
                   <NavLink to="saved" className="w-full">
                     <Select

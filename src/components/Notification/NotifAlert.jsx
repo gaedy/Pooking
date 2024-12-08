@@ -1,5 +1,5 @@
 import { animated, useSpring } from "@react-spring/web";
-import { X } from "lucide-react";
+
 import { useState } from "react";
 
 function NotifAlert({ message = "This is Alert", onClosing, delay = 0 }) {
@@ -18,8 +18,7 @@ function NotifAlert({ message = "This is Alert", onClosing, delay = 0 }) {
       {isShow && (
         <animated.div
           style={animation}
-          
-          className="fixed bg-zinc-300/30 border border-black/10 backdrop-filter backdrop-blur-2xl 
+          className="fixed bg-zinc-300/30 shadow-lg border border-black/10 backdrop-filter backdrop-blur-2xl 
           p-2 w-60 h-28 rounded-xl z-50 right-10 top-20 flex flex-col justify-center items-center 
           dark:bg-white/20 dark:border-white/15"
         >

@@ -87,7 +87,7 @@ const router = createBrowserRouter([
             element: <RentCards />,
             children: [
               {
-                path: "detailed-card/:id/:title",
+                path: "cards/:id/:title",
                 element: <DetailedCard />,
               },
             ],
@@ -97,7 +97,7 @@ const router = createBrowserRouter([
             element: <BuyCards />,
             children: [
               {
-                path: "detailed-card/:id/:title",
+                path: "cards/:id/:title",
                 element: <DetailedCard />,
               },
             ],
@@ -107,7 +107,7 @@ const router = createBrowserRouter([
             element: <SellCards />,
             children: [
               {
-                path: "detailed-card/:id/:title",
+                path: "cards/:id/:title",
                 element: <DetailedCard />,
               },
             ],

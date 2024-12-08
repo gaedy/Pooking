@@ -77,7 +77,7 @@ function General() {
         </DropSelect>
       </div>
 
-      <div className="flex justify-between  md:flex-row md:items-center gap-2 items-start flex-col transition-all duration-300 hover:text-baseText  font-medium">
+      {/* <div className="flex justify-between  md:flex-row md:items-center gap-2 items-start flex-col transition-all duration-300 hover:text-baseText  font-medium">
         <div className=" items-center flex gap-2 justify-around">
           <House size={16} />
           <p>Default Page</p>
@@ -99,7 +99,7 @@ function General() {
             <ChevronDown size={18} />
           </div>
         </DropSelect>
-      </div>
+      </div> */}
     </>
   );
 }

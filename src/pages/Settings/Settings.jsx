@@ -14,7 +14,13 @@ function Settings() {
   const animation2 = useSpring({
     from: { opacity: 0, y: 60 },
     to: { opacity: 1, y: 0 },
-    config: { mass: 2, tension: 340, friction: 30 },
+    config: { mass: 2, tension: 390, friction: 30 },
+  });
+
+  const animation3 = useSpring({
+    from: { opacity: 0, y: -10 },
+    to: { opacity: 1, y: 0 },
+    config: { mass: 2, tension: 250, friction: 18 },
   });
 
   return (
@@ -23,7 +29,9 @@ function Settings() {
         style={animation}
         className="flex flex-col items-ce justify-center gap-2 p-4 py-8 h-full my-auto max-w-5xl mx-auto"
       >
-        <p className="px-4 text-xl font-bold">{t("settings.1")}</p>
+        <animated.p style={animation3} className="px-4 text-xl font-bold">
+          {t("settings.1")}
+        </animated.p>
 
         <div className="flex md:flex-row flex-col shadow-xl text-baseHoverText justify-between items-start gap-4 w-full max-w-5xl mx-auto rounded-xl bg-background p-4 h-screen">
           <div className="w-full md:w-1/4">
