@@ -1,23 +1,21 @@
-import { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { useDispatch, useSelector } from "react-redux";
+import { changeLanguage } from "../features/languageSlice/languageSlice";
 
 function useLanguage() {
-  const { i18n } = useTranslation();
+  const dispatch = useDispatch();
 
-  const [currentLanguage, setCurrentLanguage] = useState(() => {
-    return localStorage.getItem("saveLang") || i18n.language;
-  });
+  const currentLanguage = useSelector(
+    (state) => state.language.currentLanguage
+  );
 
-  const changeLanguage = (lang) => {
-    i18n.changeLanguage(lang);
-    setCurrentLanguage(lang);
-    localStorage.setItem("saveLang", lang);
+  const handleLanguageChange = (lang) => {
+    dispatch(changeLanguage(lang));
   };
 
-  useEffect(() => {
-    i18n.changeLanguage(currentLanguage);
-  }, [currentLanguage, i18n]);
-  return { currentLanguage, changeLanguage };
+  return {
+    currentLanguage,
+    handleLanguageChange,
+  };
 }
 
 export default useLanguage;

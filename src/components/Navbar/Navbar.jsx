@@ -149,7 +149,7 @@ function Navbar() {
           </NavLink>
         </div>
 
-        <div className="ml-auto hidden md:flex">
+        <div className="ml-auto hidden md:flex hover:text-baseText">
           <Tooltip
             text={isDarkTheme ? t("navbar.nav4") : t("navbar.nav4_1")}
             className="top-2"
@@ -164,12 +164,12 @@ function Navbar() {
           </Tooltip>
         </div>
 
-        <div className="hidden md:flex">
+        <div className="hidden md:flex hover:text-baseText">
           <Tooltip text={t("navbar.nav5")} className="top-2">
             <NavLink
               to="saved"
               className={({ isActive }) =>
-                `${isActive && "bg-background rounded-full"}`
+                `${isActive && "bg-background text-baseText rounded-full"}`
               }
             >
               <div

@@ -189,6 +189,367 @@
       "checkOut": "2024-12-30",
       "rate": 9.2,
       "reviews": 27
+    },
+    {
+      "id": "ren001",
+      "title": "Spacious Loft in Arts District",
+      "location": "San Francisco, USA",
+      "price": 185,
+      "currency": "USD",
+      "guests": 3,
+      "thumbnail": "/imgs/img12.webp",
+      "thumbnails": {
+        "img01_01": "/imgs/img01_01.webp",
+        "img01_02": "/imgs/img01_02.webp",
+        "img01_03": "/imgs/img01_03.webp",
+        "img01_04": "/imgs/img01_04.webp"
+      },
+      "checkIn": "2024-11-12",
+      "checkOut": "2024-11-17",
+      "rate": 9.2,
+      "reviews": 42
+    },
+    {
+      "id": "ren002",
+      "title": "Modern Studio near Central Park",
+      "location": "New York, USA",
+      "price": 145,
+      "currency": "USD",
+      "guests": 2,
+      "thumbnail": "/imgs/img23.webp",
+      "thumbnails": {
+        "img02_01": "/imgs/img02_01.webp",
+        "img02_02": "/imgs/img02_02.webp",
+        "img02_03": "/imgs/img02_03.webp",
+        "img02_04": "/imgs/img02_04.webp"
+      },
+      "checkIn": "2024-11-15",
+      "checkOut": "2024-11-20",
+      "rate": 8.9,
+      "reviews": 35
+    },
+    {
+      "id": "ren003",
+      "title": "Charming Beachfront Condo",
+      "location": "Miami, USA",
+      "price": 220,
+      "currency": "USD",
+      "guests": 4,
+      "thumbnail": "/imgs/img07.webp",
+      "thumbnails": {
+        "img03_01": "/imgs/img03_01.webp",
+        "img03_02": "/imgs/img03_02.webp",
+        "img03_03": "/imgs/img03_03.webp",
+        "img03_04": "/imgs/img03_04.webp"
+      },
+      "checkIn": "2024-11-18",
+      "checkOut": "2024-11-23",
+      "rate": 9.5,
+      "reviews": 67
+    },
+    {
+      "id": "ren004",
+      "title": "Urban Retreat in Capitol Hill",
+      "location": "Seattle, USA",
+      "price": 165,
+      "currency": "USD",
+      "guests": 2,
+      "thumbnail": "/imgs/img19.webp",
+      "thumbnails": {
+        "img04_01": "/imgs/img04_01.webp",
+        "img04_02": "/imgs/img04_02.webp",
+        "img04_03": "/imgs/img04_03.webp",
+        "img04_04": "/imgs/img04_04.webp"
+      },
+      "checkIn": "2024-11-20",
+      "checkOut": "2024-11-25",
+      "rate": 8.7,
+      "reviews": 29
+    },
+    {
+      "id": "ren005",
+      "title": "Historic Townhouse in French Quarter",
+      "location": "New Orleans, USA",
+      "price": 195,
+      "currency": "USD",
+      "guests": 3,
+      "thumbnail": "/imgs/img14.webp",
+      "thumbnails": {
+        "img05_01": "/imgs/img05_01.webp",
+        "img05_02": "/imgs/img05_02.webp",
+        "img05_03": "/imgs/img05_03.webp",
+        "img05_04": "/imgs/img05_04.webp"
+      },
+      "checkIn": "2024-11-22",
+      "checkOut": "2024-11-27",
+      "rate": 9.1,
+      "reviews": 52
+    },
+    {
+      "id": "ren006",
+      "title": "Luxury High-Rise Apartment",
+      "location": "Chicago, USA",
+      "price": 210,
+      "currency": "USD",
+      "guests": 4,
+      "thumbnail": "/imgs/img31.webp",
+      "thumbnails": {
+        "img06_01": "/imgs/img06_01.webp",
+        "img06_02": "/imgs/img06_02.webp",
+        "img06_03": "/imgs/img06_03.webp",
+        "img06_04": "/imgs/img06_04.webp"
+      },
+      "checkIn": "2024-11-25",
+      "checkOut": "2024-11-30",
+      "rate": 9.3,
+      "reviews": 44
+    },
+    {
+      "id": "ren007",
+      "title": "Eco-Friendly Apartment in Green District",
+      "location": "Portland, USA",
+      "price": 140,
+      "currency": "USD",
+      "guests": 2,
+      "thumbnail": "/imgs/img05.webp",
+      "thumbnails": {
+        "img07_01": "/imgs/img07_01.webp",
+        "img07_02": "/imgs/img07_02.webp",
+        "img07_03": "/imgs/img07_03.webp",
+        "img07_04": "/imgs/img07_04.webp"
+      },
+      "checkIn": "2024-11-27",
+      "checkOut": "2024-12-02",
+      "rate": 8.6,
+      "reviews": 37
+    },
+    {
+      "id": "ren008",
+      "title": "Penthouse with Skyline Views",
+      "location": "Las Vegas, USA",
+      "price": 275,
+      "currency": "USD",
+      "guests": 4,
+      "thumbnail": "/imgs/img22.webp",
+      "thumbnails": {
+        "img08_01": "/imgs/img08_01.webp",
+        "img08_02": "/imgs/img08_02.webp",
+        "img08_03": "/imgs/img08_03.webp",
+        "img08_04": "/imgs/img08_04.webp"
+      },
+      "checkIn": "2024-11-30",
+      "checkOut": "2024-12-05",
+      "rate": 9.6,
+      "reviews": 61
+    },
+    {
+      "id": "ren009",
+      "title": "Rustic Mountain Cabin Apartment",
+      "location": "Denver, USA",
+      "price": 180,
+      "currency": "USD",
+      "guests": 3,
+      "thumbnail": "/imgs/img16.webp",
+      "thumbnails": {
+        "img09_01": "/imgs/img09_01.webp",
+        "img09_02": "/imgs/img09_02.webp",
+        "img09_03": "/imgs/img09_03.webp",
+        "img09_04": "/imgs/img09_04.webp"
+      },
+      "checkIn": "2024-12-02",
+      "checkOut": "2024-12-07",
+      "rate": 8.8,
+      "reviews": 33
+    },
+    {
+      "id": "ren010",
+      "title": "Vibrant Arts and Culture Loft",
+      "location": "Austin, USA",
+      "price": 160,
+      "currency": "USD",
+      "guests": 2,
+      "thumbnail": "/imgs/img29.webp",
+      "thumbnails": {
+        "img10_01": "/imgs/img10_01.webp",
+        "img10_02": "/imgs/img10_02.webp",
+        "img10_03": "/imgs/img10_03.webp",
+        "img10_04": "/imgs/img10_04.webp"
+      },
+      "checkIn": "2024-12-05",
+      "checkOut": "2024-12-10",
+      "rate": 9.0,
+      "reviews": 48
+    },
+    {
+      "id": "ren011",
+      "title": "Waterfront Condo with Marina View",
+      "location": "San Diego, USA",
+      "price": 250,
+      "currency": "USD",
+      "guests": 4,
+      "thumbnail": "/imgs/img33.webp",
+      "thumbnails": {
+        "img11_01": "/imgs/img11_01.webp",
+        "img11_02": "/imgs/img11_02.webp",
+        "img11_03": "/imgs/img11_03.webp",
+        "img11_04": "/imgs/img11_04.webp"
+      },
+      "checkIn": "2024-12-08",
+      "checkOut": "2024-12-13",
+      "rate": 9.4,
+      "reviews": 55
+    },
+    {
+      "id": "ren012",
+      "title": "Tech Hub Smart Apartment",
+      "location": "Boston, USA",
+      "price": 195,
+      "currency": "USD",
+      "guests": 2,
+      "thumbnail": "/imgs/img11.webp",
+      "thumbnails": {
+        "img12_01": "/imgs/img12_01.webp",
+        "img12_02": "/imgs/img12_02.webp",
+        "img12_03": "/imgs/img12_03.webp",
+        "img12_04": "/imgs/img12_04.webp"
+      },
+      "checkIn": "2024-12-10",
+      "checkOut": "2024-12-15",
+      "rate": 8.7,
+      "reviews": 41
+    },
+    {
+      "id": "ren013",
+      "title": "Artistic Warehouse Conversion",
+      "location": "Philadelphia, USA",
+      "price": 175,
+      "currency": "USD",
+      "guests": 3,
+      "thumbnail": "/imgs/img25.webp",
+      "thumbnails": {
+        "img13_01": "/imgs/img13_01.webp",
+        "img13_02": "/imgs/img13_02.webp",
+        "img13_03": "/imgs/img13_03.webp",
+        "img13_04": "/imgs/img13_04.webp"
+      },
+      "checkIn": "2024-12-12",
+      "checkOut": "2024-12-17",
+      "rate": 9.1,
+      "reviews": 39
+    },
+    {
+      "id": "ren014",
+      "title": "Minimalist Design Studio",
+      "location": "Washington D.C., USA",
+      "price": 205,
+      "currency": "USD",
+      "guests": 2,
+      "thumbnail": "/imgs/img37.webp",
+      "thumbnails": {
+        "img14_01": "/imgs/img14_01.webp",
+        "img14_02": "/imgs/img14_02.webp",
+        "img14_03": "/imgs/img14_03.webp",
+        "img14_04": "/imgs/img14_04.webp"
+      },
+      "checkIn": "2024-12-15",
+      "checkOut": "2024-12-20",
+      "rate": 8.9,
+      "reviews": 46
+    },
+    {
+      "id": "ren015",
+      "title": "Rooftop Garden Apartment",
+      "location": "Atlanta, USA",
+      "price": 165,
+      "currency": "USD",
+      "guests": 3,
+      "thumbnail": "/imgs/img03.webp",
+      "thumbnails": {
+        "img15_01": "/imgs/img15_01.webp",
+        "img15_02": "/imgs/img15_02.webp",
+        "img15_03": "/imgs/img15_03.webp",
+        "img15_04": "/imgs/img15_04.webp"
+      },
+      "checkIn": "2024-12-17",
+      "checkOut": "2024-12-22",
+      "rate": 8.5,
+      "reviews": 34
+    },
+    {
+      "id": "ren016",
+      "title": "Historic District Boutique Apartment",
+      "location": "Charleston, USA",
+      "price": 190,
+      "currency": "USD",
+      "guests": 2,
+      "thumbnail": "/imgs/img20.webp",
+      "thumbnails": {
+        "img16_01": "/imgs/img16_01.webp",
+        "img16_02": "/imgs/img16_02.webp",
+        "img16_03": "/imgs/img16_03.webp",
+        "img16_04": "/imgs/img16_04.webp"
+      },
+      "checkIn": "2024-12-20",
+      "checkOut": "2024-12-25",
+      "rate": 9.3,
+      "reviews": 53
+    },
+    {
+      "id": "ren017",
+      "title": "Urban Zen Retreat",
+      "location": "Los Angeles, USA",
+      "price": 235,
+      "currency": "USD",
+      "guests": 4,
+      "thumbnail": "/imgs/img15.webp",
+      "thumbnails": {
+        "img17_01": "/imgs/img17_01.webp",
+        "img17_02": "/imgs/img17_02.webp",
+        "img17_03": "/imgs/img17_03.webp",
+        "img17_04": "/imgs/img17_04.webp"
+      },
+      "checkIn": "2024-12-22",
+      "checkOut": "2024-12-27",
+      "rate": 9.2,
+      "reviews": 59
+    },
+    {
+      "id": "ren018",
+      "title": "Industrial Chic Apartment",
+      "location": "Detroit, USA",
+      "price": 150,
+      "currency": "USD",
+      "guests": 2,
+      "thumbnail": "/imgs/img27.webp",
+      "thumbnails": {
+        "img18_01": "/imgs/img18_01.webp",
+        "img18_02": "/imgs/img18_02.webp",
+        "img18_03": "/imgs/img18_03.webp",
+        "img18_04": "/imgs/img18_04.webp"
+      },
+      "checkIn": "2024-12-25",
+      "checkOut": "2024-12-30",
+      "rate": 8.6,
+      "reviews": 31
+    },
+    {
+      "id": "ren019",
+      "title": "Sunset View Luxury Apartment",
+      "location": "Phoenix, USA",
+      "price": 200,
+      "currency": "USD",
+      "guests": 3,
+      "thumbnail": "/imgs/img10.webp",
+      "thumbnails": {
+        "img19_01": "/imgs/img19_01.webp",
+        "img19_02": "/imgs/img19_02.webp",
+        "img19_03": "/imgs/img19_03.webp",
+        "img19_04": "/imgs/img19_04.webp"
+      },
+      "checkIn": "2024-12-27",
+      "checkOut": "2024-01-01",
+      "rate": 9.0,
+      "reviews": 47
     }
   ],
 
@@ -402,6 +763,153 @@
       "reviews": 20,
       "propertyType": "Mansion",
       "features": ["Pool", "Garden", "Carriage House"]
+    },
+    {
+      "id": "buy001",
+      "title": "Azure Heights Penthouse",
+      "location": "Miami, USA",
+      "price": 2500000,
+      "currency": "USD",
+      "bedrooms": 5,
+      "thumbnail": "/imgs/img01.webp",
+      "thumbnails": {
+        "img01_01": "/imgs/img01_01.webp",
+        "img01_02": "/imgs/img01_02.webp",
+        "img01_03": "/imgs/img01_03.webp",
+        "img01_04": "/imgs/img01_04.webp"
+      },
+      "yearBuilt": "2010",
+      "squareFeet": 4800,
+      "rate": 9.2,
+      "reviews": 25,
+      "propertyType": "Penthouse",
+      "features": ["Ocean View", "Private Elevator", "Infinity Pool"]
+    },
+    {
+      "id": "buy002",
+      "title": "Emerald Forest Retreat",
+      "location": "Aspen, USA",
+      "price": 3200000,
+      "currency": "USD",
+      "bedrooms": 6,
+      "thumbnail": "/imgs/img02.webp",
+      "thumbnails": {
+        "img02_01": "/imgs/img02_01.webp",
+        "img02_02": "/imgs/img02_02.webp",
+        "img02_03": "/imgs/img02_03.webp",
+        "img02_04": "/imgs/img02_04.webp"
+      },
+      "yearBuilt": "1995",
+      "squareFeet": 6000,
+      "rate": 9.8,
+      "reviews": 34,
+      "propertyType": "Villa",
+      "features": ["Ski Access", "Fireplace", "Sauna"]
+    },
+    {
+      "id": "buy003",
+      "title": "Golden Horizon Bungalow",
+      "location": "Los Angeles, USA",
+      "price": 890000,
+      "currency": "USD",
+      "bedrooms": 3,
+      "thumbnail": "/imgs/img03.webp",
+      "thumbnails": {
+        "img03_01": "/imgs/img03_01.webp",
+        "img03_02": "/imgs/img03_02.webp",
+        "img03_03": "/imgs/img03_03.webp",
+        "img03_04": "/imgs/img03_04.webp"
+      },
+      "yearBuilt": "2005",
+      "squareFeet": 2300,
+      "rate": 8.5,
+      "reviews": 12,
+      "propertyType": "Bungalow",
+      "features": ["Garden", "Solar Panels", "Open Floor Plan"]
+    },
+    {
+      "id": "buy004",
+      "title": "Sapphire Bayfront Estate",
+      "location": "Key West, USA",
+      "price": 4200000,
+      "currency": "USD",
+      "bedrooms": 7,
+      "thumbnail": "/imgs/img04.webp",
+      "thumbnails": {
+        "img04_01": "/imgs/img04_01.webp",
+        "img04_02": "/imgs/img04_02.webp",
+        "img04_03": "/imgs/img04_03.webp",
+        "img04_04": "/imgs/img04_04.webp"
+      },
+      "yearBuilt": "1980",
+      "squareFeet": 7200,
+      "rate": 9.9,
+      "reviews": 45,
+      "propertyType": "Estate",
+      "features": ["Private Beach", "Guest House", "Boat Dock"]
+    },
+    {
+      "id": "buy005",
+      "title": "Silver Lake Cabin",
+      "location": "Lake Tahoe, USA",
+      "price": 675000,
+      "currency": "USD",
+      "bedrooms": 2,
+      "thumbnail": "/imgs/img05.webp",
+      "thumbnails": {
+        "img05_01": "/imgs/img05_01.webp",
+        "img05_02": "/imgs/img05_02.webp",
+        "img05_03": "/imgs/img05_03.webp",
+        "img05_04": "/imgs/img05_04.webp"
+      },
+      "yearBuilt": "2000",
+      "squareFeet": 1200,
+      "rate": 8.0,
+      "reviews": 15,
+      "propertyType": "Cabin",
+      "features": ["Lake View", "Wood Stove", "Hiking Trails"]
+    },
+    {
+      "id": "buy006",
+      "title": "Crystal River Mansion",
+      "location": "Charleston, USA",
+      "price": 1800000,
+      "currency": "USD",
+      "bedrooms": 5,
+      "thumbnail": "/imgs/img06.webp",
+      "thumbnails": {
+        "img06_01": "/imgs/img06_01.webp",
+        "img06_02": "/imgs/img06_02.webp",
+        "img06_03": "/imgs/img06_03.webp",
+        "img06_04": "/imgs/img06_04.webp"
+      },
+      "yearBuilt": "1975",
+      "squareFeet": 5000,
+      "rate": 9.3,
+      "reviews": 30,
+      "propertyType": "Mansion",
+      "features": ["Pool", "Library", "Large Porch"]
+    },
+    {
+      "id": "buy007",
+      "title": "Amberwood Garden House",
+      "location": "Savannah, USA",
+      "price": 750000,
+      "currency": "USD",
+      "bedrooms": 4,
+      "thumbnail": "/imgs/img07.webp",
+      "thumbnails": {
+        "img07_01": "/imgs/img07_01.webp",
+        "img07_02": "/imgs/img07_02.webp",
+        "img07_03": "/imgs/img07_03.webp",
+        "img07_04": "/imgs/img07_04.webp"
+      },
+      "yearBuilt": "2018",
+      "squareFeet": 3200,
+      "rate": 8.7,
+      "reviews": 10,
+      "propertyType": "House",
+      "features": ["Garden", "Garage", "Modern Kitchen"]
     }
   ],
 
@@ -785,7 +1293,7 @@
   "reviews": [
     {
       "id": "r1_2",
-      "cardId": 1, 
+      "cardId": 1,
       "rating": 8,
       "date": "2024-10-18",
       "userName": "John D.",

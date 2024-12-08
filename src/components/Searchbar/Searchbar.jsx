@@ -97,7 +97,7 @@ function Searchbar({ setSearchTerm, setGuestNumber, setLocationTerm }) {
         {isNotification && (
           <NotifAlert
             onClosing={() => setIsNotification(false)}
-            message="Cleared! :)"
+            message="Cleared"
           />
         )}
 

@@ -49,5 +49,29 @@
     "saving1": "Unsave Card",
     "saving1_2": "Save Card",
     "2": "Click For Details"
+  },
+  "rentCards": {
+    "1": "Night",
+    "2": "No results found for your search."
+  },
+  "currency": {
+    "eg": "EGP"
+  },
+  "detailedCard": {
+    "close": "Close",
+    "noImg": "No images found",
+    "g": "Guests",
+    "b": "Bedrooms",
+    "rating1": "Wonderful",
+    "rating2": "Very Good",
+    "rating3": "Good",
+    "rating4": "Acceptable",
+    "rev": "reviews",
+    "in": "Check-in",
+    "out": "Check-out",
+    "year": "Year Built",
+    "feet": "Square Feet",
+    "topRev": "Top Reviews",
+    "topRev2": "No Reviews Found."
   }
 }

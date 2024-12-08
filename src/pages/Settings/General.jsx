@@ -7,17 +7,17 @@ import { EGIcon, USIcon } from "./someIcons/icons";
 import { useTranslation } from "react-i18next";
 
 function General() {
-  const { currentLanguage, changeLanguage } = useLanguage();
-
+  const { currentLanguage, handleLanguageChange } = useLanguage();
   const { setCurrencyHandler, selectedCurrency } = useCurrency();
-  const {t} = useTranslation();
+
+  const { t } = useTranslation();
 
   return (
     <>
       <div className="flex justify-between md:flex-row md:items-center gap-2 items-start flex-col transition-all duration-300 hover:text-baseText  font-medium">
         <div className=" items-center flex gap-2 justify-around">
           <Languages size={16} />
-          <p>{t('settings.gen1')}</p>
+          <p>{t("settings.gen1")}</p>
         </div>
 
         <DropSelect
@@ -27,12 +27,12 @@ function General() {
             <>
               <Select
                 text="English (US)"
-                onClick={() => changeLanguage("en")}
+                onClick={() => handleLanguageChange("en")}
                 icon={<USIcon />}
               />
               <Select
                 text="(مصر) العربية"
-                onClick={() => changeLanguage("ar")}
+                onClick={() => handleLanguageChange("ar")}
                 icon={<EGIcon />}
               />
             </>
@@ -50,7 +50,7 @@ function General() {
       <div className="flex justify-between  md:flex-row md:items-center gap-2 items-start flex-col transition-all duration-300 hover:text-baseText  font-medium">
         <div className=" items-center flex gap-2 justify-around">
           <CircleDollarSign size={16} />
-          <p>{t('settings.gen2')}</p>
+          <p>{t("settings.gen2")}</p>
         </div>
 
         <DropSelect
@@ -59,8 +59,8 @@ function General() {
           content={
             <>
               <Select
-                text={t('settings.gen3')}
-                onClick={() => setCurrencyHandler(t('settings.gen3'))}
+                text="Default"
+                onClick={() => setCurrencyHandler("Default")}
               />
               {/* <Select text="EUR" /> */}
 
@@ -71,7 +71,7 @@ function General() {
           }
         >
           <div className="bg-hover2 hover:bg-border cursor-pointer transition-all p-2 px-4 items-center rounded-full flex gap-1 justify-between">
-            <p>{selectedCurrency || t('settings.gen3')}</p>
+            <p>{selectedCurrency || "Default"}</p>
             <ChevronDown size={18} />
           </div>
         </DropSelect>

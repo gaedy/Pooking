@@ -4,6 +4,8 @@ import ListingCards from "../../pages/ListingCards/ListingCards";
 
 function BuyCards() {
   const { buyCardsData } = useOutletContext();
+ 
+
   return (
     <>
       <ListingCards>

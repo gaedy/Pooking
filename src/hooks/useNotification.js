@@ -3,7 +3,7 @@ import { useCallback, useState } from "react";
 export const useNotification = (initialState = false) => {
   const [isNotification, setIsNotification] = useState(initialState);
 
-  const handleNotification = useCallback((duration = 4000) => {
+  const handleNotification = useCallback((duration = 5000) => {
     setIsNotification(true);
 
     const timeOut = setTimeout(() => {

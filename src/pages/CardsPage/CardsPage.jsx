@@ -52,6 +52,10 @@ function CardsPage() {
     )
   );
 
+
+  
+
+
   const s = useSpring({
     from: { opacity: 0, y: -40 },
     to: { opacity: 1, y: 0 },

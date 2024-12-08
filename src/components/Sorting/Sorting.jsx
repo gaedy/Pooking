@@ -2,12 +2,18 @@ import { ArrowUpWideNarrow, ChevronDown, CircleXIcon } from "lucide-react";
 import DropSelect from "../DropSelect/DropSelect";
 import Select from "../DropSelect/Select";
 import { useState } from "react";
+import useDataFetch from "../../hooks/useDataFetch";
 
 function Sorting({ setRatingTerm }) {
   const [topRated, setTopRated] = useState("");
   const [ratingNumber, setRatingNumber] = useState(9);
 
-  const handleSortingSelct = (topRated) => {
+  // const { rentCards, buyCards, sellCards } = useDataFetch();
+
+  // const cards = {...rentCards, ...buyCards, ...sellCards};
+  // const sortedCards = Object.values(cards).sort((a, b) => b.rate - a.rate);
+
+  const handleSortingSelect = (topRated) => {
     setTopRated(topRated);
     setRatingTerm(ratingNumber);
   };
@@ -33,7 +39,7 @@ function Sorting({ setRatingTerm }) {
             <Select
               text="Top Rated"
               icon={<ArrowUpWideNarrow size={22} />}
-              onClick={() => handleSortingSelct("Top Rated")}
+              onClick={() => handleSortingSelect("Top Rated")}
             />
           </>
         }

@@ -159,7 +159,7 @@ function Card({
               <div
                 className="bg-white dark:bg-zinc-900 p-2 rounded-full dark:backdrop-filter 
                 dark:backdrop-blur-md dark:bg-opacity-60 backdrop-filter backdrop-blur-md bg-opacity-60 
-                active:scale-95 transition-transform"
+                active:scale-100 hover:scale-105 transition-transform"
                 onClick={handlePrevThumbnail}
               >
                 <ChevronLeft size={16} />
@@ -168,7 +168,7 @@ function Card({
               <div
                 className="bg-white dark:bg-zinc-900 p-2 rounded-full dark:backdrop-filter 
                 dark:backdrop-blur-md dark:bg-opacity-60 backdrop-filter backdrop-blur-md bg-opacity-60 
-                active:scale-95 transition-transform"
+                active:scale-100 hover:scale-105 transition-transform"
                 onClick={handleNextThumbnail}
               >
                 <ChevronRight size={16} />
@@ -206,7 +206,7 @@ function Card({
               <p className="text-button">
                 {isEGPCurrency ? (
                   <>
-                    {"EGP"} {(price * 51).toLocaleString()}
+                    {t("currency.eg")} {(price * 51).toLocaleString()}
                   </>
                 ) : isEURCurrency ? (
                   <>
@@ -219,7 +219,12 @@ function Card({
                 )}
               </p>
 
-              <p className="text-alternateText text-xs font-medium"> {per}</p>
+              {per && (
+                <div className="text-alternateText text-xs font-medium flex gap-1 items-center">
+                  <p>&bull;</p>
+                  <p>{per}</p>
+                </div>
+              )}
 
               {propertyType && (
                 <p className=" ml-auto text-greenColor bg-hover p-1 px-3 rounded-full text-xs font-medium">
