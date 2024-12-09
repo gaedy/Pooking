@@ -59,7 +59,7 @@ function CardsPage() {
   const s = useSpring({
     from: { opacity: 0, y: -40 },
     to: { opacity: 1, y: 0 },
-    delay: 100,
+    
     config: { mass: 1, tension: 210, friction: 14 },
   });
 

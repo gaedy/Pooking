@@ -85,7 +85,7 @@ function Navbar() {
         text-baseHoverText font-semibold text-sm"
       >
         <div
-          className="text-lg flex justify-between items-center gap-2 font-bold mr-10 hover:text-baseText 
+          className="text-lg flex justify-between items-center gap-2 font-bold ltr:mr-10 rtl:ml-10 hover:text-baseText 
         transition-all duration-300"
         >
           <NavLink to="/">
@@ -149,7 +149,7 @@ function Navbar() {
           </NavLink>
         </div>
 
-        <div className="ml-auto hidden md:flex hover:text-baseText">
+        <div className=" rtl:mr-auto ltr:ml-auto hidden md:flex hover:text-baseText">
           <Tooltip
             text={isDarkTheme ? t("navbar.nav4") : t("navbar.nav4_1")}
             className="top-2"
@@ -292,7 +292,7 @@ function Navbar() {
         )}
 
         {isSidebar && (
-          <div className="w-full h-full  bg-black opacity-60 z-10 fixed inset-0" />
+          <div className="w-full h-full bg-black opacity-60 z-10 fixed inset-0" />
         )}
 
         <NavLink
@@ -322,6 +322,7 @@ function Navbar() {
               label={t("navbar.nav30")}
               size="lg"
               position="right"
+              className=""
               content={
                 <>
                   {/* <NavLink to="dashboard" className="w-full">
@@ -340,7 +341,10 @@ function Navbar() {
                   </NavLink>
 
                   <NavLink to="settings" className="w-full">
-                    <Select text={t("navbar.nav13")} icon={<Settings size={22} />} />
+                    <Select
+                      text={t("navbar.nav13")}
+                      icon={<Settings size={22} />}
+                    />
                   </NavLink>
                 </>
               }

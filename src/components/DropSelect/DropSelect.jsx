@@ -50,8 +50,8 @@ function DropSelect({
   };
 
   const positions = {
-    left: "left-0",
-    right: "right-0",
+    left: "ltr:left-0 rtl:right-0",
+    right: "ltr:right-0 rtl:left-0 ",
   };
 
   const dropAnimation = useSpring({

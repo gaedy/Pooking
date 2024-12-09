@@ -107,14 +107,14 @@ function Appearance() {
       </div>
 
       <div className="flex justify-between  md:flex-row md:items-center gap-2 items-start flex-col transition-all duration-300 hover:text-baseText  font-medium">
-        <div className=" items-center  flex gap-2 justify-around">
+        <div className=" items-center flex gap-2 justify-around">
           <Type size={16} />
           <p>{t("settings.app3")}</p>
         </div>
 
         <DropSelect
-          position="right"
-          className="w-40"
+          position="left "
+          className="w-full min-w-36"
           content={
             <>
               <div

@@ -102,25 +102,25 @@ function Searchbar({ setSearchTerm, setGuestNumber, setLocationTerm }) {
         )}
 
         <div
-          className=" rounded-[1.8rem] md:rounded-full mx-2 flex-shrink h-fit md:w-fit w-11/12 flex md:flex-row flex-col justify-center items-center text-xs font-semibold
-         p-2 gap-1 bg-background hover:shadow-lg focus-within:shadow-lg transition-shadow duration-300"
+          className=" rounded-[1.8rem] sm:rounded-full mx-2 flex-shrink h-fit sm:w-fit w-11/12 flex sm:flex-row flex-col justify-center items-center text-xs font-semibold
+         p-2 gap-2 bg-background hover:shadow-lg focus-within:shadow-lg transition-shadow duration-300"
         >
-          <div className="md:w-full w-full relative group">
+          <div className="sm:w-full w-full relative group">
             <input
-              className={`md:w-full ${
+              className={`sm:w-full ${
                 search !== "" && "shadow-lg bg-hover"
-              } pr-10 p-4 w-full shrink border border-input hover:bg-hover placeholder-alternateText transition-all duration-200 focus-within:bg-hover bg-background rounded-full outline-none `}
-              placeholder={t('searchbar.search1')} 
+              } ltr:pr-10 rtl:pl-10 p-4 w-full shrink border border-input hover:bg-hover placeholder-alternateText transition-all duration-200 focus-within:bg-hover bg-background rounded-full outline-none `}
+              placeholder={t("searchbar.search1")}
               value={search}
               onChange={handleSearchChange}
             ></input>
             {search !== "" && (
               <div
-                className="absolute right-4 top-0 translate-y-4 scale-100 cursor-pointer opacity-75 hover:opacity-100"
+                className="absolute rtl:left-4 ltr:right-4 top-0 translate-y-4 scale-100 cursor-pointer opacity-75 hover:opacity-100"
                 onClick={handleAllClear}
               >
                 <Tooltip
-                  text={t('searchbar.search2')} 
+                  text={t("searchbar.search2")}
                   className="-translate-x-10 md:-translate-x-0"
                 >
                   <CircleXIcon size={16} color="var(--redColorHover)" />
@@ -129,15 +129,15 @@ function Searchbar({ setSearchTerm, setGuestNumber, setLocationTerm }) {
             )}
           </div>
 
-          <div className="md:w-fit w-full">
+          <div className="flex items-center justify-center gap-2 sm:flex-nowrap flex-wrap w-full">
             <DropSelect
-              label={t('searchbar.search3')} 
+              label={t("searchbar.search3")}
               position="left"
               hight="fixed"
-              className="md:w-60 w-full"
+              className="w-52"
               content={
                 <>
-                  <div className="overflow-auto w-full ">
+                  <div className="overflow-auto w-full">
                     <Select
                       text="USA"
                       onClick={() => handleLocationSelect("USA")}
@@ -156,14 +156,14 @@ function Searchbar({ setSearchTerm, setGuestNumber, setLocationTerm }) {
               <div
                 className={`flex hover:bg-hover ${
                   location !== "" && "bg-hover shadow-lg"
-                }  p-4 h-fit md:w-fit w-full border border-input focus-within:bg-hover rounded-full transition-all duration-200 group`}
+                }  p-4 h-fit w-full border border-input focus-within:bg-hover rounded-full transition-all duration-200 group`}
               >
                 <div className="flex gap-2 flex-row text-nowrap justify-between items-center">
                   <MapPin size={16} />
 
                   <div className="flex items-center justify-between gap-2">
                     <div>
-                      <p>{location || t('searchbar.search4') }</p>
+                      <p>{location || t("searchbar.search4")}</p>
                     </div>
                   </div>
 
@@ -172,7 +172,7 @@ function Searchbar({ setSearchTerm, setGuestNumber, setLocationTerm }) {
                   ) : (
                     <>
                       <div className="opacity-75 cursor-pointer hover:opacity-100">
-                        <Tooltip text={t('searchbar.search5')} >
+                        <Tooltip text={t("searchbar.search5")}>
                           <CircleXIcon
                             color="var(--redColorHover)"
                             size={16}
@@ -185,9 +185,41 @@ function Searchbar({ setSearchTerm, setGuestNumber, setLocationTerm }) {
                 </div>
               </div>
             </DropSelect>
+
+            <div
+              className={`flex hover:bg-hover ${
+                guests !== "" && "bg-hover shadow-lg"
+              } p-4 md:w-fit h-full border border-input focus-within:bg-hover rounded-full transition-all duration-200 group`}
+            >
+              <div className="flex flex-row justify-start items-center gap-1">
+                {/* <img
+                className="w-4 pointer-events-none select-none"
+                src={guest}
+              ></img> */}
+                <House size={16} />
+
+                <input
+                  className={`group-hover:bg-hover ${
+                    guests !== "" && "bg-hover"
+                  } px-2 mr-2 w-20 transition-all duration-200 focus-within:bg-hover bg-background rounded-full outline-none`}
+                  placeholder={t("searchbar.search6")}
+                  type="number"
+                  value={guests}
+                  min="0"
+                  onChange={handleGuestChange}
+                  max="20"
+                ></input>
+              </div>
+            </div>
           </div>
 
-          <div className="flex hover:bg-hover p-4 md:w-fit w-full border border-input focus-within:bg-hover rounded-full transition-all duration-200 group">
+          <div className="flex hover:bg-hover focus-within:bg-hover  rounded-full transition-all duration-200">
+            <Button onClick={handleSubmit} className="p-4" type="circle">
+              <Search size={20} color="white" />
+            </Button>
+          </div>
+
+          {/* <div className="flex hover:bg-hover p-4 md:w-fit w-full border border-input focus-within:bg-hover rounded-full transition-all duration-200 group">
             <div className="flex flex-row justify-start items-center gap-2">
               <CalendarSearch size={17} />
 
@@ -204,39 +236,7 @@ function Searchbar({ setSearchTerm, setGuestNumber, setLocationTerm }) {
                 placeholder="Add dates"
               />
             </div>
-          </div>
-
-          <div
-            className={`flex hover:bg-hover ${
-              guests !== "" && "bg-hover shadow-lg"
-            } p-4 md:w-fit w-full border border-input focus-within:bg-hover rounded-full transition-all duration-200 group`}
-          >
-            <div className="flex flex-row justify-start items-center gap-1">
-              {/* <img
-                className="w-4 pointer-events-none select-none"
-                src={guest}
-              ></img> */}
-              <House size={16} />
-
-              <input
-                className={`group-hover:bg-hover ${
-                  guests !== "" && "bg-hover"
-                } px-2 mr-2 w-20 transition-all duration-200 focus-within:bg-hover bg-background rounded-full outline-none`}
-                placeholder={t('searchbar.search6')} 
-                type="number"
-                value={guests}
-                min="0"
-                onChange={handleGuestChange}
-                max="20"
-              ></input>
-            </div>
-          </div>
-
-          <div className="flex hover:bg-hover focus-within:bg-hover  rounded-full transition-all duration-200">
-            <Button onClick={handleSubmit} className="p-4" type="circle">
-              <Search size={20} color="white" />
-            </Button>
-          </div>
+          </div> */}
         </div>
       </div>
     </>

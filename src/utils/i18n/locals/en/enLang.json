@@ -57,6 +57,11 @@
   "currency": {
     "eg": "EGP"
   },
+  "sorting": {
+    "1": "Choose one",
+    "2": "Top Rated",
+    "3": "Sort by"
+  },
   "detailedCard": {
     "close": "Close",
     "noImg": "No images found",
@@ -72,6 +77,39 @@
     "year": "Year Built",
     "feet": "Square Feet",
     "topRev": "Top Reviews",
-    "topRev2": "No Reviews Found."
+    "topRev2": "No Reviews Found.",
+
+    "views" : "views",
+    "inq" : "inquiries",
+    "lis" : "Listing Date",
+    "info": "Seller Info"
+
+  },
+  "loginPage": {
+    "1": "Sign in",
+    "2": "Sign up",
+    "3": "Welcome"
+  },
+  "signin": {
+    "in1": "Get Started",
+    "in2": "Enter your details to get sign in to your account",
+    "in3": "Having trouble in sign in?",
+    "in4": "Don't have an account?",
+    "in5": "Sign up",
+    "in6": "Sign in",
+    "1": "Email",
+    "2": "Password"
+  },
+  "signup": {
+    "up1": "Get Started",
+    "up2": "Enter your details to get sign up to your account",
+    "up3": "Sign up",
+    "up4": "Already have an account?",
+    "up5": "Sign in",
+    "1": "First name",
+    "2": "Last name",
+    "3": "Email",
+    "4": "Password",
+    "5": "Confirm Password"
   }
 }

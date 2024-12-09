@@ -3,10 +3,12 @@ import DropSelect from "../DropSelect/DropSelect";
 import Select from "../DropSelect/Select";
 import { useState } from "react";
 import useDataFetch from "../../hooks/useDataFetch";
+import { useTranslation } from "react-i18next";
 
 function Sorting({ setRatingTerm }) {
   const [topRated, setTopRated] = useState("");
   const [ratingNumber, setRatingNumber] = useState(9);
+  const { t } = useTranslation();
 
   // const { rentCards, buyCards, sellCards } = useDataFetch();
 
@@ -32,20 +34,20 @@ function Sorting({ setRatingTerm }) {
     >
       <DropSelect
         size="med"
-        label="Choose one"
+        label={t("sorting.1")}
         className=""
         content={
           <>
             <Select
-              text="Top Rated"
+              text={t("sorting.2")}
               icon={<ArrowUpWideNarrow size={22} />}
-              onClick={() => handleSortingSelect("Top Rated")}
+              onClick={() => handleSortingSelect(t("sorting.2"))}
             />
           </>
         }
       >
         <div className="flex items-center justify-between gap-2">
-          <p>{topRated || "Sort by"}</p>
+          <p>{topRated || t("sorting.3")}</p>
 
           {topRated === "" ? (
             <ChevronDown

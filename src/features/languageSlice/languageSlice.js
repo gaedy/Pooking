@@ -12,6 +12,7 @@ const languageSlice = createSlice({
     changeLanguage: (state, action) => {
       const lang = action.payload;
       state.currentLanguage = lang;
+      state.isRTL = ["ar"].includes(lang);
 
       i18n.changeLanguage(lang);
     },

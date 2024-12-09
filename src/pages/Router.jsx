@@ -51,7 +51,7 @@ const router = createBrowserRouter([
         element: <Saved />,
         children: [
           {
-            path: "detailed-card/:id/:title",
+            path: "cards/:id/:title",
             element: <DetailedCard />,
           },
         ],

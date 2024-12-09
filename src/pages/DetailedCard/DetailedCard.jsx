@@ -21,7 +21,7 @@ import {
 import Rating from "../../components/Rating/Rating";
 import Tooltip from "../../components/Tooltip/Tooltip";
 import GridImages from "./GridImages";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { getReviewsJSON } from "../../api/api";
 import LoadingSpin from "../../components/LoadingSpin/LoadingSpin";
 import useCurrency from "../../hooks/useCurrency";
@@ -43,12 +43,26 @@ function DetailedCard() {
     savedCards = [],
   } = useOutletContext();
 
-  const card = [
-    ...rentCardsData,
-    ...buyCardsData,
-    ...sellCardsData,
-    ...savedCards,
-  ].find((item) => item.id.toString() === id.toString());
+  const findCardById = (id, ...arrays) => {
+    for (const array of arrays) {
+      const found = array.find((item) => item.id === id);
+      if (found) return found;
+    }
+    return null;
+  };
+
+  const card = useMemo(
+    () =>
+      findCardById(id, rentCardsData, buyCardsData, sellCardsData, savedCards),
+    [id, rentCardsData, buyCardsData, sellCardsData, savedCards]
+  );
+
+  // const card = [
+  //   ...rentCardsData,
+  //   ...buyCardsData,
+  //   ...sellCardsData,
+  //   ...savedCards,
+  // ].find((item) => item.id.toString() === id.toString());
 
   useEffect(() => {
     setIsLoading(true);
@@ -180,7 +194,7 @@ function DetailedCard() {
                       <Eye />
                       <p>{card.views}</p>
                     </div>
-                    <p>views</p>
+                    <p>{t("detailedCard.views")}</p>
                   </div>
 
                   <div className="flex items-center gap-1">
@@ -188,7 +202,7 @@ function DetailedCard() {
                       <MessageCircleQuestion />
                       <p>{card.inquiries}</p>
                     </div>
-                    <p>inquiries</p>
+                    <p>{t("detailedCard.inq")}</p>
                   </div>
                 </div>
               </>
@@ -200,7 +214,7 @@ function DetailedCard() {
                 <div className="flex gap-2 items-center flex-wrap">
                   <p className="font-bold"> {card.rate.toPrecision(2)}</p>
                   <p
-                    className={`font-medium bg-hover2 px-4 py-1 rounded-full text-white text-sm ${
+                    className={`font-medium px-4 py-1 rounded-full text-white text-sm ${
                       card.rate >= 9
                         ? "bg-red-500"
                         : card.rate >= 8
@@ -323,7 +337,7 @@ function DetailedCard() {
               <div className="flex flex-col gap-2 items-center">
                 <div className="flex text-sm items-center justify-between w-full gap-2 bg-background p-2 px-3 rounded-full">
                   <Blocks size={17} />
-                  <p>Listing Date</p>
+                  <p>{t("detailedCard.lis")}</p>
                   <p className="text-alternateText">&bull;</p>
                   <p>{card.listingDate}</p>
                 </div>
@@ -377,7 +391,7 @@ function DetailedCard() {
 
         {card.sellerInfo && (
           <div className="flex flex-col mt-2 gap-3 h-fit">
-            <p className="text-lg font-bold">Seller Info</p>
+            <p className="text-lg font-bold">{t("detailedCard.info")}</p>
 
             <div className=" gap-2 justify-center flex md:flex-row flex-col">
               <div className="flex justify-between w-fit bg-background p-2 rounded-full px-3 gap-2 items-center text-sm font-semibold flex-wrap">

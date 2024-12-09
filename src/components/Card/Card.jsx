@@ -87,6 +87,7 @@ function Card({
     <>
       <animated.div
         style={animation}
+        dir="ltr"
         className="group w-72 bg-background hover:shadow-xl  transition-all cursor-pointer duration-300 
         h-80 rounded-3xl flex flex-col items-center gap-2 p-2"
       >
@@ -202,7 +203,7 @@ function Card({
 
             {/* <div className=" text-sm flex items-center">tags</div> */}
 
-            <div className="text-base flex px-0 gap-1 justify-start items-center font-bold">
+            <div  className="text-base flex px-0 gap-1 justify-start items-center font-bold">
               <p className="text-button">
                 {isEGPCurrency ? (
                   <>

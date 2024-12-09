@@ -1,14 +1,17 @@
 import { animated, useSpring } from "@react-spring/web";
+import { useTranslation } from "react-i18next";
 import { Outlet, useLocation } from "react-router-dom";
 
 function LoginPage() {
   const locate = useLocation();
+  const { t } = useTranslation();
 
   const currentPageTitles = {
-    "/login/signin": "Sign in",
-    "/login/signup": "Sign up",
+    "/login/signin": t("loginPage.1"),
+    "/login/signup": t("loginPage.2"),
   };
-  const currentPageTitle = currentPageTitles[locate.pathname] || "Welcome";
+  const currentPageTitle =
+    currentPageTitles[locate.pathname] || t("loginPage.3");
 
   const loginAnimation = useSpring({
     from: { opacity: 0, y: -60 },
