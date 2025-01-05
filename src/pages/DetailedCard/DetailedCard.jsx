@@ -13,9 +13,7 @@ import {
   MapPin,
   MessageCircleQuestion,
   Phone,
-  Ruler,
   Scale3d,
-  SquareUser,
   X,
 } from "lucide-react";
 import Rating from "../../components/Rating/Rating";
@@ -44,8 +42,9 @@ function DetailedCard() {
   } = useOutletContext();
 
   const findCardById = (id, ...arrays) => {
+    const searchId = id?.toString();
     for (const array of arrays) {
-      const found = array.find((item) => item.id === id);
+      const found = array?.find((item) => item?.id?.toString() === searchId);
       if (found) return found;
     }
     return null;
@@ -57,21 +56,15 @@ function DetailedCard() {
     [id, rentCardsData, buyCardsData, sellCardsData, savedCards]
   );
 
-  // const card = [
-  //   ...rentCardsData,
-  //   ...buyCardsData,
-  //   ...sellCardsData,
-  //   ...savedCards,
-  // ].find((item) => item.id.toString() === id.toString());
-
   useEffect(() => {
+    if (!card?.id) return;
+
     setIsLoading(true);
     getReviewsJSON()
       .then((reviewsData) => {
         const reviewsByCardID = reviewsData.filter(
-          (review) => review.cardId.toString() === card.id.toString()
+          (review) => review?.cardId?.toString() === card.id?.toString()
         );
-
         setTheReviews(reviewsByCardID);
       })
       .catch((error) => {

@@ -1,30 +1,26 @@
-import axios from "axios";
-
-const BASE_URL = "http://localhost:8000";
+// import axios from "axios";
+import rentData from '/data/db.json';
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const delayAmount = 800;
 
+// Simulating API calls by returning promises
 export const getRentJSON = async () => {
   if (delayAmount) await delay(delayAmount);
-  const response = await axios.get(`${BASE_URL}/rent`);
-  return response.data;
+  return rentData.rent;
 };
 
 export const getBuyJSON = async () => {
-  const response = await axios.get(`${BASE_URL}/buy`);
-
-  return response.data;
+  if (delayAmount) await delay(delayAmount);
+  return rentData.buy;
 };
 
 export const getSellJSON = async () => {
-  const response = await axios.get(`${BASE_URL}/sell`);
-
-  return response.data;
+  if (delayAmount) await delay(delayAmount);
+  return rentData.sell;
 };
 
 export const getReviewsJSON = async () => {
   if (delayAmount) await delay(delayAmount);
-  const response = await axios.get(`${BASE_URL}/reviews`);
-  return response.data;
+  return rentData.reviews;
 };
